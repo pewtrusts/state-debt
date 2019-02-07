@@ -1,0 +1,114 @@
+@import 'variable.scss';
+
+:global(#pew-app) {
+    font-size: 18px;
+    line-height: 144.44%;
+
+    section, footer {
+        border: 1px solid $dark_gray;
+        border-bottom-width: 0;
+        padding: 0 40px;
+        &:last-of-type {
+            border-bottom-width: 1px;
+        }
+        > div {
+            padding: 50px 0 40px;
+        }
+    }
+
+    footer {
+        margin-top: 60px;
+        > div {
+            padding: 20px 0 5px;
+        }
+    }
+
+    h2 {
+        background-color: $light_gray;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 22px;
+        margin: 0 -40px;
+        padding: 20px 40px;
+        position: relative;
+        width: calc(100% + 80px);
+        &:after, &:before {
+            content: '—';
+            display: none;
+            font-size: 36px;
+            position: absolute;
+            right: 40px;
+            top: 19px;
+        }
+        &:before {
+            display: block;
+        }
+        &:hover, &:focus {
+            &:after, &:before {
+                color: $blue;
+            }
+        }
+    }
+    
+    :global(h2.pct-is-closed){
+        
+        &:after {
+            display: block;
+            transform: rotate(90deg);
+            transform-origin: 50% 63%;
+        }
+    }
+    
+
+    h3 {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 0;
+    }
+    h4 {
+        font-size: 16px;
+    }
+
+    :global(.pct-footnote){
+        font-size: 11px;
+    }
+
+    :global(.pct-note), :global(.pct-note) p, :global(.pct-note) li, :global(.pct-note) blockquote {
+        font-size: 12px;
+        font-weight: 200;
+        line-height: 200%;
+        strong {
+            font-weight: 400;
+        }
+    }
+
+    :global(.pct-box){
+        background-color: $light_gray;
+        padding: 20px 20px 5px;
+        margin-bottom: 20px;
+    }
+
+    :global(.pct-endnotes){
+        p, li, blockquote {
+            font-size: 10px;
+            line-height: 18px;
+            margin-bottom: 0;
+        }
+    }
+
+    :global(.pct-hide) {
+        display: none;
+    }
+
+    :global(.pct-download){
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath stroke='%23333' d='M1 .5h8v9H1v-9z'%3e%3c/path%3e%3cpath stroke='%23333' d='M3 3h4'%3e%3c/path%3e%3cpath stroke='%23333' d='M3 5h4'%3e%3c/path%3e%3cpath stroke='%23333' d='M3 7h4'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        margin-left: 10px;
+margin-right: 6px;
+padding-left: 25px;
+        ;
+
+    }
+
+}
