@@ -1,8 +1,18 @@
 /*eslint no-debugger: 0 */
+/* global process */
+import StateDebt from './state-debt.js';
 import './css/styles.scss';
-import embed from './embed.html';
-import footer from './footer.html';
 
+
+const container = '#pew-app';
+const App = new StateDebt(container, {
+	needsRouter: false
+});
+if ( process.env.NODE_ENV === 'development' || window.IS_PRERENDERING ){ // process development means using WebPack dev server. window is prerendering means in
+	App.prerender();
+}
+App.init();
+/*
 function toggleSection(){
 	console.log(this.parentNode);
 	this.parentNode.querySelector('.js-inner-content').classList.toggle('pct-hide');
@@ -20,4 +30,4 @@ document.querySelectorAll('#pew-app section > h2').forEach(heading => {
 			toggleSection.call(this);
 		}
 	});
-});
+});*/
