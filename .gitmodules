@@ -13,3 +13,4 @@
 [submodule "submodules/ROUTR"]
 	path = submodules/ROUTR
 	url = git@github.com:pewtrusts/ROUTR.git
+	branch = v1
