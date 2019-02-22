@@ -22,13 +22,13 @@ module.exports = env => { // module.exports is function now to pass in env varia
                                 loader: 'eslint-loader'
                             }
                         ]},
-                       /* {
+                        {
                             test: /\.csv$/,
                             loader: 'file-loader',
                             options: {
                                 name: 'data/[name].[ext]?v=[hash:6]', 
                             }
-                        },*/
+                        },
                         /* {
                               // images under limit converted to data url. above the limit falls back to file-loader to emit file
                               // as specified in options (options are passed to file-loader)

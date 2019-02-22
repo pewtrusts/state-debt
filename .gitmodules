@@ -5,7 +5,7 @@
 [submodule "submodules/UI-js"]
 	path = submodules/UI-js
 	url = git@github.com:pewtrusts/UI-js.git
-	branch = v1
+	branch = v1.1
 [submodule "submodules/UTILS"]
 	path = submodules/UTILS
 	url = git@github.com:pewtrusts/UTILS.git
