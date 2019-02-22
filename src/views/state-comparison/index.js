@@ -1,6 +1,6 @@
 import Element from '@UI/element';
 import s from './styles.scss';
-import ComparisonText from '@Project/components/comparison-text';
+import ComparisonText from '@Project/components/comparison/text';
 
 const initialCompare = ['US','AL'];
 
