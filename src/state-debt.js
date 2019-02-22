@@ -1,6 +1,6 @@
 /* global PUBLICPATH process module */
 //utils
-//import * as d3 from 'd3-collection';
+import * as d3 from 'd3-collection';
 import Papa from 'papaparse';
 //import { stateModule as S } from 'stateful-dead';
 //import PS from 'pubsub-setter';
@@ -65,13 +65,14 @@ function getRuntimeData(){
                 var data = response.data;
                 /* complete model based on fetched data */
                 model.data = data;
+                model.typesNested = d3.nest().key(d => d.group).entries(model.types);
                 
                 // ....
                
                 /* push views now that model is complete */
                 
                 views.push(
-                    this.createComponent(model, ComparisonView, 'div#comparison-view', {renderToSelector: '#section-comparison .js-inner-content', rerenderOnDataMismatch: true})  
+                    this.createComponent(model, ComparisonView, 'div#comparison-view', {renderToSelector: '#section-comparison .js-inner-content', rerenderOnDataMismatch: true, parent: this})  
                 );
                 
                 resolve(true);
