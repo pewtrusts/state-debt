@@ -1,5 +1,5 @@
-﻿code,state,census,credit2018,credit2015,debt_limit_type,debt_percent_SPI,debt_per_capita,state_local_division,centralization,revenue_colatility,ten_year_pop_growth
-US,US Median,N/A,N/A,N/A,N/A,0.0734,3198.05,0.5829,0.2880,5.7,0.0619
+﻿code,state,census,credit2018,credit2015,debt_limit_type,debt_percent_SPI,debt_per_capita,state_local_division,centralization,revenue_volatility,ten_year_pop_growth
+US,U.S. Median,N/A,N/A,N/A,N/A,0.0734,3198.05,0.5829,0.2880,5.7,0.0619
 AL,Alabama,South-East South Central,AA,AA,Constitutional Amendment,0.0481,1839.02,0.7008,0.3471,4.6,0.0332
 AK,Alaska,West-Pacific,AA,AAA,Referendum and/or Supermajority,0.1332,7528.37,0.3729,0.5687,37.6,0.0761
 AZ,Arizona,West-Mountain,AA,AA,Prohibition,0.0525,2085.75,0.7024,0.1335,8.0,0.1172

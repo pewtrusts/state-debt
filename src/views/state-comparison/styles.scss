@@ -1,9 +1,7 @@
 @import '@Project/css/variable.scss';
 
-
-
-.groupHeader {
-    margin-bottom: 40px;
+:global(.rich-text) .groupHeader {
+    margin-bottom: 25px;
     font-size: 20px;
     color: $dark_blue;
 }
@@ -11,9 +9,14 @@
 .typeContainer {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 75px;
+    .credit-rating & {
+        justify-content: flex-start;
+    }
 }
 .typeDiv {
-
+    max-width: 400px;
     width: 50%;
 }
 :global(.rich-text) .typeHeader {
@@ -21,6 +24,7 @@
 }
 .debt_limit_type {
     width: 100%;
+    max-width: 100%;
 }
 .credit2015, .credit2018 {
     width: auto;

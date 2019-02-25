@@ -1,4 +1,4 @@
-import s from './styles.scss';
+import s from './../styles.scss';
 import Comparison from '../';
 
 export default class ComparisonText extends Comparison {

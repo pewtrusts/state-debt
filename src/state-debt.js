@@ -65,6 +65,13 @@ function getRuntimeData(){
                 var data = response.data;
                 /* complete model based on fetched data */
                 model.data = data;
+                model.types.forEach(type => {
+                    if ( type.type !== 'text'){
+                        type.max = Math.max(...data.map(d => d[type.field]));
+                        type.min = Math.min(...data.map(d => d[type.field]));
+                        type.spread = type.max - type.min ;
+                    }
+                });
                 model.typesNested = d3.nest().key(d => d.group).entries(model.types);
                 
                 // ....
