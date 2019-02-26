@@ -24,11 +24,3 @@ $label_width: 128px;
     margin-bottom: 10px;
 
 }
-.bar {
-    background-color: $medium_blue;
-    flex-grow: 1;
-    height: 24px;
-    transform-origin: left;
-    transition: transform 0.2s ease-in-out;
-    transform: scaleX(1);
-}

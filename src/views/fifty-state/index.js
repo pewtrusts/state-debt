@@ -1,6 +1,7 @@
 import Element from '@UI/element';
 import s from './styles.scss';
 import * as d3 from 'd3-collection';
+import Bar from '@Project/components/bar';
 
 export default class FiftyStateView extends Element {
     prerender(){
@@ -59,11 +60,9 @@ export default class FiftyStateView extends Element {
                 var label = document.createElement('p');
                 label.classList.add(s.barLabel);
                 label.innerHTML = d.state;
-                var bar = document.createElement('div');
-                bar.classList.add(s.bar);       //TODO: ADD THIS TO SHARED STYLES
-                bar.style.transform = `scaleX(${this.linearScale(d,field)})`;                
+                var bar = this.parent.createComponent(this.model, Bar, `div.js-bar-state-${d.code}`, {parent: this, data: {d,field, color:2}});
                 barContainer.appendChild(label);
-                barContainer.appendChild(bar);
+                barContainer.appendChild(bar.el);
                 groupDiv.appendChild(barContainer);
             });
             container.appendChild(groupDiv);
@@ -71,11 +70,5 @@ export default class FiftyStateView extends Element {
 
         return container;
     }
-    linearScale(match, field){
-        var typeObject = this.model.types.find(t => t.field === field),
-            scale = ( match[field] - typeObject.min ) / typeObject.spread,
-            adjusted = .01 + ( scale * .99 );
-
-        return adjusted;
-    }
+    
 }
