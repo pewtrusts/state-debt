@@ -3,7 +3,7 @@ import s from './styles.scss';
 import ComparisonText from '@Project/components/comparison/text';
 import ComparisonChart from '@Project/components/comparison/chart';
 
-const initialCompare = ['MD','NH'];
+const initialCompare = ['US','AL'];
 
 export default class Comparison extends Element {
     prerender(){

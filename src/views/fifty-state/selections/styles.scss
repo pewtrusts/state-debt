@@ -1,0 +1,14 @@
+@import '@Project/css/variable.scss';
+
+.dropdownWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.dropdownInner {
+    width: 32%;
+    height: 75px;
+    background-color: beige;
+}
