@@ -10,9 +10,11 @@ import Papa from 'papaparse';
 import data from './data/data.csv';
 import groups from './data/groups.json';
 import types from './data/types.json';
+import dict from './data/dictionary.json';
 
 //views
 import ComparisonView from './views/state-comparison/';
+import FiftyStateView from './views/fifty-state/';
 
 // app prototype
 import PCTApp from '@App';
@@ -23,7 +25,8 @@ import footer from './partials/footer.html';
 
 const model = {
     groups,
-    types
+    types,
+    dict
 };
 
 const views = [];
@@ -67,19 +70,21 @@ function getRuntimeData(){
                 model.data = data;
                 model.types.forEach(type => {
                     if ( type.type !== 'text'){
-                        type.max = Math.max(...data.map(d => d[type.field]));
-                        type.min = Math.min(...data.map(d => d[type.field]));
+                        let dataArray = data.map(d => d[type.field]).filter(d => d !== null); 
+                        type.max = Math.max(...dataArray);
+                        type.min = Math.min(...dataArray);
                         type.spread = type.max - type.min ;
                     }
                 });
                 model.typesNested = d3.nest().key(d => d.group).entries(model.types);
-                
+                console.log(model);
                 // ....
                
                 /* push views now that model is complete */
                 
                 views.push(
-                    this.createComponent(model, ComparisonView, 'div#comparison-view', {renderToSelector: '#section-comparison .js-inner-content', rerenderOnDataMismatch: true, parent: this})  
+                    this.createComponent(model, ComparisonView, 'div#comparison-view', {renderToSelector: '#section-comparison .js-inner-content', rerenderOnDataMismatch: true, parent: this}),  
+                    this.createComponent(model, FiftyStateView, 'div#fifty-state-view', {renderToSelector: '#section-states .js-inner-content', rerenderOnDataMismatch: true, parent: this})  
                 );
                 
                 resolve(true);

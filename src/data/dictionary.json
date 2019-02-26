@@ -1,0 +1,41 @@
+{
+    "census": [
+        "N/A",
+        "Northeast—New England",
+        "Northeast—Middle Atlantic",
+        "Midwest—East North Central",
+        "Midwest—West North Central",
+        "South—South Atlantic",
+        "South—East South Central",
+        "South—West South Central",
+        "West—Mountain",
+        "West—Pacific"
+    ],
+    "credit2018": [
+        "N/A",
+        "AAA",
+        "AA+",
+        "AA",
+        "AA-",
+        "A+",
+        "A",
+        "A-",
+        "BBB+",
+        "BBB",
+        "BBB-",
+        "BB+",
+        "BB",
+        "BB-",
+        "B+",
+        "B",
+        "B-",
+        "CCC+",
+        "CCC",
+        "CCC-",
+        "CC",
+        "C",
+        "RD",
+        "SD",
+        "D"
+    ]
+}

@@ -1,0 +1,34 @@
+@import '@Project/css/variable.scss';
+
+$label_width: 128px;
+
+:global(.rich-text) .groupHeader {
+    font-size: 16px;
+    font-weight: 600;
+    color: $dark_blue;
+    margin-bottom: 10px;
+}
+:global(.rich-text) .barLabel {
+    margin: 0;
+    width: $label_width;
+    padding-right: 15px;
+    display: inline-block;
+    line-height: 24px;
+}
+.groupDiv {
+    margin-bottom: 27px;
+}
+.barContainer {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+.bar {
+    background-color: $medium_blue;
+    flex-grow: 1;
+    height: 24px;
+    transform-origin: left;
+    transition: transform 0.2s ease-in-out;
+    transform: scaleX(1);
+}
