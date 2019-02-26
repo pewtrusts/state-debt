@@ -3,7 +3,7 @@ import Comparison from '../';
 
 
 
-export default class ComparisonText extends Comparison {
+export default class ComparisonChart extends Comparison {
     prerender(){
         var div = super.prerender(),
             scales;
