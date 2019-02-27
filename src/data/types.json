@@ -70,5 +70,13 @@
     "order": 2,
     "label": 2018,
     "tooltip": "Standard & Poor’s general obligation credit rating."
+  },
+  {
+    "field": "census",
+    "type": "text",
+    "group": null,
+    "order": null,
+    "label": "Census region and division",
+    "tooltip": null
   }
 ]
