@@ -21,6 +21,11 @@ $label_width: 128px;
 .barContainer {
     display: flex;
     width: 100%;
-    margin-bottom: 10px;
-
+    margin-bottom: 2px;
+    padding: 4px 10px;
+    position: relative;
+    left: -4px;
+    &:hover {
+        background-color: $highlight_blue;
+    }
 }

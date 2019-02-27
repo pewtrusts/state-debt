@@ -52,8 +52,9 @@
     "type": "percent",
     "group": 3,
     "order": 2,
-    "label": "Debt as a Percentage of State Personal Income",
-    "tooltip": "Total debt relative to state personal income, a measure of economic resources."
+    "label": "Debt as a Percentage of SPI",
+    "tooltip": "Total debt relative to state personal income, a measure of economic resources.",
+    "isDefaultSelection": true
   },
   {
     "field": "credit2015",

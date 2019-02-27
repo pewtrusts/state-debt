@@ -6,9 +6,28 @@
     justify-content: space-between;
     margin-bottom: 40px;
 }
-
+.dropdownOuter {
+    width: 48%;
+    font-size: 16px;
+    font-weight: bold;
+    color: $dark_blue;
+}
 .dropdownInner {
-    width: 32%;
-    height: 75px;
-    background-color: beige;
+        margin-top: 8px;
+        position: relative;
+    
+    &:before {
+        content: '';
+        display: block;
+        width: 38px;
+        height: 38px;
+        background-color: $blue_gray;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 11'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2px' stroke-miterlimit='10' d='M1 1l8 7 8-7'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 17px;
+        background-position: calc(50% - 1px) 50%;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+    }
 }
