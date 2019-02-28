@@ -30,3 +30,33 @@
     width: auto;
     margin-right: 90px;
 }
+
+:global(.compare-label) {
+    font-style: italic;
+}
+
+:global(.autoComplete_wrapper) {
+    width: 320px;
+    margin-right: 20px;
+    &:last-of-type {
+        margin-left: 20px;
+    }
+}
+
+:global(.compare-selection-wrapper) {
+    margin-bottom: 65px;
+}
+
+:global(.autoComplete) {
+    padding: 0;
+    border-bottom-color: $gray;
+    &::placeholder {
+        font-weight: bold;
+    }
+}
+.autoComplete0::placeholder {
+    color: $light_blue;
+}
+.autoComplete1::placeholder {
+    color: $medium_blue;
+}

@@ -40,6 +40,20 @@ module.exports = env => { // module.exports is function now to pass in env varia
                         }
                     }, // any scss files to be excluded from renaming the classes
                 ]
+            },
+            {
+                test: /\.css$/,
+                //exclude: /exclude/,
+                use: [{
+                        loader: 'style-loader'
+                    }, {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            localIdentName: '[local]', // in dev mode hash not necessary to brak caches but incuding path
+                        }
+                    }
+                ]
             }]
         },
         plugins: [

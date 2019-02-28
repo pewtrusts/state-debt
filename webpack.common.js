@@ -11,7 +11,7 @@ module.exports = env => { // module.exports is function now to pass in env varia
             module: {
                 rules: [{
                         test: /\.js$/,
-                        exclude: [/node_modules/, /\.min\./, /vendor/],
+                        exclude: [/node_modules/, /\.min\./, /vendor/, /autoComplete\.js/],
                         use: [{
                                 loader: 'babel-loader',
                                 /*options: {
@@ -80,6 +80,8 @@ module.exports = env => { // module.exports is function now to pass in env varia
                         "@Project": path.join(__dirname, 'src'),
                         //"@Helpers": path.join(__dirname, '../../helpers/'),
                         "@Utils": path.join(__dirname, 'submodules/UTILS/'),
+                        "@AutoComplete": path.join(__dirname, 'submodules/autoComplete.js/dist/'),
+                        
                     }
                 }
             }
