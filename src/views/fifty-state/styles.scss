@@ -25,6 +25,7 @@ $label_width: 128px;
     padding: 4px 10px;
     position: relative;
     left: -4px;
+    cursor: pointer;
     &:hover {
         background-color: $highlight_blue;
     }

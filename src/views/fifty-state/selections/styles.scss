@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 .dropdownOuter {
     width: 48%;
@@ -29,5 +29,21 @@
         position: absolute;
         right: 1px;
         top: 1px;
+    }
+}
+:global(.rich-text) .label {
+    font-size: 16px;
+    font-weight: bold;
+    color: $dark_blue;
+    margin: 0;
+    margin-bottom: 20px;
+    width: 110px;
+    a, a:visited, a:active {
+        color: $gray;
+        text-decoration: none;
+        &:hover {
+            color: $light_blue;
+            text-decoration: none;
+        }
     }
 }

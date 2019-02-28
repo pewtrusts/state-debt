@@ -46,6 +46,7 @@ export default class FiftyStateView extends Element {
             dropdownWrapper.appendChild(dropdownOuter);
         });
         view.appendChild(dropdownWrapper);
+        view.insertAdjacentHTML('beforeend', `<p class="${s.label}">Select a state to highlight<br /><a id="clear-all-highlight" href="#">Clear all</a></p>`);
         return view;
     }
     
