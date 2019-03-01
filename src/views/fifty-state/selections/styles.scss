@@ -4,13 +4,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 .dropdownOuter {
-    width: 48%;
+    width: 310px;
+    flex-grow: 1;
     font-size: 16px;
     font-weight: bold;
     color: $dark_blue;
+    margin-right: 10px;
+    margin-bottom: 15px;
 }
 .dropdownInner {
         margin-top: 8px;
@@ -48,7 +51,7 @@
     }
 }
 :global(.rich-text) .labelSort {
-    span {
+    span:first-of-type {
         width: 128px;
         display: inline-block;
     }
