@@ -54,5 +54,8 @@ export default class FiftyStateView extends Element {
 
         return container;
     }
+    init(){
+        console.log('init fifty-state');
+    }
     
 }
