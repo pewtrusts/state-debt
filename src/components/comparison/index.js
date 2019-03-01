@@ -13,6 +13,5 @@ export default class Comparison extends Element {
 
         return div;
     }
-    init(){
-    }
+
 }

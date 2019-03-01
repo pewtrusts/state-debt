@@ -2,21 +2,39 @@ import Element from '@UI/element';
 import '@AutoComplete/css/autoComplete.css';
 import s from './styles.scss';
 import { stateModule as S } from 'stateful-dead';
-//import PS from 'pubsub-setter';
 import ComparisonText from '@Project/components/comparison/text';
 import ComparisonChart from '@Project/components/comparison/chart';
 import AutoComplete from '@AutoComplete/js/autoComplete.js';
+import PS from 'pubsub-setter';
 
 const initialCompare = ['US','AL'];
 
 export default class Comparison extends Element {
     prerender(){ // this prerender is called as part of the super constructor
-         //container
+        this.comparisons = [];
+        // first loop through to instantiate the Comparisons. if prerendered, comparison.el will be the renders html. if not, it will be created
+        this.model.groups.forEach((group, i) => {
+            this.model.typesNested[i].values.forEach(value => {
+              var comparison;
+                if ( value.type === 'text' ){
+                    comparison = this.parent.createComponent(this.model, ComparisonText, `div.js-text-compare-${value.field}`, {rerenderOnDataMismatch: true, parent: this, data: {comparison: initialCompare, field: value.field}});
+                } else {
+                    comparison = this.parent.createComponent(this.model, ComparisonChart, `div.js-text-compare-${value.field}`, {rerenderOnDataMismatch: true, parent: this, data: {comparison: initialCompare, field: value.field}});
+                }
+                this.comparisons.push(comparison);
+            });
+        });
+        this.children.push(...this.comparisons);
+
+        //then either return the prendered DOM element or create it, appending the DOM elements from the comparisons instantiated above 
+
+        //container
         var view = super.prerender();
-        this.children = [];
+        //this.children = []; already set as part of createComponent method
         if ( this.prerendered && !this.rerender) {
             return view; // if prerendered and no need to render (no data mismatch)
         }
+        var compoundIndex = 0;
         this.model.groups.forEach((group, i) => {
             var groupDiv = document.createElement('div');
             groupDiv.classList.add(s[group.cleanString()]);
@@ -27,25 +45,31 @@ export default class Comparison extends Element {
                 var typeDiv = document.createElement('div'); 
                 typeDiv.classList.add(s.typeDiv, s[value.field]);
                 typeDiv.insertAdjacentHTML('afterbegin', `<h4 class="${s.typeHeader}">${value.label}</h4>`);
-                if ( value.type === 'text' ){
-                    let child = this.parent.createComponent(this.model, ComparisonText, `div.js-text-compare-${value.field}`, {rerenderOnDataMismatch: true, parent: this, data: {comparison: initialCompare, field: value.field}});
-                    typeDiv.appendChild(child.el);
-                    this.children.push(child);
-                } else {
-                    let child = this.parent.createComponent(this.model, ComparisonChart, `div.js-text-compare-${value.field}`, {rerenderOnDataMismatch: true, parent: this, data: {comparison: initialCompare, field: value.field}});
-                    typeDiv.appendChild(child.el);
-                    this.children.push(child);
-                }
+                typeDiv.appendChild(this.comparisons[compoundIndex].el);
+                compoundIndex++;
                 typeContainer.appendChild(typeDiv);
             });
+
             groupDiv.appendChild(typeContainer);
             view.appendChild(groupDiv);
         });
         return view;
     }
     init(){
-        console.log('init Comparison');
         this.initializeAutocompletes();
+        PS.setSubs([
+            ['compare', (msg,data) => {
+                
+                this.update(msg, data);                
+
+            }]
+        ]);
+    }
+    update(msg,data){
+        console.log(this);
+        this.comparisons.forEach(child => {
+            child.update(msg, data);
+        });
     }
     initializeAutocompletes(){
         var src = this.model.data.map(d => {
@@ -82,7 +106,7 @@ export default class Comparison extends Element {
                     //maxResults: 5,                         // Max. number of rendered results | (Optional)
                     onSelection: feedback => {             // Action script onSelection event | (Optional)
                         console.log(feedback, this);
-                        S.setState('compare' + index, feedback.selection.code);
+                        S.setState('compare.' + index, feedback.selection.code);
                         input.value = feedback.selection.state;
                       //  input.setAttribute('placeholder', feedback.selection.state);
                     }
