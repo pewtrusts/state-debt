@@ -46,7 +46,12 @@ export default class FiftyStateView extends Element {
             dropdownWrapper.appendChild(dropdownOuter);
         });
         view.appendChild(dropdownWrapper);
-        view.insertAdjacentHTML('beforeend', `<p class="${s.label}">Select a state to highlight<br /><a id="clear-all-highlight" href="#">Clear all</a></p>`);
+        view.insertAdjacentHTML('beforeend', `
+            <div class="flex">
+                <p class="${s.label} ${s.labelSort}"><span>Sort by:</span> <a class="${s.sortBy}" data-sort="alpha" href="#">A–Z</a> | <a class="${s.sortBy}" data-sort="asc" href="#">Low–High</a> | <a class="${s.sortBy}" data-sort="desc" href="#">High–Low</a></p>
+                <p class="${s.label} ${s.labelHighlight}">Select a state to highlight | <a id="clear-all-highlight" href="#">Clear all</a></p>
+            </div>
+        `);
         return view;
     }
     

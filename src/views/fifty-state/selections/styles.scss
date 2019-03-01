@@ -37,7 +37,7 @@
     color: $dark_blue;
     margin: 0;
     margin-bottom: 20px;
-    width: 110px;
+    
     a, a:visited, a:active {
         color: $gray;
         text-decoration: none;
@@ -45,5 +45,18 @@
             color: $light_blue;
             text-decoration: none;
         }
+    }
+}
+:global(.rich-text) .labelSort {
+    span {
+        width: 128px;
+        display: inline-block;
+    }
+}
+
+.sortBy {
+    margin: 0 5px;
+    &:first-of-type {
+        margin-left: 0;
     }
 }
