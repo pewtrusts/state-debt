@@ -8,8 +8,11 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-    }    
-
+    }
+    :global(.flex-start) {
+        justify-content: flex-start;
+    }
+    
     section, footer {
         border: 1px solid $dark_gray;
         border-bottom-width: 0;
