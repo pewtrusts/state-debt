@@ -1,0 +1,63 @@
+@import '@Project/css/variable.scss';
+
+span.compareColor1 {
+    color: $light_blue;
+}
+span.compareColor2 {
+    color: $medium_blue;
+}
+div.compareColor1 {
+    background-color: $light_blue;
+}
+div.compareColor2 {
+    background-color: $medium_blue;
+}
+.chartContainer {
+    display: grid;
+    grid-template-columns: auto 100fr;
+    grid-template-rows: auto auto;
+    grid-column-gap: 15px;
+    grid-row-gap: 4px;
+    
+}
+:global(.rich-text) p.chartLabel {
+
+    margin: 0;
+    margin-left: 0;
+    font-size: 16px;
+    position: relative;
+    bottom: 2px;
+}
+
+.chartLabel1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+.chartLabel2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+.barContainer {
+    position: relative;
+}
+
+.barContainer1 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+.barContainer2 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.dataLabel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    transform: translateX(100%);
+    padding-left: 5px;
+    transition: transform 0.2s ease-in-out;
+}

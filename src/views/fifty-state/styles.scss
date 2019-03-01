@@ -1,0 +1,32 @@
+@import '@Project/css/variable.scss';
+
+$label_width: 128px;
+
+:global(.rich-text) .groupHeader {
+    font-size: 16px;
+    font-weight: 600;
+    color: $dark_blue;
+    margin-bottom: 10px;
+}
+:global(.rich-text) .barLabel {
+    margin: 0;
+    width: $label_width;
+    padding-right: 15px;
+    display: inline-block;
+    line-height: 24px;
+}
+.groupDiv {
+    margin-bottom: 27px;
+}
+.barContainer {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2px;
+    padding: 4px 10px;
+    position: relative;
+    left: -4px;
+    cursor: pointer;
+    &:hover {
+        background-color: $highlight_blue;
+    }
+}

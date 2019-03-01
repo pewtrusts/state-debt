@@ -1,0 +1,16 @@
+@import '@Project/css/variable.scss';
+
+.bar {
+    flex-grow: 1;
+    height: 24px;
+    transform-origin: left;
+    transition: transform 0.2s ease-in-out;
+    transform: scaleX(1);
+}
+
+.barColor1 {
+    background-color: $light_blue;
+}
+.barColor2 {
+    background-color: $medium_blue;
+}
