@@ -14,3 +14,7 @@
 .barColor2 {
     background-color: $medium_blue;
 }
+
+:global(.bar-state-US) {
+    background-color: $light_blue;
+}

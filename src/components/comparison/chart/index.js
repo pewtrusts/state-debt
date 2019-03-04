@@ -6,7 +6,12 @@ import Bar from '@Project/components/bar';
 export default class ComparisonChart extends Comparison {
     prerender(){
         var div = super.prerender();
-        if ( this.prerendered && this.rerender) {
+        this.bars = [];
+        [0,1].forEach(index => {
+            this.bars.push(this.parent.parent.createComponent(this.model, Bar, `div.js-bar-compare-${this.data.field}-${index}`, {parent: this, data: {d: this.matches[index], field: this.data.field, color: index + 1}}))
+        });
+        this.children.push(...this.bars);
+        if ( this.prerendered && !this.rerender) {
             return div;
         }
 
@@ -25,15 +30,14 @@ export default class ComparisonChart extends Comparison {
                        `;
     }
     partialTemplate(index){
-        var bar = this.parent.parent.createComponent(this.model, Bar, `div.js-bar-compare-${this.data.field}-${index}`, {parent: this, data: {d: this.matches[index], field: this.data.field, color: index + 1}});
-        this.children.push(bar);
+        
         return `
                 <p class="${s.chartLabel} ${s['chartLabel' + (index + 1)]}">
                     ${this.matches[index].state}
                 </p>
                 <div class="${s.barContainer} ${s['barContainer' + (index + 1)]}">
-                    ${bar.el.outerHTML}                        
-                    <div class="${s.dataLabel}" style="transform: translateX(${( bar.linearScale(this.matches[index], this.data.field) * 100).toFixed(1) }%)">
+                    ${this.bars[index].el.outerHTML}                        
+                    <div class="${s.dataLabel}" style="transform: translateX(${( this.bars[index].linearScale(this.matches[index], this.data.field) * 100).toFixed(1) }%)">
                         ${this.formatValue(this.matches[index], this.data.field)}
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import Comparison from '../';
 export default class ComparisonText extends Comparison {
     prerender(){
         var div = super.prerender();
-        if ( this.prerendered && this.rerender) {
+        if ( this.prerendered && !this.rerender) {
             return div;
         }
             console.log(this.model.dict, this.data.field);

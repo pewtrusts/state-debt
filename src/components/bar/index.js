@@ -1,4 +1,3 @@
-/* global process */
 import s from './styles.scss';
 import Element from '@UI/element';
 
@@ -6,7 +5,7 @@ import Element from '@UI/element';
     
     prerender(){
         var div = super.prerender();
-        if ( this.prerendered && this.rerender) {
+        if ( this.prerendered && !this.rerender) {
             return div;
         }
         div.classList.add(s.bar, s['barColor' + this.data.color]);
@@ -21,11 +20,11 @@ import Element from '@UI/element';
 
         return adjusted;
     }
-    update(index){
+    update(){
         // in development mode, this.el is a js object but does not refer to element rendered on the page
-        var el = process.env.NODE_ENV === 'development' ? document.querySelector(`.js-bar-compare-${this.data.field}-${index}`) : this.el;
-        //this.el.style.transform = `scaleX(${this.linearScale(this.data.d, this.data.field)})`;
-        el.style.transform = `scaleX(${this.linearScale(this.data.d, this.data.field)})`;
+        //var el = process.env.NODE_ENV === 'development' ? document.querySelector(`.js-bar-compare-${this.data.field}-${index}`) : this.el;
+        console.log(this);        
+        this.el.style.transform = `scaleX(${this.linearScale(this.data.d, this.data.field)})`;
     }
 
 }
