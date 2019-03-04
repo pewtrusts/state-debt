@@ -1,7 +1,7 @@
 /* global process */
-/*eslint no-unused-vars: ["error", { "varsIgnorePattern": "StringHelpers" }]*/ //allow StringHelpers to be iported (defined) and not being explicitly called
+/*eslint no-unused-vars: ["error", { "varsIgnorePattern": "StringHelpers|FadeInText" }]*/ //allow StringHelpers to be iported (defined) and not being explicitly called
 																			// without triggering eslint error
-import { StringHelpers } from '@Utils'; // string helpers is an IIFE
+import { StringHelpers, FadeInText } from '@Utils'; // string helpers is an IIFE
 import StateDebt from './state-debt.js';
 import './css/styles.scss';
 

@@ -13,5 +13,8 @@ export default class Comparison extends Element {
 
         return div;
     }
+    update(index,data){
+        this.matches[index] = this.model.data.find(d => d.code === data);
+    }
 
 }

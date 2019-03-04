@@ -125,3 +125,7 @@ padding-left: 25px;
     }
 
 }
+
+:global(.no-opacity) {
+    opacity: 0;
+}

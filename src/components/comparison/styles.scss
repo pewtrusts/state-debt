@@ -27,7 +27,13 @@ div.compareColor2 {
     font-size: 16px;
     position: relative;
     bottom: 2px;
+    transition: opacity 0.4s ease-in-out;
+    width: 128px;
+    &.chartLabelText {
+        width: 100%;
+    }
 }
+
 
 .chartLabel1 {
     grid-column-start: 1;

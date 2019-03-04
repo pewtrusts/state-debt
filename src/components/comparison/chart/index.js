@@ -26,6 +26,7 @@ export default class ComparisonChart extends Comparison {
     }
     partialTemplate(index){
         var bar = this.parent.parent.createComponent(this.model, Bar, `div.js-bar-compare-${this.data.field}-${index}`, {parent: this, data: {d: this.matches[index], field: this.data.field, color: index + 1}});
+        this.children.push(bar);
         return `
                 <p class="${s.chartLabel} ${s['chartLabel' + (index + 1)]}">
                     ${this.matches[index].state}
@@ -33,7 +34,6 @@ export default class ComparisonChart extends Comparison {
                 <div class="${s.barContainer} ${s['barContainer' + (index + 1)]}">
                     ${bar.el.outerHTML}                        
                     <div class="${s.dataLabel}" style="transform: translateX(${( bar.linearScale(this.matches[index], this.data.field) * 100).toFixed(1) }%)">
-                    <!--<div class="${s.dataLabel}" style="transform: translateX(0)">-->
                         ${this.formatValue(this.matches[index], this.data.field)}
                     </div>
                 </div>
@@ -67,7 +67,20 @@ export default class ComparisonChart extends Comparison {
         return formattedValueString;
     }
     update(msg, data){
-        this.matches[parseInt(msg.split('.')[1])] = this.model.data.find(d => d.code === data);
-        this.el.innerHTML = this.returnTemplate();
+        var index = parseInt(msg.split('.')[1]),
+        dataLabel = this.el.querySelectorAll('.' + s.dataLabel)[index];
+        super.update(index,data);
+        
+        console.log(this);
+        // update label
+        this.el.querySelectorAll('.' + s.chartLabel)[index].fadeInContent(this.matches[index].state);
+        
+        //update bars
+        this.children[index].data.d = this.matches[index];
+        this.children[index].update(index);
+
+        //update dataLabel
+        dataLabel.fadeInContent(this.formatValue(this.matches[index], this.data.field));
+        dataLabel.style.transform = `translateX(${( this.children[index].linearScale(this.matches[index], this.data.field) * 100).toFixed(1) }%)`;
     }
 }

@@ -8,19 +8,21 @@ export default class ComparisonText extends Comparison {
             return div;
         }
             console.log(this.model.dict, this.data.field);
-        div.innerHTML = this.returnTemplate();
+        div.innerHTML = this.returnTemplate(0) + this.returnTemplate(1);
         
 
         return div;
     }
     update(msg, data){ // some here could be in the super
-        this.matches[parseInt(msg.split('.')[1])] = this.model.data.find(d => d.code === data);
-        this.el.innerHTML = this.returnTemplate();
+        var index = parseInt(msg.split('.')[1]);
+        console.log(index);
+        super.update(index,data);
+        console.log(this, index);
+        this.el.children[index].fadeInContent(this.returnTemplate(index));
+        //this.el.innerHTML = this.returnTemplate(index);
 
     }
-    returnTemplate(){
-        return `<p>${this.matches[0].state}: <span class="${s.compareColor1}">${this.model.dict[this.data.field] !== undefined ? this.model.dict[this.data.field][[this.matches[0][this.data.field]]] : this.matches[0][this.data.field] }</span><br />
-                ${this.matches[1].state}: <span class="${s.compareColor2}">${this.model.dict[this.data.field] !== undefined ? this.model.dict[this.data.field][[this.matches[1][this.data.field]]] : this.matches[1][this.data.field]}</span></p>
-                `;
+    returnTemplate(i){
+        return `<p class="${s.chartLabel} ${s.chartLabelText}">${this.matches[i].state}: <span class="${s['compareColor' + (i +1)]}">${this.model.dict[this.data.field] !== undefined ? this.model.dict[this.data.field][[this.matches[i][this.data.field]]] : this.matches[i][this.data.field]}</span></p>`;
     }
 }

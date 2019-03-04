@@ -67,8 +67,8 @@ export default class Comparison extends Element {
     }
     update(msg,data){
         console.log(this);
-        this.comparisons.forEach(child => {
-            child.update(msg, data);
+        this.comparisons.forEach(comparison => {
+            comparison.update(msg, data);
         });
     }
     initializeAutocompletes(){

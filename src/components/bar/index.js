@@ -1,3 +1,4 @@
+/* global process */
 import s from './styles.scss';
 import Element from '@UI/element';
 
@@ -19,6 +20,12 @@ import Element from '@UI/element';
             adjusted = .01 + ( scale * .99 );
 
         return adjusted;
+    }
+    update(index){
+        // in development mode, this.el is a js object but does not refer to element rendered on the page
+        var el = process.env.NODE_ENV === 'development' ? document.querySelector(`.js-bar-compare-${this.data.field}-${index}`) : this.el;
+        //this.el.style.transform = `scaleX(${this.linearScale(this.data.d, this.data.field)})`;
+        el.style.transform = `scaleX(${this.linearScale(this.data.d, this.data.field)})`;
     }
 
 }
