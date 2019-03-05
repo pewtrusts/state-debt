@@ -19,7 +19,7 @@ function ascending(key = null) {
 function descending(key = null) {
     return key === null ? 
         function(a,b){
-            console.log(a);
+            
             return a < b ? 1 : a > b ? -1 : a >= b ? 0 : NaN;
         } :
         function(a,b){
@@ -33,11 +33,13 @@ export default class FiftyStateView extends Element {
         var view = super.prerender();
         this.field = 'debt_percent_SPI';
         this.bars = [];
+        this.barContainers = [];
+        this.lastPositions = {};
         this.groupByFn = this.groupBy !== null ? d => d[this.groupBy] : d => d !== null;
         this.selections = this.parent.createComponent(this.model, Selections, `div.js-fifty-state-selections`, {parent: this});
         this.groupBy = null; // TODO: should this be in the constructor?
         this.nestedData = d3.nest().key(this.groupByFn).sortKeys(ascending()).entries(this.model.data);
-        console.log(this.nestedData);
+        
         this.pushBars();
         
         this.children.push(this.selections, ...this.bars);
@@ -55,11 +57,15 @@ export default class FiftyStateView extends Element {
     }
     pushBars(){
         this.bars.length = 0;
+        this.barContainers.length = 0;
+
         this.nestedData.forEach(group => {
             group.values.forEach(d => {
                 this.bars.push(this.parent.createComponent(this.model, Bar, `div.bar-state-${d.code}`, {parent: this, data: {d,field: this.field, color:2}}));
+                this.barContainers.push(this.parent.createComponent(this.model, Element, `div#barContainer-${d.code}`));
             });
-        });    
+        }); 
+        
     }
     renderSelections(){
         this.container.appendChild(this.selections.el);
@@ -74,9 +80,10 @@ export default class FiftyStateView extends Element {
             groupDiv.classList.add(s.groupDiv);
             groupDiv.innerHTML = this.groupBy !== null ? `<h3 class="${s.groupHeader}">${this.model.dict[this.groupBy] !== undefined ? this.model.dict[this.groupBy][group.key] : group.key}</h3>` : '';
             group.values.forEach(d => {
-                var barContainer = document.createElement('div');
+                var barContainer = this.barContainers[index].el;
+                
                 barContainer.classList.add(s.barContainer);
-                barContainer.id = 'barContainer-' + d.code;
+                
                 var label = document.createElement('p');
                 label.classList.add(s.barLabel);
                 label.innerHTML = d.state;
@@ -84,12 +91,27 @@ export default class FiftyStateView extends Element {
                 barContainer.appendChild(label);
                 barContainer.appendChild(this.bars[index].el);
                 groupDiv.appendChild(barContainer);
+                
                 index++;
             });
             container.appendChild(groupDiv);
         });
 
         return container;
+    }
+    invertPositions(){
+        this.barContainers.forEach(barContainer => {
+            var lastPosition = barContainer.el.getBoundingClientRect(),
+                deltaY = this.firstPositions[barContainer.el.id].top - lastPosition.top;
+            barContainer.el.style.transitionDuration = '0';
+            barContainer.el.style.transform = `translateY(${deltaY}px)`;
+            setTimeout(function(){ // transition won't happen w/o the settimeout trick
+                barContainer.el.style.transitionDuration = '0.8s';
+                barContainer.el.style.transform = 'translateY(0)';
+            });
+        });
+
+
     }
     init(){
         PS.setSubs([
@@ -100,7 +122,7 @@ export default class FiftyStateView extends Element {
                 this.updateGroups(msg,data);
             }]
         ]);
-        console.log('init FiftyStateView', this);
+        
         this.children.forEach(child => {
             child.init();
         });
@@ -112,13 +134,24 @@ export default class FiftyStateView extends Element {
             bar.update();
         });
     }
+    recordFirstPositions(){
+        this.firstPositions = this.barContainers.reduce((acc, cur) => {
+            
+            acc[cur.el.id] = cur.el.getBoundingClientRect();
+            return acc;
+        },{});
+        
+    }
     updateGroups(msg, data){
-        console.log(msg,data,this);
+        this.recordFirstPositions();
+        this.el.innerHTML = ''; // clearing the HTML has to happen before the methods below or 
+                                // barContainers will return existing elements
+        
         this.groupBy = data;
         this.nestedData = d3.nest().key(this.groupByFn).sortKeys(ascending()).entries(this.model.data);
         this.pushBars();        
-        this.el.innerHTML = '';
         this.el.appendChild(this.renderCharts());
+        this.invertPositions();
 
         /* TODO ***** FLIP animation and delay group labels (?) */
     }
