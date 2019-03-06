@@ -44,9 +44,15 @@
     a, a:visited, a:active {
         color: $gray;
         text-decoration: none;
+        &.sortActive {
+            color: $dark_blue;
+        }
         &:hover {
             color: $light_blue;
             text-decoration: none;
+            &.sortActive {
+                color: $dark_blue;
+            }
         }
     }
 }

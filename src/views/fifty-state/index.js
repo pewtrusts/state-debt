@@ -38,9 +38,10 @@ export default class FiftyStateView extends Element {
         this.highlightedBars = {};
         this.groupByFn = this.groupBy !== null ? d => d[this.groupBy] : d => d !== null;
         this.selections = this.parent.createComponent(this.model, Selections, `div.js-fifty-state-selections`, {parent: this});
+        this.sortValueKey = 'state';
+        this.sortValuesFn = ascending;
         this.groupBy = null; // TODO: should this be in the constructor?
-        this.nestedData = d3.nest().key(this.groupByFn).sortKeys(ascending()).entries(this.model.data);
-        
+        this.nestData();        
         this.pushBars();
         
         this.children.push(this.selections, ...this.bars);
@@ -55,6 +56,9 @@ export default class FiftyStateView extends Element {
         view.appendChild(charts);
        
         return view;
+    }
+    nestData(){
+        this.nestedData = d3.nest().key(this.groupByFn).sortKeys(ascending()).sortValues(this.sortValuesFn(this.sortValueKey)).entries(this.model.data);
     }
     pushBars(){
         this.bars.length = 0;
@@ -124,6 +128,9 @@ export default class FiftyStateView extends Element {
             }],
             ['group', (msg,data) => {
                 this.updateGroups(msg,data);
+            }],
+            ['sort', (msg,data) => {
+                this.sortBars(msg,data);
             }]
         ]);
         
@@ -166,19 +173,23 @@ export default class FiftyStateView extends Element {
         },{});
         
     }
-    updateGroups(msg, data){
+    FLIP(){
         this.recordFirstPositions();
-        this.el.innerHTML = ''; // clearing the HTML has to happen before the methods below or 
-                                // barContainers will return existing elements
-        
-        this.groupBy = data;
-        this.nestedData = d3.nest().key(this.groupByFn).sortKeys(ascending()).entries(this.model.data);
+        this.nestData();
+        this.el.innerHTML = ''; 
         this.pushBars();        
         this.el.appendChild(this.renderCharts());
         this.initHighlightBars();
         this.invertPositions();
-
-        /* TODO ***** FLIP animation and delay group labels (?) */
+    }
+    updateGroups(msg, data){
+        this.groupBy = data;
+        this.FLIP();
+    }
+    sortBars(msg, data){
+        this.sortValueKey = data === 'alpha' ? 'state' : this.field;
+        this.sortValuesFn = data === 'desc' ? descending : ascending;
+        this.FLIP();    
     }
     
 }

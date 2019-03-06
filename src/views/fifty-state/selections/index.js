@@ -1,6 +1,7 @@
 import Element from '@UI/element';
 import s from './styles.scss';
 import ThisDropdown from '@Project/components/dropdown';
+import { stateModule as S } from 'stateful-dead';
 
 export default class Selections extends Element {
     prerender(){
@@ -54,7 +55,7 @@ export default class Selections extends Element {
         
         view.insertAdjacentHTML('beforeend', `
             <div class="flex">
-                <p class="${s.label} ${s.labelSort} flex"><span>Sort by:</span> <span><a class="${s.sortBy}" data-sort="alpha" href="#">A–Z</a> | <a class="${s.sortBy}" data-sort="asc" href="#">Low–High</a> | <a class="${s.sortBy}" data-sort="desc" href="#">High–Low</a></span></p>
+                <p class="${s.label} ${s.labelSort} flex"><span>Sort by:</span> <span><a class="${s.sortBy} ${s.sortActive}" data-sort="alpha" href="#">A–Z</a> | <a class="${s.sortBy}" data-sort="asc" href="#">Low–High</a> | <a class="${s.sortBy}" data-sort="desc" href="#">High–Low</a></span></p>
                 <p class="${s.label} ${s.labelHighlight}">Select a state to highlight | <a id="clear-all-highlight" href="#">Clear all</a></p>
             </div>
         `);
@@ -64,6 +65,13 @@ export default class Selections extends Element {
         this.children.forEach(child => {
             child.init();
         });
+        document.querySelectorAll('.' + s.sortBy).forEach(each => {
+            each.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelector('.' + s.sortActive).classList.remove(s.sortActive);
+                each.classList.add(s.sortActive);
+                S.setState('sort', each.dataset.sort);
+            });
+        });
     }
-    
 }
