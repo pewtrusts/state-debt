@@ -35,6 +35,7 @@ export default class FiftyStateView extends Element {
         this.bars = [];
         this.barContainers = [];
         this.lastPositions = {};
+        this.highlightedBars = {};
         this.groupByFn = this.groupBy !== null ? d => d[this.groupBy] : d => d !== null;
         this.selections = this.parent.createComponent(this.model, Selections, `div.js-fifty-state-selections`, {parent: this});
         this.groupBy = null; // TODO: should this be in the constructor?
@@ -83,6 +84,9 @@ export default class FiftyStateView extends Element {
                 var barContainer = this.barContainers[index].el;
                 
                 barContainer.classList.add(s.barContainer);
+                if ( this.highlightedBars[barContainer.id] ) {
+                    barContainer.classList.add(s.isHighlighted);
+                }
                 
                 var label = document.createElement('p');
                 label.classList.add(s.barLabel);
@@ -126,6 +130,26 @@ export default class FiftyStateView extends Element {
         this.children.forEach(child => {
             child.init();
         });
+
+        this.initHighlightBars();
+        this.initClearAllHighlights();
+    }
+    initHighlightBars(){
+        document.querySelectorAll('.' + s.barContainer).forEach(barContainer => {
+            barContainer.addEventListener('click', () => {
+                this.highlightedBars[barContainer.id] = !this.highlightedBars[barContainer.id];
+                barContainer.classList.toggle(s.isHighlighted);
+            });
+        });
+    }
+    initClearAllHighlights(){
+        document.querySelector('#clear-all-highlight').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelectorAll('.' + s.barContainer).forEach(barContainer => {
+                barContainer.classList.remove(s.isHighlighted);
+                this.highlightedBars = {};
+            });
+        });
     }
     updateBars(msg,data){
         this.field = data;
@@ -151,6 +175,7 @@ export default class FiftyStateView extends Element {
         this.nestedData = d3.nest().key(this.groupByFn).sortKeys(ascending()).entries(this.model.data);
         this.pushBars();        
         this.el.appendChild(this.renderCharts());
+        this.initHighlightBars();
         this.invertPositions();
 
         /* TODO ***** FLIP animation and delay group labels (?) */
