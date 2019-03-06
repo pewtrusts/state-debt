@@ -7,6 +7,19 @@ import Bar from '@Project/components/bar';
 import Selections from './selections';
 import PS from 'pubsub-setter';
 
+// partials
+/*
+import centralization from '@Project/partials/centralization.md';
+import credit2015 from '@Project/partials/credit-rating.md';
+import credit2018 from '@Project/partials/credit-rating.md';
+import debt_limit_type from '@Project/partials/debt-limit.md';
+import debt_per_capita from '@Project/partials/debt-per-capita.md';
+import debt_percent_SPI from '@Project/partials/debt-spi.md';
+import ten_year_pop_growth from '@Project/partials/population-growth.md';
+import revenue_volatility from '@Project/partials/revenue-volatility.md';
+import state_local_division from '@Project/partials/state-local.md';
+*/
+
 function ascending(key = null) {
     return key === null ? 
         function(a,b){
@@ -126,6 +139,9 @@ export default class FiftyStateView extends Element {
             ['field', (msg,data) => {
                 this.updateBars(msg,data);
             }],
+            ['field', (msg,data) => {
+                this.updateExplainerText(msg,data);
+            }],
             ['group', (msg,data) => {
                 this.updateGroups(msg,data);
             }],
@@ -140,6 +156,10 @@ export default class FiftyStateView extends Element {
 
         this.initHighlightBars();
         this.initClearAllHighlights();
+    }
+    updateExplainerText(msg,data){
+        // here insert HTML after s.dropdownWrapper
+        // also need to initialize an object container the imported markdown
     }
     initHighlightBars(){
         document.querySelectorAll('.' + s.barContainer).forEach(barContainer => {

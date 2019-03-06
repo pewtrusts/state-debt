@@ -1,0 +1,1 @@
+**Centralization.** The degree to which borrowing is done by the state itself rather than by a component unit-a legally separate entity such as a housing or turnpike authority. Higher values mean the state is more centralized.

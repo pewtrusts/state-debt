@@ -1,0 +1,1 @@
+**Division of borrowing between state and local governments.** The share of combined state and local debt issued by local governments. States where local governments borrow less tend to have higher debt levels.
