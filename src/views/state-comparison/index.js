@@ -94,7 +94,6 @@ export default class Comparison extends Element {
                 wrapper = document.querySelector('#autoComplete_wrapper-' + index);
             input.classList.add('autoComplete', s['autoComplete' + index]);
             wrapper.classList.add(s['autoComplete_wrapper-' + index]);
-
             this.children.push(
                 new AutoComplete({
                     data: {
@@ -121,6 +120,7 @@ export default class Comparison extends Element {
                 })
             );
             input.value = this.model.data.find(d => d.code === initialCompare[index]).state;
+            console.log(this.children);
         });
     }
 }
