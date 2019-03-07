@@ -8,7 +8,6 @@ import Selections from './selections';
 import PS from 'pubsub-setter';
 
 // partials
-/*
 import centralization from '@Project/partials/centralization.md';
 import credit2015 from '@Project/partials/credit-rating.md';
 import credit2018 from '@Project/partials/credit-rating.md';
@@ -18,7 +17,6 @@ import debt_percent_SPI from '@Project/partials/debt-spi.md';
 import ten_year_pop_growth from '@Project/partials/population-growth.md';
 import revenue_volatility from '@Project/partials/revenue-volatility.md';
 import state_local_division from '@Project/partials/state-local.md';
-*/
 
 function ascending(key = null) {
     return key === null ? 
@@ -49,11 +47,22 @@ export default class FiftyStateView extends Element {
         this.barContainers = [];
         this.lastPositions = {};
         this.highlightedBars = {};
+        this.explainerText = {
+            centralization,
+            credit2015,
+            credit2018,
+            debt_limit_type,
+            debt_per_capita,
+            debt_percent_SPI,
+            ten_year_pop_growth,
+            revenue_volatility,
+            state_local_division
+        };
         this.groupByFn = this.groupBy !== null ? d => d[this.groupBy] : d => d !== null;
         this.selections = this.parent.createComponent(this.model, Selections, `div.js-fifty-state-selections`, {parent: this});
         this.sortValueKey = 'state';
         this.sortValuesFn = ascending;
-        this.groupBy = null; // TODO: should this be in the constructor?
+        this.groupBy = null;
         this.nestData();        
         this.pushBars();
         
@@ -64,6 +73,7 @@ export default class FiftyStateView extends Element {
         }
         
         this.renderSelections();
+        this.updateExplainerText('field', this.field);
         
         var charts = this.renderCharts();
         view.appendChild(charts);
@@ -138,12 +148,11 @@ export default class FiftyStateView extends Element {
         PS.setSubs([
             ['field', (msg,data) => {
                 this.updateBars(msg,data);
-            }],
-            ['field', (msg,data) => {
                 this.updateExplainerText(msg,data);
             }],
             ['group', (msg,data) => {
                 this.updateGroups(msg,data);
+                this.updateExplainerText(msg,data);
             }],
             ['sort', (msg,data) => {
                 this.sortBars(msg,data);
@@ -158,8 +167,17 @@ export default class FiftyStateView extends Element {
         this.initClearAllHighlights();
     }
     updateExplainerText(msg,data){
-        // here insert HTML after s.dropdownWrapper
-        // also need to initialize an object container the imported markdown
+        console.log(msg,data);
+        if ( msg === 'field' ) {
+            this.field = data; // so that the order of subs doesn't matter
+            let content = this.explainerText[this.field] || '';
+            document.querySelector('#field-explainer').fadeInContent(content, 0.2);
+        }
+        if ( msg === 'group' ){
+            this.groupBy = data; // so that the order of subs doesn't matter
+            let content = this.explainerText[this.groupBy] || '';
+            document.querySelector('#group-explainer').fadeInContent(content, 0.2);
+        }
     }
     initHighlightBars(){
         document.querySelectorAll('.' + s.barContainer).forEach(barContainer => {

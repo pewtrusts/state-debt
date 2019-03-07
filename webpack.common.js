@@ -38,11 +38,11 @@ module.exports = env => { // module.exports is function now to pass in env varia
                                 {
                                     loader: 'markdown-loader',
                                     options: {
-                                        smartypants: true;
+                                        smartypants: true
                                     }
                                 }
                             ]
-                        }
+                        },
                         /* {
                               // images under limit converted to data url. above the limit falls back to file-loader to emit file
                               // as specified in options (options are passed to file-loader)

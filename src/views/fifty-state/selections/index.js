@@ -54,6 +54,8 @@ export default class Selections extends Element {
         
         
         view.insertAdjacentHTML('beforeend', `
+            <p id="field-explainer"></p>
+            <p id="group-explainer"></p>
             <div class="flex">
                 <p class="${s.label} ${s.labelSort} flex"><span>Sort by:</span> <span><a class="${s.sortBy} ${s.sortActive}" data-sort="alpha" href="#">A–Z</a> | <a class="${s.sortBy}" data-sort="asc" href="#">Low–High</a> | <a class="${s.sortBy}" data-sort="desc" href="#">High–Low</a></span></p>
                 <p class="${s.label} ${s.labelHighlight}">Select a state to highlight | <a id="clear-all-highlight" href="#">Clear all</a></p>
