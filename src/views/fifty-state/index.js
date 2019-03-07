@@ -202,6 +202,11 @@ export default class FiftyStateView extends Element {
             bar.data.field = data;
             bar.update();
         });
+        console.log(this.sortValueKey);
+        if ( this.sortValueKey !== 'state' ){
+            this.sortValueKey = data;
+            setTimeout(this.FLIP.bind(this),500);
+        }
     }
     recordFirstPositions(){
         this.firstPositions = this.barContainers.reduce((acc, cur) => {
