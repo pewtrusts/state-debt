@@ -62,7 +62,7 @@ export default class FiftyStateView extends Element {
         this.selections = this.parent.createComponent(this.model, Selections, `div.js-fifty-state-selections`, {parent: this});
         this.sortValueKey = 'state';
         this.sortValuesFn = ascending;
-        this.groupBy = null;
+        this.groupBy = 'null';
         this.nestData();        
         this.pushBars();
         
@@ -106,7 +106,7 @@ export default class FiftyStateView extends Element {
         this.nestedData.forEach(group => {
             var groupDiv = document.createElement('div');
             groupDiv.classList.add(s.groupDiv);
-            groupDiv.innerHTML = this.groupBy !== null ? `<h3 class="${s.groupHeader}">${this.model.dict[this.groupBy] !== undefined ? this.model.dict[this.groupBy][group.key] : group.key}</h3>` : '';
+            groupDiv.innerHTML = this.groupBy !== 'null' ? `<h3 class="${s.groupHeader}">${this.model.dict[this.groupBy] !== undefined ? this.model.dict[this.groupBy][group.key] : group.key}</h3>` : '';
             group.values.forEach(d => {
                 var barContainer = this.barContainers[index].el;
                 
