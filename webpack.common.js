@@ -54,16 +54,12 @@ module.exports = env => { // module.exports is function now to pass in env varia
                                   outputPath: 'images/',
                               }
                           },*/ // not in use but might be later
-                        /*{
+                        {
                             test: /\.svg$/,
-                            exclude: /x-out\.svg/,
                             use: [{
-                                    loader: 'svg-inline-loader',
-                                    options: {
-                                        removeSVGTagAttrs: false
-                                    }
+                                    loader: 'svg-url-loader',
                                 }]
-                        },
+                        },/*
                         {
                             test: /x-out\.svg/,
                             use: {
