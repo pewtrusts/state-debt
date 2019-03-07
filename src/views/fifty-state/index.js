@@ -158,6 +158,9 @@ export default class FiftyStateView extends Element {
             }],
             ['sort', (msg,data) => {
                 this.sortBars(msg,data);
+            }],
+            ['resize', () => {
+                this.adjustExplainerTextHeight();
             }]
         ]);
         
@@ -188,14 +191,17 @@ export default class FiftyStateView extends Element {
         }
         el.fadeInContent(content).then(() => {
             if ( !calledFromPrerender ) {
-                let innerHeight = [this.fieldExplainer, this.groupExplainer].reduce((acc, cur) => {
-                    var el = cur.querySelector('p');
-                    var computedStyles = el ? window.getComputedStyle(cur.querySelector('p')) : null;
-                    return computedStyles ? +acc + el.offsetHeight + parseInt(computedStyles['margin-top']) + parseInt(computedStyles['margin-bottom']) : +acc;
-                },0);
-                this.explainerWrapper.style.height = innerHeight + 'px';
+                this.adjustExplainerTextHeight();
             }
         });
+    }
+    adjustExplainerTextHeight(){
+        var innerHeight = [this.fieldExplainer, this.groupExplainer].reduce((acc, cur) => {
+            var el = cur.querySelector('p');
+            var computedStyles = el ? window.getComputedStyle(cur.querySelector('p')) : null;
+            return computedStyles ? +acc + el.offsetHeight + parseInt(computedStyles['margin-top']) + parseInt(computedStyles['margin-bottom']) : +acc;
+        },0);
+        this.explainerWrapper.style.height = innerHeight + 'px';
     }
     initHighlightBars(){
         document.querySelectorAll('.' + s.barContainer).forEach(barContainer => {

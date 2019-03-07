@@ -2,9 +2,9 @@
 //utils
 import * as d3 from 'd3-collection';
 import Papa from 'papaparse';
-//import { stateModule as S } from 'stateful-dead';
+import { stateModule as S } from 'stateful-dead';
 //import PS from 'pubsub-setter';
-//import { publishWindowResize } from '@Utils';
+import { publishWindowResize } from '@Utils';
 
 //data ( CSVs loaded by file-loader for use by Papaparse at build and runtime. that's set in webpack.common.js )
 import data from './data/data.csv';
@@ -22,6 +22,8 @@ import PCTApp from '@App';
 //static content
 import sections from './partials/sections.html';
 import footer from './partials/footer.html';
+
+publishWindowResize(S);
 
 const model = {
     groups,
