@@ -22,7 +22,7 @@ module.exports = env => {
                         loader: 'css-loader',
                         options: {
                             modules: true,
-                            localIdentName: '[local]', // hash to avoid collisions
+                            localIdentName: '[path]-[local]', // hash to avoid collisions
                             sourceMap: true,
                             minimize: true,
                             importLoaders: 1
@@ -41,10 +41,24 @@ module.exports = env => {
                         }
                     },
                 ]
+            },
+            {
+                test: /\.css$/,
+                //exclude: /exclude/,
+                use: [{
+                        loader: MiniCssExtractPlugin.loader,
+                    },{
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            localIdentName: '[local]', // in dev mode hash not necessary to brak caches but incuding path
+                        }
+                    }
+                ]
             }]
         },
         plugins: [
-            new CleanWebpackPlugin(['dist']),
+            new CleanWebpackPlugin(['docs']),
             
         ]
       });

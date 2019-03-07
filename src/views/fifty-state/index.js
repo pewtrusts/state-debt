@@ -190,9 +190,7 @@ export default class FiftyStateView extends Element {
             this.explainerWrapper.style.height = this.explainerWrapper.offsetHeight + 'px';       
         }
         el.fadeInContent(content).then(() => {
-            if ( !calledFromPrerender ) {
-                this.adjustExplainerTextHeight();
-            }
+            this.adjustExplainerTextHeight();
         });
     }
     adjustExplainerTextHeight(){

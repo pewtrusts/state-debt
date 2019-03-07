@@ -41,6 +41,7 @@ function getRuntimeData(){
         publicPath = PUBLICPATH; // TODO: set PUBLICPATH using define plugin in webpack.build.js
     }
     return new Promise((resolve, reject) => {
+        var appContainer = this.el;
         Papa.parse(publicPath + data, {
             download: true,
             dynamicTyping: true,
@@ -55,11 +56,10 @@ function getRuntimeData(){
                                      // and respond accordingly
 
                 var dataHash = chunk.hashCode(); // hashCode is helper function from utils, imported and IIFE'd in index.js
-                var el = this.el; //document.querySelector('#pew-app');
                 if ( window.IS_PRERENDERING ){
-                    el.setAttribute('data-data-hash', dataHash);
-                } else if ( process.env.NODE_ENV !== 'development' && dataHash.toString() !== el.getAttribute('data-data-hash') ){
-                    el.setAttribute('data-data-mismatch',true);
+                    appContainer.setAttribute('data-data-hash', dataHash);
+                } else if ( process.env.NODE_ENV !== 'development' && dataHash.toString() !== appContainer.getAttribute('data-data-hash') ){
+                    appContainer.setAttribute('data-data-mismatch',true);
                     console.log('data mismatch');
                     model.isMismatched = true; // set so that components can access this value 
                 }
