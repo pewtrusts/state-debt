@@ -22,6 +22,8 @@
 }
 :global(.rich-text) .typeHeader {
     font-size: 16px;
+    display: inline-block;
+    position: relative;
 }
 .debt_limit_type {
     width: 100%;
@@ -110,4 +112,20 @@
     .autoComplete_wrapper-1 & {
         background-color: $medium_blue;
     }   
+}
+
+.withTooltip{
+
+    &::after {
+        content: '';
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        right: -15px;
+        display: block;
+        top: 0;
+        background:transparent url('./tooltip.min.svg') no-repeat;
+
+    }
+    
 }

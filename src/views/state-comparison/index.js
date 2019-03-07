@@ -44,7 +44,7 @@ export default class Comparison extends Element {
             this.model.typesNested[i].values.forEach(value => {
                 var typeDiv = document.createElement('div'); 
                 typeDiv.classList.add(s.typeDiv, s[value.field]);
-                typeDiv.insertAdjacentHTML('afterbegin', `<h4 class="${s.typeHeader}">${value.label}</h4>`);
+                typeDiv.insertAdjacentHTML('afterbegin', `<h4 class="${s.typeHeader} ${ value.tooltip ? s.withTooltip : 'withoutTooltip' }">${value.label}</h4>`);
                 typeDiv.appendChild(this.comparisons[compoundIndex].el);
                 compoundIndex++;
                 typeContainer.appendChild(typeDiv);
