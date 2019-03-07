@@ -1,0 +1,10 @@
+@import '@Project/css/variable.scss';
+
+:global(.tippy-backdrop){
+    background-color: $dark_blue;
+    opacity: .95;
+}
+:global(.tippy-content){
+    font-weight: 600;
+    padding-bottom: 3px;
+}

@@ -1,6 +1,13 @@
 @import 'variable.scss';
 
-:global(#pew-app) {
+:global(.rich-text #pew-app) {
+
+    :global(#section-overview){
+        p:not(:global(.pct-footnote)), li, blockquote {
+            font-size: 18px;
+        }
+    }
+
     font-size: 18px;
     line-height: 144.44%;
 
@@ -43,6 +50,7 @@
         position: relative;
         width: calc(100% + 80px);
         color: #fff;
+        border-bottom: 1px solid #fff;
         &:after, &:before {
             content: '—';
             display: none;
@@ -118,10 +126,8 @@
         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath stroke='%23333' d='M1 .5h8v9H1v-9z'%3e%3c/path%3e%3cpath stroke='%23333' d='M3 3h4'%3e%3c/path%3e%3cpath stroke='%23333' d='M3 5h4'%3e%3c/path%3e%3cpath stroke='%23333' d='M3 7h4'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
         background-repeat: no-repeat;
         margin-left: 10px;
-margin-right: 6px;
-padding-left: 25px;
-        ;
-
+        margin-right: 6px;
+        padding-left: 25px;
     }
 
 }

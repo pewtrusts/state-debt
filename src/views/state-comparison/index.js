@@ -1,11 +1,13 @@
 import Element from '@UI/element';
 import '@AutoComplete/css/autoComplete.css';
 import s from './styles.scss';
+import './tippy-styles.scss';
 import { stateModule as S } from 'stateful-dead';
 import ComparisonText from '@Project/components/comparison/text';
 import ComparisonChart from '@Project/components/comparison/chart';
 import AutoComplete from '@AutoComplete/js/autoComplete.js';
 import PS from 'pubsub-setter';
+import tippy from 'tippy.js';
 
 const initialCompare = ['US','AL'];
 
@@ -44,7 +46,7 @@ export default class Comparison extends Element {
             this.model.typesNested[i].values.forEach(value => {
                 var typeDiv = document.createElement('div'); 
                 typeDiv.classList.add(s.typeDiv, s[value.field]);
-                typeDiv.insertAdjacentHTML('afterbegin', `<h4 class="${s.typeHeader} ${ value.tooltip ? s.withTooltip : 'withoutTooltip' }">${value.label}</h4>`);
+                typeDiv.insertAdjacentHTML('afterbegin', `<h4 class="${s.typeHeader} ${ value.tooltip ? s.withTooltip : 'withoutTooltip' }" data-tippy-content="${value.tooltip || ''}">${value.label}</h4>`);
                 typeDiv.appendChild(this.comparisons[compoundIndex].el);
                 compoundIndex++;
                 typeContainer.appendChild(typeDiv);
@@ -57,6 +59,7 @@ export default class Comparison extends Element {
     }
     init(){
         this.initializeAutocompletes();
+        this.initializeTooltips();
         PS.setSubs([
             ['compare', (msg,data) => {
                 
@@ -64,6 +67,11 @@ export default class Comparison extends Element {
 
             }]
         ]);
+    }
+    initializeTooltips(){
+        var els = document.querySelectorAll('.' + s.withTooltip);
+        tippy(els)
+            
     }
     update(msg,data){
         console.log(this);
