@@ -65,7 +65,6 @@ export default class FiftyStateView extends Element {
         this.groupBy = 'null';
         this.nestData();        
         this.pushBars();
-        
         this.children.push(this.selections, ...this.bars);
 
         if ( this.prerendered && !this.rerender) {
@@ -73,7 +72,10 @@ export default class FiftyStateView extends Element {
         }
         
         this.renderSelections();
-        this.updateExplainerText('field', this.field);
+        this.explainerWrapper = document.querySelector('#explainer-wrapper');
+        this.fieldExplainer = document.querySelector('#field-explainer');
+        this.groupExplainer = document.querySelector('#group-explainer');
+        this.updateExplainerText('field', this.field, true);
         
         var charts = this.renderCharts();
         view.appendChild(charts);
@@ -162,22 +164,38 @@ export default class FiftyStateView extends Element {
         this.children.forEach(child => {
             child.init();
         });
-
+        this.explainerWrapper = document.querySelector('#explainer-wrapper');
+        this.fieldExplainer = document.querySelector('#field-explainer');
+        this.groupExplainer = document.querySelector('#group-explainer');
         this.initHighlightBars();
         this.initClearAllHighlights();
     }
-    updateExplainerText(msg,data){
-        console.log(msg,data);
+    updateExplainerText(msg,data, calledFromPrerender){
+        var el,
+            content;
         if ( msg === 'field' ) {
             this.field = data; // so that the order of subs doesn't matter
-            let content = this.explainerText[this.field] || '';
-            document.querySelector('#field-explainer').fadeInContent(content, 0.2);
+            content = this.explainerText[this.field] || '';
+            el = this.fieldExplainer;
         }
         if ( msg === 'group' ){
             this.groupBy = data; // so that the order of subs doesn't matter
-            let content = this.explainerText[this.groupBy] || '';
-            document.querySelector('#group-explainer').fadeInContent(content, 0.2);
+            content = this.explainerText[this.groupBy] || '';
+            el = this.groupExplainer;
         }
+        if ( !calledFromPrerender ) {
+            this.explainerWrapper.style.height = this.explainerWrapper.offsetHeight + 'px';       
+        }
+        el.fadeInContent(content).then(() => {
+            if ( !calledFromPrerender ) {
+                let innerHeight = [this.fieldExplainer, this.groupExplainer].reduce((acc, cur) => {
+                    var el = cur.querySelector('p');
+                    var computedStyles = el ? window.getComputedStyle(cur.querySelector('p')) : null;
+                    return computedStyles ? +acc + el.offsetHeight + parseInt(computedStyles['margin-top']) + parseInt(computedStyles['margin-bottom']) : +acc;
+                },0);
+                this.explainerWrapper.style.height = innerHeight + 'px';
+            }
+        });
     }
     initHighlightBars(){
         document.querySelectorAll('.' + s.barContainer).forEach(barContainer => {

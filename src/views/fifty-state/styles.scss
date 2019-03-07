@@ -31,3 +31,10 @@ $label_width: 128px;
         background-color: $highlight_blue;
     }
 }
+
+:global(#field-explainer), :global(#group-explainer){
+    transition: opacity 0.2s linear;
+}
+:global(#explainer-wrapper) {
+    transition: height 0.2s ease-in-out;
+}
