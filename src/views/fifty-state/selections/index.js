@@ -30,7 +30,7 @@ export default class Selections extends Element {
         ];
         this.dropdowns = [];
         dropdownData.forEach(d => {
-            this.dropdowns.push(this.parent.parent.createComponent(this.model, ThisDropdown, `select.js-dropdown-${d.label.cleanString()}`, {parent: this, data: d}));
+            this.dropdowns.push(this.parent.parent.createComponent(this.model, ThisDropdown, `div.js-dropdown-${d.label.cleanString()}`, {parent: this, data: d}));
         });
         this.children.push(...this.dropdowns);
         if ( this.prerendered && !this.rerender) {

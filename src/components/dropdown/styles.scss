@@ -1,20 +1,48 @@
 @import '@Project/css/variable.scss';
 
-.dropdown {
-    appearance: none;
-    width: 100%;
-    border-radius: 0;
+%border-shared {
     border: 1px solid $gray;
-    color: $gray;
-    background-color: #fff;
-    height: 40px;
-    padding-left: 12px;
-    padding-right: 45px;
-    font-size: 16px;
-    text-overflow: ellipsis;
-    
+}
 
-    &::-ms-expand {
-        display: none; /* hide the default arrow in ie10 and ie11  https://stackoverflow.com/a/13968900 */
+%font-shared {
+    color: $gray;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.dropdown {
+    &>div {
+        width: 100%;
+        @extend %border-shared;
+        border-radius: 0;
+        background-color: #fff;
+        @extend %font-shared;
+        height: 40px;
+        padding-left: 12px;
+        padding-right: 45px;
+        text-overflow: ellipsis;
+    }
+
+    &>ul {
+        @extend %border-shared;
+        border-top: none;
+        display: block;
+
+        li {
+            @extend %font-shared;
+            padding: 0.3em 0 0.5em;
+            border-bottom: 1px solid $light_gray;
+            &:hover {
+                color: $dark_blue;
+            }
+
+            &:first-child {
+                margin-top: 0.7em;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
     }
 }

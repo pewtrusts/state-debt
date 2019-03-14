@@ -1,6 +1,6 @@
 import s from './styles.scss';
 import { Dropdown } from '@UI/inputs/inputs.js';
-import { stateModule as S } from 'stateful-dead';
+//import { stateModule as S } from 'stateful-dead';
 
 export default class ThisDropdown extends Dropdown {
     constructor(selector, options){
@@ -42,11 +42,12 @@ export default class ThisDropdown extends Dropdown {
         return dropdown;
     }
     init(){
-        console.log('init dropdown', this);
+        super.init();
+        /*console.log('init dropdown', this);
         this.el.addEventListener('change', e => {
             console.log(e, this);
             S.setState(this.dropdownType, e.target.value);
-        });
+        });*/
     }
     
 }
