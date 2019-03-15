@@ -114,12 +114,13 @@ export default class Comparison extends Element {
                     onSelection: feedback => {             // Action script onSelection event | (Optional)
                         console.log(feedback, this);
                         S.setState('compare.' + index, feedback.selection.code);
-                        input.value = feedback.selection.state;
-                      //  input.setAttribute('placeholder', feedback.selection.state);
+                        input.value = '';
+                        input.setAttribute('placeholder', feedback.selection.state);
                     }
                 })
             );
-            input.value = this.model.data.find(d => d.code === initialCompare[index]).state;
+            input.setAttribute('placeHolder', this.model.data.find(d => d.code === initialCompare[index]).state);
+            //input.value = this.model.data.find(d => d.code === initialCompare[index]).state;
             console.log(this.children);
         });
     }
