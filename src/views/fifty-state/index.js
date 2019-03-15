@@ -21,6 +21,8 @@ import state_local_division from '@Project/partials/state-local.md';
 function ascending(key = null) {
     return key === null ? 
         function(a,b){
+            a = a === 'N/A' ? '!' : a; // this ensures n/a is always first
+            b = b === 'N/A' ? '!' : b;
             return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
         } :
         function(a,b){
@@ -249,6 +251,7 @@ export default class FiftyStateView extends Element {
     }
     updateGroups(msg, data){
         this.groupBy = data;
+        console.log(this.groupBy);
         this.FLIP();
     }
     sortBars(msg, data){

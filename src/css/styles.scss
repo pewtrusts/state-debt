@@ -95,11 +95,10 @@
     }
 
     :global(.pct-note), :global(.pct-note) p, :global(.pct-note) li, :global(.pct-note) blockquote {
-        font-size: 12px;
-        font-weight: 200;
+        font-size: 13px;
         line-height: 200%;
         strong {
-            font-weight: 400;
+            font-weight: 800;
         }
     }
 
@@ -111,7 +110,7 @@
 
     :global(.pct-endnotes){
         p, li, blockquote {
-            font-size: 10px;
+            font-size: 13px;
             line-height: 18px;
             margin-bottom: 0;
             color: $gray;
