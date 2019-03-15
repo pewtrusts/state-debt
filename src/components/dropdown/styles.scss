@@ -20,6 +20,7 @@
         height: 40px;
         padding-left: 12px;
         padding-right: 45px;
+        padding-top: 6px;
         text-overflow: ellipsis;
     }
 
@@ -30,12 +31,14 @@
 
         li {
             @extend %font-shared;
-            padding: 0.3em 0 0.5em;
+            padding: 0.1em 0 0.5em;
             border-bottom: 1px solid $light_gray;
-            &:hover {
+            &:hover, &:global(.selected) {
                 color: $dark_blue;
             }
-
+            &:global(.selected) {
+                font-weight: bold;
+            }
             &:first-child {
                 margin-top: 0.7em;
             }
@@ -43,6 +46,7 @@
             &:last-child {
                 border-bottom: none;
             }
+            
         }
     }
 }
