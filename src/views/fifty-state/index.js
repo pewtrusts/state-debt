@@ -7,6 +7,8 @@ import Bar from '@Project/components/bar';
 import Selections from './selections';
 import PS from 'pubsub-setter';
 
+import { formatValue } from '@Project/methods';
+
 // partials
 import centralization from '@Project/partials/centralization.md';
 import credit2015 from '@Project/partials/credit-rating.md';
@@ -119,12 +121,18 @@ export default class FiftyStateView extends Element {
                     barContainer.classList.add(s.isHighlighted);
                 }
                 
-                var label = document.createElement('p');
+                var label = document.createElement('p'),
+                    placeHolder = document.createElement('div');
                 label.classList.add(s.barLabel);
                 label.innerHTML = d.state;
-                
+                placeHolder.classList.add(s.placeHolder);
                 barContainer.appendChild(label);
                 barContainer.appendChild(this.bars[index].el);
+                barContainer.appendChild(placeHolder);
+                barContainer.insertAdjacentHTML('beforeend', `
+                    <div class="${s.dataLabel}" style="transform: translateX(${( this.bars[index].linearScale(this.bars[index].data.d, this.bars[index].data.field) * 100).toFixed(1) }%)">
+                        ${this.formatValue(this.bars[index].data.d, this.bars[index].data.field)}
+                    </div>`)
                 groupDiv.appendChild(barContainer);
                 
                 index++;
@@ -133,6 +141,9 @@ export default class FiftyStateView extends Element {
         });
 
         return container;
+    }
+    formatValue(){
+        return formatValue.apply(this, arguments);
     }
     invertPositions(){
         this.barContainers.forEach(barContainer => {
@@ -152,6 +163,7 @@ export default class FiftyStateView extends Element {
         PS.setSubs([
             ['field', (msg,data) => {
                 this.updateBars(msg,data);
+                this.updateDataLabels(msg,data);
                 this.updateExplainerText(msg,data);
             }],
             ['group', (msg,data) => {
@@ -218,6 +230,13 @@ export default class FiftyStateView extends Element {
                 barContainer.classList.remove(s.isHighlighted);
                 this.highlightedBars = {};
             });
+        });
+    }
+    updateDataLabels(){
+        this.barContainers.forEach((barContainer, index) => {
+            var dataLabel = barContainer.el.querySelector('.' + s.dataLabel);
+            dataLabel.fadeInContent(this.formatValue(this.bars[index].data.d, this.bars[index].data.field));
+            dataLabel.style.transform = `translateX(${( this.bars[index].linearScale(this.bars[index].data.d, this.bars[index].data.field) * 100).toFixed(1) }%)`;
         });
     }
     updateBars(msg,data){

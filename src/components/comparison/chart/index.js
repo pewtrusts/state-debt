@@ -1,6 +1,7 @@
 import s from './../styles.scss';
 import Comparison from '../';
 import Bar from '@Project/components/bar';
+import { formatValue } from '@Project/methods';
 
 
 export default class ComparisonChart extends Comparison {
@@ -49,26 +50,8 @@ export default class ComparisonChart extends Comparison {
 
         return scale;
     }
-    formatValue(match, field){
-        var style = this.model.types.find(d => d.field === field).type,
-            value = match[field],
-            formattedValueString;
-        console.log(value);
-        switch(style){
-            case 'number':
-                formattedValueString = value.toLocaleString('en-US', {minimumFractionDigits: 1});
-                break;
-            case 'currency':
-                formattedValueString = value.toLocaleString('en-US', {style,currency:'USD'});
-                break;
-            case 'percent':
-                formattedValueString = value.toLocaleString('en-US', {style, minimumFractionDigits: 1});
-                break;
-            default:
-                formattedValueString = '[unformatted]' + value;
-        }
-
-        return formattedValueString;
+    formatValue(){
+        return formatValue.apply(this,arguments);
     }
     update(msg, data){
         var index = parseInt(msg.split('.')[1]),
