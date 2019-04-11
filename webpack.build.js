@@ -8,8 +8,9 @@ const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const pretty = require('pretty');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-//const publicPath = '/~/media/data-visualizations/interactives/2018/EIFP/' // <<== set this for each project
+const publicPath = '/~/media/data-visualizations/interactives/2019/state-debt/' // <<== set this for each project
 
 module.exports = env => {
     return merge(common(env), {
@@ -31,12 +32,13 @@ module.exports = env => {
             }
         },
         plugins: [
+            new CleanWebpackPlugin(['dist']),
             new HtmlWebpackPlugin({
                 title: 'title title title',
                 inject: false,
                 template: './src/index.html'
             }),
-            /* new PrerenderSPAPlugin({
+            new PrerenderSPAPlugin({
                  // Required - The path to the webpack-outputted app to prerender.
                  staticDir: path.join(__dirname, 'dist'),
                  // Required - Routes to render.
@@ -56,10 +58,10 @@ module.exports = env => {
                      renderedRoute.html = pretty(renderedRoute.html);
                      return renderedRoute;
                  }
-             }),*/
-            /*new webpack.DefinePlugin({
+             }),
+            new webpack.DefinePlugin({
                 'PUBLICPATH': '"' + publicPath + '"', // from https://webpack.js.org/plugins/define-plugin/: Note that because the plugin does a direct text replacement, the value given to it must include actual quotes inside of the string itself. Typically, this is done either with alternate quotes, such as '"production"', or by using JSON.stringify('production').
-            }),*/
+            }),
             new webpack.EnvironmentPlugin({
                 'NODE_ENV': env
             }),

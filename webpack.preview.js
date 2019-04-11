@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const pretty = require('pretty');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const repoName = 'state-debt';
 
@@ -14,6 +15,7 @@ module.exports = env => {
     return merge(common(), {
         devtool: 'inline-source-map', 
         plugins: [
+            new CleanWebpackPlugin(['docs']),
             new HtmlWebpackPlugin({
                 title: 'A Tool for Better Debt Comparisons',
                 template: './src/index-dev.html',
