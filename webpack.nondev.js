@@ -22,16 +22,25 @@ module.exports = env => {
                         loader: 'css-loader',
                         options: {
                             modules: true,
-                            localIdentName: '[path]-[local]', // hash to avoid collisions
+                            localIdentName: '[path]-[local]', 
                             sourceMap: true,
-                            minimize: true,
                             importLoaders: 1
                         }
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            sourceMap: true
+                            sourceMap: true,
+                            ident: 'postcss',
+                            plugins: (loader) => [
+                                require('postcss-assets')(),
+                                require('postcss-preset-env')({
+                                    autoprefixer: {
+                                        grid: true
+                                    }
+                                }),
+                                require('cssnano')(),
+                            ]
                         }
                     },
                     {
@@ -51,7 +60,8 @@ module.exports = env => {
                         loader: 'css-loader',
                         options: {
                             modules: true,
-                            localIdentName: '[local]', // in dev mode hash not necessary to brak caches but incuding path
+                            localIdentName: '[local]', // in dev mode hash not necessary to brak caches but incuding path,
+                            minimize: true
                         }
                     }
                 ]
@@ -59,7 +69,13 @@ module.exports = env => {
         },
         plugins: [
             new CleanWebpackPlugin(['docs']),
-            
+            new MiniCssExtractPlugin({
+                // Options similar to the same options in webpackOptions.output
+                // both options are optional
+                filename: "css/styles.css?v=[hash:6]",
+                chunkFilename: "[id].css",
+            })
         ]
       });
   };
+ 

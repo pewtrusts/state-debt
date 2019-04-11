@@ -54,7 +54,7 @@ module.exports = env => { // module.exports is function now to pass in env varia
                                   outputPath: 'images/',
                               }
                           },*/ // not in use but might be later
-                        {
+                  /*      {
                             test: /\.svg$/,
                             use: [{
                                     loader: 'svg-url-loader',
@@ -74,14 +74,7 @@ module.exports = env => { // module.exports is function now to pass in env varia
 
                     ]
                 },
-                plugins: [
-                    new MiniCssExtractPlugin({
-                        // Options similar to the same options in webpackOptions.output
-                        // both options are optional
-                        filename: "css/styles.css?v=[hash:6]",
-                        chunkFilename: "[id].css",
-                    })
-                ],
+               
                 resolve: {
                     alias: {
                         "@App": path.join(__dirname, 'submodules/PCTApp-js/'),

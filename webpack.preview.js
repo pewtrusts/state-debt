@@ -8,27 +8,29 @@ const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const pretty = require('pretty');
 
+const repoName = 'state-debt';
+
 module.exports = env => {
     return merge(common(), {
-        devtool: 'inline-source-map', // may be too slow an option; set to another if so
+        devtool: 'inline-source-map', 
         plugins: [
             new HtmlWebpackPlugin({
                 title: 'A Tool for Better Debt Comparisons',
                 template: './src/index-dev.html',
             }),
             new CopyWebpackPlugin([{
-                from: '-/**/*.*',
-                context: 'src'
+                from: './**/*.*',
+                to: './',
+                context: 'src/-/'
             }, {
                 from: 'assets/**/*.*',
                 exclude: 'assets/Pew/css/',
                 context: 'src',
-                ignore: ['assets/countries/*.*']
             }, {
                 from: 'assets/Pew/css/*.*',
                 context: 'src',
                 transform(content, path) {
-                    return content.toString().replace(/url\("\/([^/])/g, 'url("/docs/$1');
+                    return content.toString().replace(/url\("\/([^/])/g, 'url("/' + repoName + '/$1').replace(/\/pew\//g,'/Pew/'); // this modifies the content of the files being copied; here making sure url('/...') is changed
                 }
             }]),
             new PrerenderSPAPlugin({
