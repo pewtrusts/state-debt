@@ -1,1 +1,1 @@
-**Credit rating:** Standard & Poor's general obligation credit rating.
+**Credit rating:** Standard & Poor's general obligation or issuer credit rating. 

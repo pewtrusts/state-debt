@@ -10,6 +10,7 @@ import PS from 'pubsub-setter';
 import tippy from 'tippy.js';
 
 const initialCompare = ['US','AL'];
+var scrollPosition = 0;
 
 export default class Comparison extends Element {
     prerender(){ // this prerender is called as part of the super constructor
@@ -36,6 +37,7 @@ export default class Comparison extends Element {
         if ( this.prerendered && !this.rerender) {
             return view; // if prerendered and no need to render (no data mismatch)
         }
+        
         var compoundIndex = 0;
         this.model.groups.forEach((group, i) => {
             var groupDiv = document.createElement('div');
@@ -46,7 +48,7 @@ export default class Comparison extends Element {
             this.model.typesNested[i].values.forEach(value => {
                 var typeDiv = document.createElement('div'); 
                 typeDiv.classList.add(s.typeDiv, s[value.field]);
-                typeDiv.insertAdjacentHTML('afterbegin', `<h4 class="${s.typeHeader} ${ value.tooltip ? s.withTooltip : 'withoutTooltip' }" data-tippy-content="${value.tooltip || ''}">${value.label}</h4>`);
+                typeDiv.insertAdjacentHTML('afterbegin', `<h4 class="${s.typeHeader} ${ value.tooltip ? s.withTooltip : 'withoutTooltip' }" data-field="${value.field}" data-content="${value.tooltip ? value.tooltip : ''}">${value.label}</h4>`);
                 typeDiv.appendChild(this.comparisons[compoundIndex].el);
                 compoundIndex++;
                 typeContainer.appendChild(typeDiv);
@@ -70,8 +72,46 @@ export default class Comparison extends Element {
     }
     initializeTooltips(){
         var els = document.querySelectorAll('.' + s.withTooltip);
-        tippy(els)
-            
+        function scrollBack(){
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth'
+            });
+            this.removeEventListener('click', scrollBack);
+            this.classList.remove(s.showGoBack);
+        }
+        function returnMoreLink(field){
+            var link = document.createElement('a');
+            if ( field === 'credit2015' || field === 'credit2018' ){
+                field = 'credit_rating';
+            }
+            link.innerText = ' more';
+            link.href = '#' + field;
+            link.addEventListener('click', function(e){
+                e.preventDefault();
+                scrollPosition = window.pageYOffset;
+                var header = document.querySelector('.js-' + field);
+                header.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                document.querySelectorAll('.' + s.showGoBack).forEach(function(each){
+                    each.classList.remove(s.showGoBack);
+                });
+                header.classList.add(s.showGoBack);
+                header.addEventListener('click', scrollBack);
+            });
+            return link;
+        }
+        tippy(els,{
+            interactive: true,
+            content(reference){
+                var div = document.createElement('div');
+                div.textContent = reference.dataset.content;
+                div.appendChild(returnMoreLink(reference.dataset.field));
+                return div;
+            }
+        });
     }
     update(msg,data){
         console.log(this);

@@ -1,1 +1,1 @@
-**General obligation (GO) debt limit type.** The kind of limit the state has on GO borrowing, one of the most common types of debt issued by states. These limits affect how states borrow. 
+**General obligation (GO) debt limit type.** The kind of limit the state has on GO borrowing, one of the most common types of debt issued by states. These limits affect how states borrow.

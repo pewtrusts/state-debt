@@ -144,3 +144,20 @@
     }
     
 }
+.showGoBack {
+    cursor: pointer;
+    background-color: $light_yellow;
+    display: inline-block !important;
+    &::after {
+        content: ' go back';
+        color: $gray;
+        font-variant: small-caps;
+        background-color: $highlight_blue;
+        padding: 0 3px 3px;
+        font-size: 16px;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+
+}

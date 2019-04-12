@@ -1,1 +1,1 @@
-**Population growth.** The 10-year population growth rate from 2008 to 2017. Growing populations are associated with greater infrastructure investment. 
+**Population growth.** The 10-year population growth rate from 2008 to 2017. Growing populations are associated with greater infrastructure investment.

@@ -20,6 +20,8 @@ import ten_year_pop_growth from '@Project/partials/population-growth.md';
 import revenue_volatility from '@Project/partials/revenue-volatility.md';
 import state_local_division from '@Project/partials/state-local.md';
 
+const explainerTextAddon = ' For more information, please see &ldquo;About the Data&rdquo; below.</p>'
+
 function ascending(key = null) {
     return key === null ? 
         function(a,b){
@@ -192,12 +194,12 @@ export default class FiftyStateView extends Element {
             content;
         if ( msg === 'field' ) {
             this.field = data; // so that the order of subs doesn't matter
-            content = this.explainerText[this.field] || '';
+            content = this.explainerText[this.field].replace('</p>', explainerTextAddon) || '';
             el = this.fieldExplainer;
         }
         if ( msg === 'group' ){
             this.groupBy = data; // so that the order of subs doesn't matter
-            content = this.explainerText[this.groupBy] || '';
+            content = this.explainerText[this.groupBy].replace('</p>', explainerTextAddon) || '';
             el = this.groupExplainer;
         }
         if ( !calledFromPrerender ) {
