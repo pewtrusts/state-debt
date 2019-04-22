@@ -85,7 +85,7 @@ export default class Comparison extends Element {
             if ( field === 'credit2015' || field === 'credit2018' ){
                 field = 'credit_rating';
             }
-            link.innerText = ' more';
+            link.innerText = 'more';
             link.href = '#' + field;
             link.addEventListener('click', function(e){
                 e.preventDefault();
@@ -107,7 +107,7 @@ export default class Comparison extends Element {
             interactive: true,
             content(reference){
                 var div = document.createElement('div');
-                div.textContent = reference.dataset.content;
+                div.textContent = reference.dataset.content + ' ';
                 div.appendChild(returnMoreLink(reference.dataset.field));
                 return div;
             }
