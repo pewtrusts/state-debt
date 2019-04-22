@@ -91,11 +91,19 @@
 .autoComplete0, .autoComplete0::placeholder {
     color: $light_blue;
 }
+.autoComplete0:focus, .autoComplete0:focus::placeholder {
+    background-color: $light_blue;
+    color: #fff;
+}
 .autoComplete_wrapper-0 :global(.autoComplete_highlighted){
     color: $light_blue;   
 }
 .autoComplete1, .autoComplete1::placeholder {
     color: $medium_blue;
+}
+.autoComplete1:focus, .autoComplete1:focus::placeholder {
+    background-color: $medium_blue;
+    color: #fff;
 }
 .autoComplete_wrapper-1 :global(.autoComplete_highlighted){
     color: $medium_blue;   
