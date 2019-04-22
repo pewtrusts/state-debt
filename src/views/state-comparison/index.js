@@ -144,8 +144,8 @@ export default class Comparison extends Element {
                     onSelection: feedback => {             // Action script onSelection event | (Optional)
                         console.log(feedback, this);
                         S.setState('compare.' + index, feedback.selection.code);
-                        input.value = '';
-                        input.setAttribute('placeholder', feedback.selection.state);
+                        input.value = feedback.selection.state;
+  //                      input.setAttribute('placeholder', feedback.selection.state);
                     },
                     placeHolder: 'Select state',
                     resultsList: {                       // Rendered results list object      | (Optional)
@@ -159,7 +159,7 @@ export default class Comparison extends Element {
                     //maxResults: 5,                         // Max. number of rendered results | (Optional)
                 })
             );
-            input.setAttribute('placeHolder', this.model.data.find(d => d.code === initialCompare[index]).state);
+            input.setAttribute('value', this.model.data.find(d => d.code === initialCompare[index]).state);
             //input.value = this.model.data.find(d => d.code === initialCompare[index]).state;
             console.log(this.children);
         });
