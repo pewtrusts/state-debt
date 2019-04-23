@@ -128,7 +128,7 @@ export default class Comparison extends Element {
                 };
             }),
             key = 'state';
-
+        var autoCompletesAreDirty = [false,false];
         function suggestionMouseHandler(e){
             console.log(this,e);
             if ( e.type === 'mouseenter' ){
@@ -147,6 +147,7 @@ export default class Comparison extends Element {
             if ( suggestions[0] ){
                 suggestions[0].parentNode.innerHTML = '';
             }
+            autoCompletesAreDirty[index] = false;
         }
         
         
@@ -179,12 +180,16 @@ export default class Comparison extends Element {
                 e.stopPropagation();
             });
             document.body.addEventListener('click', function(){
-                revertToPrevious.call(input, index);
+                console.log(autoCompletesAreDirty);
+                if (autoCompletesAreDirty[index]){
+                    revertToPrevious.call(input, index);
+                }
             }); 
             input.classList.add('autoComplete', s['autoComplete' + index]);
             wrapper.classList.add(s['autoComplete_wrapper-' + index]);
             
             input.addEventListener('keyup', function() {
+                autoCompletesAreDirty[index] = true;
                 var suggestions = this.parentNode.querySelectorAll('.autoComplete_results_list li');
                 suggestions.forEach(suggestion => {
                     console.log(suggestion);
@@ -215,6 +220,7 @@ export default class Comparison extends Element {
                     this.value = suggestions[0].dataset.result;
                     S.setState('compare.' + index, src.find(s => s.state === this.value).code);
                     suggestions[0].parentNode.innerHTML = '';
+                    autoCompletesAreDirty[index] = false;
                     //this.blur();
 
                 }
@@ -232,6 +238,7 @@ export default class Comparison extends Element {
                         S.setState('compare.' + index, feedback.selection.code);
                         input.value = feedback.selection.state;
                         input.focus();
+                        autoCompletesAreDirty[index] = false;
   //                      input.setAttribute('placeholder', feedback.selection.state);
                     },
                     placeHolder: 'Select state',
