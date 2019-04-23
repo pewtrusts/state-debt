@@ -120,6 +120,7 @@ export default class Comparison extends Element {
         });
     }
     initializeAutocompletes(){
+        
         var src = this.model.data.map(d => {
                 return {
                     state: d.state,
@@ -128,12 +129,97 @@ export default class Comparison extends Element {
             }),
             key = 'state';
 
-        console.log(src);
+        function suggestionMouseHandler(e){
+            console.log(this,e);
+            if ( e.type === 'mouseenter' ){
+                this.focus();
+            }
+            if ( e.type === 'click' ){
+                console.log(this.parentNode.parentNode);
+                this.parentNode.parentNode.focus();
+            }
+        }
+        function revertToPrevious(index){ // this in the input element
+            var currentStateAbbr = S.getState('compare.' + index) || initialCompare[index];
+            var suggestions = this.parentNode.querySelectorAll('.autoComplete_results_list li');
+            console.log(currentStateAbbr);
+            this.value = src.find(s => s.code === currentStateAbbr).state;
+            if ( suggestions[0] ){
+                suggestions[0].parentNode.innerHTML = '';
+            }
+        }
+        
+        
+
+        function setMutationObserver(index){
+            var target = document.querySelector('#autoComplete_wrapper-' + index + ' .autoComplete_results_list');
+            var config = { attributes: false, childList: true, subtree: false };
+            var callback = function(mutationList, observer){
+                console.log(mutationList, observer);
+                mutationList.forEach(mutation => {
+                    mutation.addedNodes.forEach(node => {
+                            node.addEventListener('mouseenter', suggestionMouseHandler);
+                            node.setAttribute('tabindex',0);
+                    });
+                });
+            /*    if ( mutationList[mutationList.length - 1].target.children.length > 0 && !bodyHasEventListener ){
+                    document.body.addEventListener('click', () => {
+                        console.log('body click');
+                        revertToPrevious.call(mutation.target.parentNode, index);
+                    });
+                }*/
+            }
+            var observer = new MutationObserver(callback);
+            observer.observe(target, config);
+        }
         [0,1].forEach(index => {
             var input = document.querySelector('#compare-input-' + index),
                 wrapper = document.querySelector('#autoComplete_wrapper-' + index);
+            input.addEventListener('click', function(e){
+                e.stopPropagation();
+            });
+            document.body.addEventListener('click', function(){
+                revertToPrevious.call(input, index);
+            }); 
             input.classList.add('autoComplete', s['autoComplete' + index]);
             wrapper.classList.add(s['autoComplete_wrapper-' + index]);
+            
+            input.addEventListener('keyup', function() {
+                var suggestions = this.parentNode.querySelectorAll('.autoComplete_results_list li');
+                suggestions.forEach(suggestion => {
+                    console.log(suggestion);
+
+                    suggestion.addEventListener('mouseenter', suggestionMouseHandler);
+                    suggestion.addEventListener('mouseleave', suggestionMouseHandler);
+                });
+            });
+            input.addEventListener('keydown', function(e){
+                console.log(e, this);
+                
+
+                var suggestions = this.parentNode.querySelectorAll('.autoComplete_results_list li');
+                
+                if ( e.keyCode === 9 && suggestions.length === 1 ) { // tab key
+                    if ( this.value !== suggestions[0].dataset.result ){
+                        e.preventDefault();
+                        this.value = suggestions[0].dataset.result;
+                    } else {
+                        revertToPrevious.call(this, index);   
+                    }
+
+                }
+                if ( e.keyCode === 9 && ( suggestions.length > 1  || suggestions.length === 0 ) ) { // tab key
+                    revertToPrevious.call(this, index);   
+                }
+                if ( e.keyCode === 13 && suggestions.length === 1) { // enter key
+                    this.value = suggestions[0].dataset.result;
+                    S.setState('compare.' + index, src.find(s => s.state === this.value).code);
+                    suggestions[0].parentNode.innerHTML = '';
+                    //this.blur();
+
+                }
+            });
+
             this.children.push(
                 new AutoComplete({
                     data: {
@@ -145,6 +231,7 @@ export default class Comparison extends Element {
                         console.log(feedback, this);
                         S.setState('compare.' + index, feedback.selection.code);
                         input.value = feedback.selection.state;
+                        input.focus();
   //                      input.setAttribute('placeholder', feedback.selection.state);
                     },
                     placeHolder: 'Select state',
@@ -155,10 +242,11 @@ export default class Comparison extends Element {
                     },
                     searchEngine: "strict",              // Search Engine type/mode           | (Optional)
                     selector: '#compare-input-' + index,
-                    threshold: 3,                        // Min. Chars length to start Engine | (Optional)
-                    //maxResults: 5,                         // Max. number of rendered results | (Optional)
+                    threshold: 2,                        // Min. Chars length to start Engine | (Optional)
+                    //maxResults: 5,                         /
                 })
             );
+            setMutationObserver(index);
             input.setAttribute('value', this.model.data.find(d => d.code === initialCompare[index]).state);
             //input.value = this.model.data.find(d => d.code === initialCompare[index]).state;
             console.log(this.children);

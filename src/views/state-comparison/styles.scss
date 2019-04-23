@@ -116,15 +116,23 @@
     max-height: 45vh;
     border-left: 1px solid #e3e3e3;
 }
-:global(.autoComplete_result):focus, :global(.autoComplete_result):hover {
+:global(.autoComplete_result):focus {
     background-color: #fff;
     .autoComplete_wrapper-0 & {
-        border-bottom: 1px solid $light_blue;
+        background-color: $light_blue;
+        color: #fff;
         position: relative;
+        :global(.autoComplete_highlighted) {
+            color: #fff;
+        }
     }
     .autoComplete_wrapper-1 & {
-        border-bottom: 1px solid $medium_blue;
+        background-color: $medium_blue;
+        color: #fff;
         position: relative;
+        :global(.autoComplete_highlighted) {
+            color: #fff;
+        }
     }
 }
 :global(.autoComplete)::selection, :global(.autoComplete):focus::selection {
