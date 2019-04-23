@@ -85,7 +85,7 @@ export default class Comparison extends Element {
             if ( field === 'credit2015' || field === 'credit2018' ){
                 field = 'credit_rating';
             }
-            link.innerText = ' more';
+            link.innerText = 'more';
             link.href = '#' + field;
             link.addEventListener('click', function(e){
                 e.preventDefault();
@@ -107,7 +107,7 @@ export default class Comparison extends Element {
             interactive: true,
             content(reference){
                 var div = document.createElement('div');
-                div.textContent = reference.dataset.content;
+                div.textContent = reference.dataset.content + ' ';
                 div.appendChild(returnMoreLink(reference.dataset.field));
                 return div;
             }
@@ -140,26 +140,26 @@ export default class Comparison extends Element {
                         src,
                         key
                     },
-                    selector: '#compare-input-' + index,
+                    highlight: true,                       // Highlight matching results      | (Optional)
+                    onSelection: feedback => {             // Action script onSelection event | (Optional)
+                        console.log(feedback, this);
+                        S.setState('compare.' + index, feedback.selection.code);
+                        input.value = feedback.selection.state;
+  //                      input.setAttribute('placeholder', feedback.selection.state);
+                    },
                     placeHolder: 'Select state',
-                    //threshold: 0,                        // Min. Chars length to start Engine | (Optional)
-                    searchEngine: "strict",              // Search Engine type/mode           | (Optional)
                     resultsList: {                       // Rendered results list object      | (Optional)
                         container: () => 'autoComplete_results_list',
                         destination: document.querySelector('#compare-input-' + index),
                         position: 'afterend'
                     },
-                    highlight: true,                       // Highlight matching results      | (Optional)
+                    searchEngine: "strict",              // Search Engine type/mode           | (Optional)
+                    selector: '#compare-input-' + index,
+                    threshold: 3,                        // Min. Chars length to start Engine | (Optional)
                     //maxResults: 5,                         // Max. number of rendered results | (Optional)
-                    onSelection: feedback => {             // Action script onSelection event | (Optional)
-                        console.log(feedback, this);
-                        S.setState('compare.' + index, feedback.selection.code);
-                        input.value = '';
-                        input.setAttribute('placeholder', feedback.selection.state);
-                    }
                 })
             );
-            input.setAttribute('placeHolder', this.model.data.find(d => d.code === initialCompare[index]).state);
+            input.setAttribute('value', this.model.data.find(d => d.code === initialCompare[index]).state);
             //input.value = this.model.data.find(d => d.code === initialCompare[index]).state;
             console.log(this.children);
         });
