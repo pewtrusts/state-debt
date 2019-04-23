@@ -23,8 +23,10 @@ import Element from '@UI/element';
     update(){
         // in development mode, this.el is a js object but does not refer to element rendered on the page
         //var el = process.env.NODE_ENV === 'development' ? document.querySelector(`.js-bar-compare-${this.data.field}-${index}`) : this.el;
-        console.log(this);        
-        this.el.style.transform = `scaleX(${this.linearScale(this.data.d, this.data.field)})`;
+        console.log(this); 
+        window.requestAnimationFrame(() => {
+            this.el.style.transform = `scaleX(${this.linearScale(this.data.d, this.data.field)})`;
+        });       
     }
 
 }

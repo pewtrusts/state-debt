@@ -153,7 +153,7 @@ export default class FiftyStateView extends Element {
                 deltaY = this.firstPositions[barContainer.el.id].top - lastPosition.top;
             barContainer.el.style.transitionDuration = '0';
             barContainer.el.style.transform = `translateY(${deltaY}px)`;
-            setTimeout(function(){ // transition won't happen w/o the settimeout trick
+            window.requestAnimationFrame(() => {
                 barContainer.el.style.transitionDuration = '0.8s';
                 barContainer.el.style.transform = 'translateY(0)';
             });
@@ -238,7 +238,9 @@ export default class FiftyStateView extends Element {
         this.barContainers.forEach((barContainer, index) => {
             var dataLabel = barContainer.el.querySelector('.' + s.dataLabel);
             dataLabel.fadeInContent(this.formatValue(this.bars[index].data.d, this.bars[index].data.field));
-            dataLabel.style.transform = `translateX(${( this.bars[index].linearScale(this.bars[index].data.d, this.bars[index].data.field) * 100).toFixed(1) }%)`;
+            window.requestAnimationFrame(() => {
+                dataLabel.style.transform = `translateX(${( this.bars[index].linearScale(this.bars[index].data.d, this.bars[index].data.field) * 100).toFixed(1) }%)`;
+            });
         });
     }
     updateBars(msg,data){
