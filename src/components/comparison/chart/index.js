@@ -30,16 +30,22 @@ export default class ComparisonChart extends Comparison {
                         </div>
                        `;
     }
+    returnTranslateValue(index){
+            if ( this.bars[index].data.d[this.bars[index].data.field] < 0 && this.model.types.find(t => t.field === this.bars[index].data.field).crossesZero ){
+                return `${(this.bars[index].placeZero(this.bars[index].data.field) * 100).toFixed(1)}%`;   
+            } else {
+                return `${( ( this.bars[index].linearScale(this.matches[index], this.data.field) + this.bars[index].placeZero(this.bars[index].data.field) ) * 100).toFixed(1) }%`;
+            }
+        }
     partialTemplate(index){
-        
         return `
                 <p class="${s.chartLabel} ${s['chartLabel' + (index + 1)]}">
                     ${this.matches[index].state}
                 </p>
                 <div class="${s.barContainer} ${s['barContainer' + (index + 1)]}">
                     ${this.bars[index].el.outerHTML}                        
-                    <div class="${s.dataLabel}" style="transform: translateX(${( this.bars[index].linearScale(this.matches[index], this.data.field) * 100).toFixed(1) }%)">
-                        ${this.formatValue(this.matches[index], this.data.field)}
+                    <div class="${s.dataLabel}" style="transform: translateX(${this.returnTranslateValue.call(this, index)})">
+                        ${this.formatValue(this.matches[index], this.data.field).replace('-','–')}
                     </div>
                 </div>
         `;
@@ -67,7 +73,7 @@ export default class ComparisonChart extends Comparison {
         this.children[index].update(index);
 
         //update dataLabel
-        dataLabel.fadeInContent(this.formatValue(this.matches[index], this.data.field));
-        dataLabel.style.transform = `translateX(${( this.children[index].linearScale(this.matches[index], this.data.field) * 100).toFixed(1) }%)`;
+        dataLabel.fadeInContent(this.formatValue(this.matches[index], this.data.field).replace('-','–'));
+        dataLabel.style.transform = `translateX(${this.returnTranslateValue.call(this, index)})`;
     }
 }

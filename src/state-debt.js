@@ -75,7 +75,8 @@ function getRuntimeData(){
                         let dataArray = data.map(d => d[type.field]).filter(d => d !== null); 
                         type.max = Math.max(...dataArray);
                         type.min = Math.min(...dataArray);
-                        type.spread = type.max - type.min ;
+                        type.spread = type.max - type.min;
+                        type.crossesZero = type.max * type.min <= 0;
                     }
                 });
                 model.typesNested = d3.nest().key(d => d.group).entries(model.types);

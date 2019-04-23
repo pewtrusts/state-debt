@@ -237,9 +237,14 @@ export default class FiftyStateView extends Element {
     updateDataLabels(){
         this.barContainers.forEach((barContainer, index) => {
             var dataLabel = barContainer.el.querySelector('.' + s.dataLabel);
-            dataLabel.fadeInContent(this.formatValue(this.bars[index].data.d, this.bars[index].data.field));
+            dataLabel.fadeInContent(this.formatValue(this.bars[index].data.d, this.bars[index].data.field).replace('-','–'));
             window.requestAnimationFrame(() => {
-                dataLabel.style.transform = `translateX(${( this.bars[index].linearScale(this.bars[index].data.d, this.bars[index].data.field) * 100).toFixed(1) }%)`;
+                console.log(this.bars[index].data.d);
+                if ( this.bars[index].data.d[this.bars[index].data.field] < 0 && this.model.types.find(t => t.field === this.bars[index].data.field).crossesZero ){
+                    dataLabel.style.transform = `translateX(${(this.bars[index].placeZero(this.bars[index].data.field) * 100).toFixed(1)}%)`;
+                } else {
+                    dataLabel.style.transform = `translateX(${( ( this.bars[index].linearScale(this.bars[index].data.d, this.bars[index].data.field) + this.bars[index].placeZero(this.bars[index].data.field) ) * 100).toFixed(1) }%)`;
+                }
             });
         });
     }
