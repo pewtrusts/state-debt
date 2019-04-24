@@ -136,10 +136,7 @@ export default class FiftyStateView extends Element {
                 barContainer.appendChild(label);
                 barContainer.appendChild(this.bars[index].el);
                 barContainer.appendChild(placeHolder);
-                barContainer.insertAdjacentHTML('beforeend', `
-                    <div class="${s.dataLabel}" style="transform: translateX(${( this.bars[index].linearScale(this.bars[index].data.d, this.bars[index].data.field) * 100).toFixed(1) }%)">
-                        ${this.formatValue(this.bars[index].data.d, this.bars[index].data.field)}
-                    </div>`)
+                barContainer.insertAdjacentHTML('beforeend', this.returnDataLabel(index));
                 groupDiv.appendChild(barContainer);
                 
                 index++;
@@ -148,6 +145,18 @@ export default class FiftyStateView extends Element {
         });
 
         return container;
+    }
+    returnDataLabel(index){
+        return `<div class="${s.dataLabel}" style="transform: translateX(${this.returnTranslateValue(index)})">
+                    ${this.formatValue(this.bars[index].data.d, this.bars[index].data.field)}
+                </div>`;
+    }
+    returnTranslateValue(index){
+        if ( this.bars[index].data.d[this.bars[index].data.field] < 0 && this.model.types.find(t => t.field === this.bars[index].data.field).crossesZero ){
+            return `${(this.bars[index].placeZero(this.bars[index].data.field) * 100).toFixed(1)}%`;
+        } else {
+            return `${( ( this.bars[index].linearScale(this.bars[index].data.d, this.bars[index].data.field) + this.bars[index].placeZero(this.bars[index].data.field) ) * 100).toFixed(1) }%`;
+        }
     }
     formatValue(){
         return formatValue.apply(this, arguments);
@@ -245,11 +254,7 @@ export default class FiftyStateView extends Element {
             dataLabel.fadeInContent(this.formatValue(this.bars[index].data.d, this.bars[index].data.field).replace('-','–'));
             window.requestAnimationFrame(() => {
                 console.log(this.bars[index].data.d);
-                if ( this.bars[index].data.d[this.bars[index].data.field] < 0 && this.model.types.find(t => t.field === this.bars[index].data.field).crossesZero ){
-                    dataLabel.style.transform = `translateX(${(this.bars[index].placeZero(this.bars[index].data.field) * 100).toFixed(1)}%)`;
-                } else {
-                    dataLabel.style.transform = `translateX(${( ( this.bars[index].linearScale(this.bars[index].data.d, this.bars[index].data.field) + this.bars[index].placeZero(this.bars[index].data.field) ) * 100).toFixed(1) }%)`;
-                }
+                dataLabel.style.transform = `translateX(${this.returnTranslateValue(index)})`;
             });
         });
     }
