@@ -60,8 +60,9 @@ export default class ComparisonChart extends Comparison {
         return formatValue.apply(this,arguments);
     }
     update(msg, data){
+        console.log(msg,data);
         var index = parseInt(msg.split('.')[1]),
-        dataLabel = this.el.querySelectorAll('.' + s.dataLabel)[index];
+            dataLabel = this.el.querySelectorAll('.' + s.dataLabel)[index];
         super.update(index,data);
         
         console.log(this);
@@ -71,7 +72,7 @@ export default class ComparisonChart extends Comparison {
         //update bars
         this.children[index].data.d = this.matches[index];
         this.children[index].update(index);
-
+        console.log('HERE—',this.children[index].data.d);
         //update dataLabel
         dataLabel.fadeInContent(this.formatValue(this.matches[index], this.data.field).replace('-','–'));
         dataLabel.style.transform = `translateX(${this.returnTranslateValue.call(this, index)})`;
