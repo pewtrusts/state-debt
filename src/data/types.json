@@ -42,6 +42,7 @@
   {
     "field": "debt_per_capita",
     "type": "currency",
+    "decimals": 0,
     "group": 3,
     "order": 1,
     "label": "Debt per Capita",
