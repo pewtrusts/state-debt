@@ -25,9 +25,13 @@ const explainerTextAddon = ' For more information, please see &ldquo;About the D
 function ascending(key = null) {
     return key === null ? 
         function(a,b){
+            console.log(a,b);
             a = a === 'N/A' ? '!' : a; // this ensures n/a is always first
             b = b === 'N/A' ? '!' : b;
-            return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
+            a = !isNaN(+a) ? +a : a; // coercing stringified numbers into numbers so that correct order can be taken
+            b = !isNaN(+b) ? +b : b;
+            var rtn = a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
+            return rtn;
         } :
         function(a,b){
             return a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : a[key] >= b[key] ? 0 : NaN;
@@ -90,6 +94,7 @@ export default class FiftyStateView extends Element {
     }
     nestData(){
         this.nestedData = d3.nest().key(this.groupByFn).sortKeys(ascending()).sortValues(this.sortValuesFn(this.sortValueKey)).entries(this.model.data);
+        console.log(this.nestedData);
     }
     pushBars(){
         this.bars.length = 0;
