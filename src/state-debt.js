@@ -119,6 +119,7 @@ export default class StateDebt extends PCTApp {
         console.log('init');
         super.init();
         this.attachSectionOpenClose();
+        this.initStaticAnchorLinks();
         getRuntimeData.call(this).then(() => {
             views.forEach(view => {
                view.init(this);                    
@@ -136,6 +137,19 @@ export default class StateDebt extends PCTApp {
 
             });
         }
+    }
+    initStaticAnchorLinks(){
+        var links = document.querySelectorAll('.pct-static-anchor');
+        links.forEach(link => {
+            var target = document.querySelector('#' + link.href.split('#')[1]);
+            link.addEventListener('click', function(e){
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+
+        });
     }
     attachSectionOpenClose(){
         function toggleSection(){
