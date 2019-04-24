@@ -19,6 +19,7 @@
         margin-top: 8px;
         position: relative;
         background-color: transparent;
+        cursor: pointer;
     
     &:before {
         content: '';
@@ -33,7 +34,6 @@
         position: absolute;
         right: 1px;
         top: 1px;
-        z-index: 1;
     }
 }
 :global(.rich-text) .label {
