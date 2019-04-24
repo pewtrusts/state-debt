@@ -129,12 +129,15 @@ export default class FiftyStateView extends Element {
                 }
                 
                 var label = document.createElement('p'),
-                    placeHolder = document.createElement('div');
+                    placeHolder = document.createElement('div'),
+                    barInnerContainer = document.createElement('div');
+                barInnerContainer.classList.add(s.barInnerContainer);
                 label.classList.add(s.barLabel);
                 label.innerHTML = d.state;
                 placeHolder.classList.add(s.placeHolder);
                 barContainer.appendChild(label);
-                barContainer.appendChild(this.bars[index].el);
+                barInnerContainer.appendChild(this.bars[index].el);
+                barContainer.appendChild(barInnerContainer);
                 barContainer.appendChild(placeHolder);
                 barContainer.insertAdjacentHTML('beforeend', this.returnDataLabel(index));
                 groupDiv.appendChild(barContainer);
@@ -144,6 +147,9 @@ export default class FiftyStateView extends Element {
             container.appendChild(groupDiv);
         });
 
+        this.bars.forEach(bar => {
+            bar.checkIfZero();
+        });
         return container;
     }
     returnDataLabel(index){
@@ -208,12 +214,12 @@ export default class FiftyStateView extends Element {
             content;
         if ( msg === 'field' ) {
             this.field = data; // so that the order of subs doesn't matter
-            content = this.explainerText[this.field].replace('</p>', explainerTextAddon) || '';
+            content = this.explainerText[this.field] ? this.explainerText[this.field].replace('</p>', explainerTextAddon) : '';
             el = this.fieldExplainer;
         }
         if ( msg === 'group' ){
             this.groupBy = data; // so that the order of subs doesn't matter
-            content = this.explainerText[this.groupBy].replace('</p>', explainerTextAddon) || '';
+            content = this.explainerText[this.groupBy] ? this.explainerText[this.groupBy].replace('</p>', explainerTextAddon) : '';
             el = this.groupExplainer;
         }
         if ( !calledFromPrerender ) {

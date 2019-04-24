@@ -32,6 +32,10 @@ $label_width: 128px;
     }
 }
 
+.barInnerContainer {
+    flex-grow: 1;
+}
+
 :global(#field-explainer), :global(#group-explainer){
     transition: opacity 0.2s linear;
 }

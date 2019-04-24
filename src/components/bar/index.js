@@ -26,10 +26,17 @@ import Element from '@UI/element';
             raw = ( 0 - typeObject.min ) / typeObject.spread;
         return raw > 0 ? raw : 0;
     }
+    checkIfZero(){
+        if ( this.data.d[this.data.field] === 0 ){
+            this.el.parentNode.classList.add(s.isZero);
+        } else {
+            this.el.parentNode.classList.remove(s.isZero);
+        }
+    }
     update(){
+        this.checkIfZero();
         // in development mode, this.el is a js object but does not refer to element rendered on the page
         //var el = process.env.NODE_ENV === 'development' ? document.querySelector(`.js-bar-compare-${this.data.field}-${index}`) : this.el;
-        console.log('THIS',this); 
         window.requestAnimationFrame(() => {
             this.el.style.transform = `translateX(${this.placeZero(this.data.field) * 100 + '%'}) scaleX(${this.linearScale(this.data.d, this.data.field)})`;
         });       

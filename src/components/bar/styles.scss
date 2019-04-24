@@ -18,3 +18,12 @@
 :global(.bar-state-US) {
     background-color: $light_blue;
 }
+
+.isZero::before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 1px;
+    height: 24px;
+    background-color: $gray;
+}
