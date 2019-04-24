@@ -12,10 +12,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const repoName = 'state-debt';
 
 module.exports = env => {
+    var folder = env === 'localpreview' ? '/preview/' : '/docs/';
     return merge(common(), {
         devtool: 'inline-source-map', 
         plugins: [
-            new CleanWebpackPlugin(['docs']),
+            new CleanWebpackPlugin([folder.replace(/\//g,'')]),
             new HtmlWebpackPlugin({
                 title: 'A Tool for Better Debt Comparisons',
                 template: './src/index-dev.html',
@@ -32,12 +33,16 @@ module.exports = env => {
                 from: 'assets/Pew/css/*.*',
                 context: 'src',
                 transform(content, path) {
-                    return content.toString().replace(/url\("\/([^/])/g, 'url("/' + repoName + '/$1').replace(/\/pew\//g,'/Pew/'); // this modifies the content of the files being copied; here making sure url('/...') is changed
+                    if ( env === 'localpreview'){
+                        return content.toString();
+                    } else  {
+                        return content.toString().replace(/url\("\/([^/])/g, 'url("/' + repoName + '/$1').replace(/\/pew\//g,'/Pew/'); // this modifies the content of the files being copied; here making sure url('/...') is changed
+                    }
                 }
             }]),
             new PrerenderSPAPlugin({
                 // Required - The path to the webpack-outputted app to prerender.
-                staticDir: path.join(__dirname, '/docs/'),
+                staticDir: path.join(__dirname, folder),
                 // Required - Routes to render.
                 routes: ['/'],
                 renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
@@ -56,7 +61,7 @@ module.exports = env => {
         ],
         output: {
             filename: '[name].js',
-            path: path.join(__dirname, '/docs/'),
+            path: path.join(__dirname, folder),
         }
       });
   };
