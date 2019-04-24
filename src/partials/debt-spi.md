@@ -1,1 +1,0 @@
-**Debt as a percentage of state personal income.** Total debt relative to state personal income, a measure of economic resources.

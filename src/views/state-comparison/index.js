@@ -10,7 +10,7 @@ import PS from 'pubsub-setter';
 import tippy from 'tippy.js';
 
 const initialCompare = ['US','AL'];
-var scrollPosition = 0;
+
 
 export default class Comparison extends Element {
     prerender(){ // this prerender is called as part of the super constructor
@@ -71,44 +71,15 @@ export default class Comparison extends Element {
         ]);
     }
     initializeTooltips(){
-        var els = document.querySelectorAll('.' + s.withTooltip);
-        function scrollBack(){
-            window.scrollTo({
-                top: scrollPosition,
-                behavior: 'smooth'
-            });
-            this.removeEventListener('click', scrollBack);
-            this.classList.remove(s.showGoBack);
-        }
-        function returnMoreLink(field){
-            var link = document.createElement('a');
-            if ( field === 'credit2015' || field === 'credit2018' ){
-                field = 'credit_rating';
-            }
-            link.innerText = 'more';
-            link.href = '#' + field;
-            link.addEventListener('click', function(e){
-                e.preventDefault();
-                scrollPosition = window.pageYOffset;
-                var header = document.querySelector('.js-' + field);
-                header.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-                document.querySelectorAll('.' + s.showGoBack).forEach(function(each){
-                    each.classList.remove(s.showGoBack);
-                });
-                header.classList.add(s.showGoBack);
-                header.addEventListener('click', scrollBack);
-            });
-            return link;
-        }
+        var els = document.querySelectorAll('.' + s.withTooltip),
+            _this = this;
+        
         tippy(els,{
             interactive: true,
             content(reference){
                 var div = document.createElement('div');
                 div.textContent = reference.dataset.content + ' ';
-                div.appendChild(returnMoreLink(reference.dataset.field));
+                div.appendChild(_this.parent.returnMoreLink(reference.dataset.field));
                 return div;
             }
         });

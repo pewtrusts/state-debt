@@ -1,1 +1,0 @@
-**Centralization.** The degree to which borrowing is done by the state itself rather than by component units. Higher values mean that borrowing in the state is more centralized.

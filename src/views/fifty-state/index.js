@@ -10,17 +10,6 @@ import PS from 'pubsub-setter';
 import { formatValue } from '@Project/methods';
 
 // partials
-import centralization from '@Project/partials/centralization.md';
-import credit2015 from '@Project/partials/credit-rating.md';
-import credit2018 from '@Project/partials/credit-rating.md';
-import debt_limit_type from '@Project/partials/debt-limit.md';
-import debt_per_capita from '@Project/partials/debt-per-capita.md';
-import debt_percent_SPI from '@Project/partials/debt-spi.md';
-import ten_year_pop_growth from '@Project/partials/population-growth.md';
-import revenue_volatility from '@Project/partials/revenue-volatility.md';
-import state_local_division from '@Project/partials/state-local.md';
-
-const explainerTextAddon = ' For more information, please see &ldquo;About the Data&rdquo; below.</p>'
 
 function ascending(key = null) {
     return key === null ? 
@@ -57,17 +46,6 @@ export default class FiftyStateView extends Element {
         this.barContainers = [];
         this.lastPositions = {};
         this.highlightedBars = {};
-        this.explainerText = {
-            centralization,
-            credit2015,
-            credit2018,
-            debt_limit_type,
-            debt_per_capita,
-            debt_percent_SPI,
-            ten_year_pop_growth,
-            revenue_volatility,
-            state_local_division
-        };
         this.groupByFn = this.groupBy !== null ? d => d[this.groupBy] : d => d !== null;
         this.selections = this.parent.createComponent(this.model, Selections, `div.js-fifty-state-selections`, {parent: this});
         this.sortValueKey = 'state';
@@ -210,23 +188,27 @@ export default class FiftyStateView extends Element {
         this.initClearAllHighlights();
     }
     updateExplainerText(msg,data, calledFromPrerender){
-        var el,
-            content;
+        console.log(msg,data, this);
+        var match = this.model.types.find(t => t.field === data),
+            content = `<p><strong>${!isNaN(match.label) ? 'Credit rating ' + match.label : match.label }.</strong> ${match.tooltip} </p>`,
+            el;
         if ( msg === 'field' ) {
             this.field = data; // so that the order of subs doesn't matter
-            content = this.explainerText[this.field] ? this.explainerText[this.field].replace('</p>', explainerTextAddon) : '';
             el = this.fieldExplainer;
         }
         if ( msg === 'group' ){
             this.groupBy = data; // so that the order of subs doesn't matter
-            content = this.explainerText[this.groupBy] ? this.explainerText[this.groupBy].replace('</p>', explainerTextAddon) : '';
             el = this.groupExplainer;
         }
         if ( !calledFromPrerender ) {
             this.explainerWrapper.style.height = this.explainerWrapper.offsetHeight + 'px';       
         }
         el.fadeInContent(content).then(() => {
+            var link = this.parent.returnMoreLink(this.field);
+            link.classList.add(s.moreLink);
             this.adjustExplainerTextHeight();
+            el.lastChild.appendChild(link);
+            console.log(el.lastChild);
         });
     }
     adjustExplainerTextHeight(){

@@ -33,6 +33,8 @@ const model = {
 
 const views = [];
 
+var scrollPosition = 0;
+
 function getRuntimeData(){
     var publicPath = '';
     if ( process.env.NODE_ENV === 'production' && !window.IS_PRERENDERING ){ // production build needs to know the public path of assets
@@ -166,5 +168,37 @@ export default class StateDebt extends PCTApp {
                 }
             });
         });
+    }
+    returnMoreLink(field){
+        console.log(field);
+        function scrollBack(){
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth'
+            });
+            this.removeEventListener('click', scrollBack);
+            this.classList.remove('showGoBack');
+        }
+        var link = document.createElement('a');
+        if ( field === 'credit2015' || field === 'credit2018' ){
+            field = 'credit_rating';
+        }
+        link.innerText = 'more';
+        link.href = '#' + field;
+        link.addEventListener('click', function(e){
+            e.preventDefault();
+            scrollPosition = window.pageYOffset;
+            var header = document.querySelector('.js-' + field);
+            header.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+            document.querySelectorAll('.showGoBack').forEach(function(each){
+                each.classList.remove('showGoBack');
+            });
+            header.classList.add('showGoBack');
+            header.addEventListener('click', scrollBack);
+        });
+        return link;
     }
 }

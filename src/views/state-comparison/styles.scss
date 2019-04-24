@@ -160,7 +160,7 @@
     }
     
 }
-.showGoBack {
+:global(.showGoBack) {
     cursor: pointer;
     background-color: $light_yellow;
     display: inline-block !important;

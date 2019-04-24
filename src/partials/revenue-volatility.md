@@ -1,1 +1,0 @@
-**Revenue volatility.** A measure of variation in tax collections. Low scores mean that revenue levels are similar from year to year, while high scores indicate that revenue varies more. More volatile states should plan for greater uncertainty. 

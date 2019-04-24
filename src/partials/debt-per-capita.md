@@ -1,1 +1,0 @@
-**Debt per capita.** Total debt relative to a state's population.
