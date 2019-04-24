@@ -26,7 +26,7 @@ $label_width: 128px;
     position: relative;
     left: -8px;
     cursor: pointer;
-    
+    overflow: hidden;
     &:hover, &.isHighlighted {
         background-color: $highlight_blue;
     }
