@@ -41,6 +41,7 @@ export default class FiftyStateView extends Element {
     prerender(){
          //container
         var view = super.prerender();
+        this.name = 'FiftyStateView';
         this.field = 'debt_percent_SPI';
         this.bars = [];
         this.barContainers = [];
