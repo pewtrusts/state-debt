@@ -190,7 +190,7 @@ export default class FiftyStateView extends Element {
     updateExplainerText(msg,data, calledFromPrerender){
         console.log(msg,data, this);
         var match = this.model.types.find(t => t.field === data),
-            content = `<p><strong>${!isNaN(match.label) ? 'Credit rating ' + match.label : match.label }.</strong> ${match.tooltip} </p>`,
+            content = match ? `<p><strong>${!isNaN(match.label) ? 'Credit rating ' + match.label : match.label }.</strong> ${match.tooltip} </p>` : '',
             el;
         if ( msg === 'field' ) {
             this.field = data; // so that the order of subs doesn't matter
