@@ -132,7 +132,7 @@ export default class FiftyStateView extends Element {
     }
     returnDataLabel(index){
         return `<div class="${s.dataLabel}" style="transform: translateX(${this.returnTranslateValue(index)})">
-                    ${this.formatValue(this.bars[index].data.d, this.bars[index].data.field)}
+                    ${this.formatValue(this.bars[index].data.d, this.bars[index].data.field).replace('-','–')}
                 </div>`;
     }
     returnTranslateValue(index){
