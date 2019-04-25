@@ -164,16 +164,27 @@
     cursor: pointer;
     background-color: $light_yellow;
     display: inline-block !important;
+    position: relative;
     &::after {
         content: ' go back';
         color: $gray;
         font-variant: small-caps;
         background-color: $highlight_blue;
+        line-height: 17px;
         padding: 0 3px 3px;
         font-size: 16px;
+        top: 0;
+        right: -60px;
+        bottom: 0;
+        position: absolute;
+
+
     }
     &:hover {
         text-decoration: underline;
     }
 
+}
+h3:global(.showGoBack)::after {
+    line-height: 25px;
 }

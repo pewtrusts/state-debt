@@ -183,22 +183,25 @@ export default class StateDebt extends PCTApp {
         if ( field === 'credit2015' || field === 'credit2018' ){
             field = 'credit_rating';
         }
+        var header = document.querySelector('.js-' + field);
         link.innerText = 'more';
         link.href = '#' + field;
         link.addEventListener('click', function(e){
             e.preventDefault();
             scrollPosition = window.pageYOffset;
-            var header = document.querySelector('.js-' + field);
-            header.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
-            document.querySelectorAll('.showGoBack').forEach(function(each){
-                each.classList.remove('showGoBack');
-            });
-            header.classList.add('showGoBack');
-            header.addEventListener('click', scrollBack);
+            if ( header ){
+                header.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+                document.querySelectorAll('.showGoBack').forEach(function(each){
+                    each.classList.remove('showGoBack');
+                });
+                header.classList.add('showGoBack');
+                header.addEventListener('click', scrollBack);
+            }
         });
-        return link;
+        return header ? link : null;
     }
 }

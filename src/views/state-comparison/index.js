@@ -78,8 +78,11 @@ export default class Comparison extends Element {
             interactive: true,
             content(reference){
                 var div = document.createElement('div');
+                var link = _this.parent.returnMoreLink(reference.dataset.field);
                 div.textContent = reference.dataset.content + ' ';
-                div.appendChild(_this.parent.returnMoreLink(reference.dataset.field));
+                if ( link ) {
+                    div.appendChild(_this.parent.returnMoreLink(reference.dataset.field));
+                }
                 return div;
             }
         });

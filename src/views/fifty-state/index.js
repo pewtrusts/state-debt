@@ -204,10 +204,12 @@ export default class FiftyStateView extends Element {
             this.explainerWrapper.style.height = this.explainerWrapper.offsetHeight + 'px';       
         }
         el.fadeInContent(content).then(() => {
-            var link = this.parent.returnMoreLink(this.field);
-            link.classList.add(s.moreLink);
+            var link = this.parent.returnMoreLink(data);
+            if ( link ) {
+                link.classList.add(s.moreLink);
+                el.lastChild.appendChild(link);
+            }
             this.adjustExplainerTextHeight();
-            el.lastChild.appendChild(link);
             console.log(el.lastChild);
         });
     }
