@@ -14,6 +14,7 @@ const initialCompare = ['US','AL'];
 
 export default class Comparison extends Element {
     prerender(){ // this prerender is called as part of the super constructor
+ 
         this.comparisons = [];
         // first loop through to instantiate the Comparisons. if prerendered, comparison.el will be the renders html. if not, it will be created
         this.model.groups.forEach((group, i) => {
@@ -69,6 +70,14 @@ export default class Comparison extends Element {
 
             }]
         ]);
+        function randomIntFromInterval(min,max){ // min and max included https://stackoverflow.com/a/7228322
+            return Math.floor(Math.random()*(max-min+1)+min);
+        }
+        var states = this.model.data.map(d => d.code);
+        var index = states.indexOf('US');
+        states.splice(index, 1);
+        S.setState('compare.1', states[randomIntFromInterval(0, states.length -1)]);
+        
     }
     initializeTooltips(){
         var els = document.querySelectorAll('.' + s.withTooltip),
@@ -88,10 +97,12 @@ export default class Comparison extends Element {
         });
     }
     update(msg,data){
-        console.log(this);
+        console.log(this, msg, data);
         this.comparisons.forEach(comparison => {
             comparison.update(msg, data);
         });
+        var input = document.querySelector('#compare-input-' + msg.split('.')[1]);
+        input.value = this.model.data.find(d => d.code === data).state;
     }
     initializeAutocompletes(){
         
