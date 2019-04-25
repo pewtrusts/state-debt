@@ -31,12 +31,12 @@ export default class ComparisonChart extends Comparison {
                        `;
     }
     returnTranslateValue(index){
-            if ( this.bars[index].data.d[this.bars[index].data.field] < 0 && this.model.types.find(t => t.field === this.bars[index].data.field).crossesZero ){
-                return `${(this.bars[index].placeZero(this.bars[index].data.field) * 100).toFixed(1)}%`;   
-            } else {
-                return `${( ( this.bars[index].linearScale(this.matches[index], this.data.field) + this.bars[index].placeZero(this.bars[index].data.field) ) * 100).toFixed(1) }%`;
-            }
+        if ( this.bars[index].data.d[this.bars[index].data.field] < 0 && this.model.types.find(t => t.field === this.bars[index].data.field).crossesZero ){
+            return 0;   
+        } else {
+            return `${( this.bars[index].linearScale(this.matches[index], this.data.field) * 100).toFixed(1) }%`;
         }
+    }
     partialTemplate(index){
         return `
                 <p class="${s.chartLabel} ${s['chartLabel' + (index + 1)]}">

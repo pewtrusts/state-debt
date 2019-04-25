@@ -9,16 +9,19 @@ import Element from '@UI/element';
             return div;
         }
         div.classList.add(s.bar, s['barColor' + this.data.color]);
-        div.style.transform = `translateX(${this.placeZero(this.data.field) * 100 + '%'}) scaleX(${this.linearScale(this.data.d, this.data.field)})`;
+        div.style.transform = `translateX(${this.parent.constructor.name === 'FiftyStateView' ? this.placeZero(this.data.field) * 100 + '%' : 0}) scaleX(${this.linearScale(this.data.d, this.data.field)})`;
 
         return div;
     }
     linearScale(match, field){
+        
         var typeObject = this.model.types.find(t => t.field === field),
-            scale = ( match[field] - typeObject.min ) / typeObject.spread,
+            //max = Math.max(typeObject.max, 100),
+            //min = Math.min(typeObject.min, 0),
+            scale = this.parent.constructor.name !== 'FiftyStateView' && typeObject.type === 'percent' ? match[field] / 1 : ( match[field] - typeObject.min ) / typeObject.spread,
             zeroPlacement = this.placeZero(field),
-            offset = typeObject.crossesZero ? 0 : .01,
-            adjusted = offset + ( scale * ( 1 - offset) ) - zeroPlacement;
+            offset = typeObject.crossesZero || this.parent.constructor.name !== 'FiftyStateView' ? 0 : .01,
+            adjusted = this.parent.constructor.name !== 'FiftyStateView' ? offset + ( scale * ( 1 - offset) ) : offset + ( scale * ( 1 - offset) ) - zeroPlacement;
         return adjusted;
     }
     placeZero(field){
@@ -38,7 +41,7 @@ import Element from '@UI/element';
         // in development mode, this.el is a js object but does not refer to element rendered on the page
         //var el = process.env.NODE_ENV === 'development' ? document.querySelector(`.js-bar-compare-${this.data.field}-${index}`) : this.el;
         window.requestAnimationFrame(() => {
-            this.el.style.transform = `translateX(${this.placeZero(this.data.field) * 100 + '%'}) scaleX(${this.linearScale(this.data.d, this.data.field)})`;
+            this.el.style.transform = `translateX(${this.parent.constructor.name === 'FiftyStateView' ? this.placeZero(this.data.field) * 100 + '%' : 0}) scaleX(${this.linearScale(this.data.d, this.data.field)})`;
         });       
     }
 
