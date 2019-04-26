@@ -26,3 +26,4 @@ export default class ComparisonText extends Comparison {
         return `<p class="${s.chartLabel} ${s.chartLabelText}">${this.matches[i].state}: <span class="${s['compareColor' + (i +1)]}">${this.model.dict[this.data.field] !== undefined ? this.model.dict[this.data.field][[this.matches[i][this.data.field]]] : this.matches[i][this.data.field]}</span></p>`;
     }
 }
+ 

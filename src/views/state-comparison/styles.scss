@@ -162,9 +162,19 @@
 }
 :global(.showGoBack) {
     cursor: pointer;
-    background-color: $light_yellow;
+    
     display: inline-block !important;
     position: relative;
+    &::before {
+        content: '';
+        display: block;
+        border-top: 5px solid rgba(0,0,0,0);
+        border-left: 10px solid #FF7F49;
+        border-bottom: 5px solid rgba(0,0,0,0);
+        position: absolute;
+        left: -14px;
+        top: 5px;
+    }
     &::after {
         content: ' go back';
         color: $gray;
@@ -173,10 +183,7 @@
         line-height: 17px;
         padding: 0 3px 3px;
         font-size: 16px;
-        top: 0;
         right: -60px;
-        bottom: 0;
-        position: absolute;
 
 
     }
@@ -186,5 +193,9 @@
 
 }
 h3:global(.showGoBack)::after {
-    line-height: 25px;
+    bottom: 4px;
+    position: absolute;
+}
+h3:global(.showGoBack)::before {
+    top:11px;
 }

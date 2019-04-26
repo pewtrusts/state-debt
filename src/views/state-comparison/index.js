@@ -60,6 +60,15 @@ export default class Comparison extends Element {
         });
         return view;
     }
+    randomize(){
+        function randomIntFromInterval(min,max){ // min and max included https://stackoverflow.com/a/7228322
+            return Math.floor(Math.random()*(max-min+1)+min);
+        }
+        var states = this.model.data.map(d => d.code);
+        var index = states.indexOf('US');
+        states.splice(index, 1);
+        S.setState('compare.1', states[randomIntFromInterval(0, states.length -1)]);
+    }
     init(){
         this.initializeAutocompletes();
         this.initializeTooltips();
@@ -70,14 +79,11 @@ export default class Comparison extends Element {
 
             }]
         ]);
-        function randomIntFromInterval(min,max){ // min and max included https://stackoverflow.com/a/7228322
-            return Math.floor(Math.random()*(max-min+1)+min);
-        }
-        var states = this.model.data.map(d => d.code);
-        var index = states.indexOf('US');
-        states.splice(index, 1);
-        S.setState('compare.1', states[randomIntFromInterval(0, states.length -1)]);
-        
+        if ( !window.IS_PRERENDERING ){
+          // setTimeout(() => {
+                this.randomize();
+          //  },5000);
+         }
     }
     initializeTooltips(){
         var els = document.querySelectorAll('.' + s.withTooltip),
