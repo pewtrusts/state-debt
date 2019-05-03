@@ -19,7 +19,7 @@ import Element from '@UI/element';
             //min = Math.min(typeObject.min, 0),
             scale = this.parent.name !== 'FiftyStateView' && typeObject.type === 'percent' ? match[field] / 1 : ( match[field] - typeObject.min ) / typeObject.spread,
             zeroPlacement = this.placeZero(field),
-            offset = typeObject.crossesZero || this.parent.name !== 'FiftyStateView' ? 0 : .01,
+            offset = typeObject.crossesZero || typeObject.type === 'percent' ? 0 : .01,
             adjusted = this.parent.name !== 'FiftyStateView' ? offset + ( scale * ( 1 - offset) ) : offset + ( scale * ( 1 - offset) ) - zeroPlacement;
         return adjusted;
     }
