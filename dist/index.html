@@ -1,1292 +1,1302 @@
-<body class="has-hover">
-  <main role="main" id="pew-app" class="pct-section no-js" data-data-hash="1883342734">
-    <script>
-      // rollbar code goes here
-    </script>
-    <!--<script src="https://cdn.polyfill.io/v2/polyfill.js?features=fetch,Promise,WebAnimations,Element.prototype.classList,Array.prototype.find"></script>-->
+<main role="main" id="pew-app" class="pct-section no-js" data-data-hash="-333630610">
+  <script>
+    // rollbar code goes here
+  </script>
+  <!--<script src="https://cdn.polyfill.io/v2/polyfill.js?features=fetch,Promise,WebAnimations,Element.prototype.classList,Array.prototype.find"></script>-->
 
-    <link class="emitted-css" href="/~/media/data-visualizations/interactives/2019/state-debt/css/styles.css?v=8672e3" rel="stylesheet">
+  <link class="emitted-css" href="/~/media/data-visualizations/interactives/2019/state-debt/css/styles.css?v=5c5f17" rel="stylesheet">
 
-    <section id="section-overview">
-      <h2 class="static" role="button" tabindex="0" aria-label="Show/hide content">Overview</h2>
-      <div class="js-inner-content">
+  <section id="section-overview">
+    <h2 class="static" role="button" tabindex="0" aria-label="Show/hide content">Overview</h2>
+    <div class="js-inner-content">
 
-        <p>
-          When state policymakers try to assess how much debt to take on for projects
-          such as roads, bridges, and schools, they often compare debt levels in
-          their state to those of others. Because no universal guidelines exist for
-          how much debt is affordable, many policymakers evaluate how their state
-          stacks up against others with a common credit rating or national median
-          debt levels.
-        </p>
-        <p>
-          But selecting a peer group based only on a common rating or using national
-          benchmarks overlooks many factors that influence borrowing levels. States
-          with growing populations, for example, tend to borrow more; a state’s
-          fiscal health affects the funds available for debt service; and policies
-          meant to limit state debt can influence how much local governments and
-          other state entities borrow for capital projects.
-        </p>
-        <p>
-          To address this gap, The Pew Charitable Trusts has created an interactive
-          tool to allow policymakers to compare states based on seven characteristics
-          related to debt. States can use these data to select more tailored peer
-          groups, giving them a deeper understanding of how states with similar
-          borrowing practices, constraints, and needs manage their borrowing.
-          Ultimately, these improved comparisons will help states make
-          better-informed decisions.
-        </p>
-        <p>
-          More information about these characteristics and why Pew chose them may be
-          found in the <a class="pct-static-anchor" id="about-the-data" href="#section-about">About the Data</a> section at the bottom of this page.
-        </p>
+      <p>
+        When state policymakers try to assess how much debt to take on for projects such as roads, bridges, and schools, they often compare debt levels in their state to those of others. Because no universal guidelines exist for how much debt is affordable, many policymakers evaluate how their state stacks up against others with a common credit rating or national median debt levels.
+      </p>
+      <p>
+        But selecting a peer group based only on a common rating or using national benchmarks overlooks many factors that influence borrowing levels. States with growing populations, for example, tend to borrow more; a state’s fiscal health affects the funds available for debt service; and policies meant to limit state debt can influence how much local governments and other state entities borrow for capital projects.
+      </p>
+      <p>
+        To address this gap, The Pew Charitable Trusts has created an interactive tool to allow policymakers to compare states based on seven characteristics related to debt. States can use these data to select more tailored peer groups, giving them a deeper understanding of how states with similar borrowing practices, constraints, and needs manage their borrowing. Ultimately, these improved comparisons will help states make better-informed decisions.
+      </p>
+      <p>
+        More information about these characteristics and why Pew chose them may be
+        found in the <a class="pct-static-anchor" id="about-the-data" href="#section-about">About the Data</a> section at the bottom of this page.
+      </p>
+    </div>
+  </section>
+  <section id="section-comparison">
+    <h2 class="static" role="button" tabindex="0" aria-label="Show/hide content">State Comparison</h2>
+    <div class="js-inner-content">
+      <div class="compare-selection-wrapper">
+        <span class="compare-label">Compare</span><br>
+        <div class="flex flex-start flex-baseline autoComplete_outerWrapper">
+          <div class="autoComplete_wrapper src-views-state-comparison--autoComplete_wrapper-0" id="autoComplete_wrapper-0">
+            <input autocomplete="off" type="text" id="compare-input-0" class="autoComplete src-views-state-comparison--autoComplete0" placeholder="Select state" value="U.S. Median">
+            <ul class="autoComplete_results_list"></ul>
+          </div>
+          <span>to</span>
+          <div class="autoComplete_wrapper src-views-state-comparison--autoComplete_wrapper-1" id="autoComplete_wrapper-1">
+            <input autocomplete="off" type="text" id="compare-input-1" class="autoComplete src-views-state-comparison--autoComplete1" placeholder="Select state" value="Alabama">
+            <ul class="autoComplete_results_list"></ul>
+          </div>
+        </div>
       </div>
-    </section>
-    <section id="section-comparison">
-      <h2 class="static" role="button" tabindex="0" aria-label="Show/hide content">State Comparison</h2>
-      <div class="js-inner-content">
-        <div class="compare-selection-wrapper">
-          <span class="compare-label">Compare</span><br>
-          <div class="flex flex-start flex-baseline autoComplete_outerWrapper">
-            <div class="autoComplete_wrapper src-views-state-comparison--autoComplete_wrapper-0" id="autoComplete_wrapper-0">
-              <input autocomplete="off" type="text" id="compare-input-0" class="autoComplete src-views-state-comparison--autoComplete0" placeholder="Select state" value="U.S. Median">
-              <ul class="autoComplete_results_list"></ul>
+      <div id="comparison-view">
+        <div class="undefined">
+          <h3 class="src-views-state-comparison--groupHeader">Borrowing Practices</h3>
+          <div class="src-views-state-comparison--typeContainer undefined">
+            <div class="src-views-state-comparison--typeDiv src-views-state-comparison--debt_limit_type">
+              <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="debt_limit_type" data-content="The kind of limit the state has on general obligation borrowing, one of the most common types of debt issued by states. These limits affect how states borrow." tabindex="0">General obligation debt limit type</h4>
+              <div class="js-text-compare-debt_limit_type">
+                <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">U.S. Median: <span class="src-components-comparison--compareColor1">N/A</span></p>
+                <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">Alabama: <span class="src-components-comparison--compareColor2">Constitutional Amendment</span></p>
+              </div>
             </div>
-            <span>to</span>
-            <div class="autoComplete_wrapper src-views-state-comparison--autoComplete_wrapper-1" id="autoComplete_wrapper-1">
-              <input autocomplete="off" type="text" id="compare-input-1" class="autoComplete src-views-state-comparison--autoComplete1" placeholder="Select state" value="Alabama">
-              <ul class="autoComplete_results_list"></ul>
+            <div class="src-views-state-comparison--typeDiv undefined">
+              <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="centralization" data-content="The degree to which borrowing is done by the state itself rather than by component units. Higher values mean that borrowing in the state is more centralized." tabindex="0">Centralization</h4>
+              <div class="js-text-compare-centralization">
+                <div class="src-components-comparison--chartContainer">
+
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
+                    U.S. Median
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
+                    <div class="js-bar-compare-centralization-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(0px) scaleX(0.712);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(71.2%)">
+                      71.2%
+                    </div>
+                  </div>
+
+
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
+                    Alabama
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
+                    <div class="js-bar-compare-centralization-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0px) scaleX(0.653);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(65.3%)">
+                      65.3%
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="src-views-state-comparison--typeDiv undefined">
+              <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="state_local_division" data-content="The share of combined state and local debt issued by local governments. States in which local governments borrow less tend to have higher state debt levels." tabindex="0">State-local borrowing division</h4>
+              <div class="js-text-compare-state_local_division">
+                <div class="src-components-comparison--chartContainer">
+
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
+                    U.S. Median
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
+                    <div class="js-bar-compare-state_local_division-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(0px) scaleX(0.5829);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(58.3%)">
+                      58.3%
+                    </div>
+                  </div>
+
+
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
+                    Alabama
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
+                    <div class="js-bar-compare-state_local_division-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0px) scaleX(0.7008);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(70.1%)">
+                      70.1%
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div id="comparison-view">
-          <div class="undefined">
-            <h3 class="src-views-state-comparison--groupHeader">Borrowing Practices</h3>
-            <div class="src-views-state-comparison--typeContainer undefined">
-              <div class="src-views-state-comparison--typeDiv src-views-state-comparison--debt_limit_type">
-                <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="debt_limit_type" data-content="The kind of limit the state has on GO borrowing, one of the most common types of debt issued by states. These limits affect how states borrow." tabindex="0">General Obligation Debt Limit Type</h4>
-                <div class="js-text-compare-debt_limit_type">
-                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">U.S. Median: <span class="src-components-comparison--compareColor1">N/A</span></p>
-                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">Alabama: <span class="src-components-comparison--compareColor2">Constitutional Amendment</span></p>
+        <div class="undefined">
+          <h3 class="src-views-state-comparison--groupHeader">Fiscal Conditions and Infrastructure Needs</h3>
+          <div class="src-views-state-comparison--typeContainer undefined">
+            <div class="src-views-state-comparison--typeDiv undefined">
+              <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="revenue_volatility" data-content="A measure of variation in tax collections. Low scores mean that revenue levels are similar from year to year, while high scores indicate that revenue varies more. More volatile states should plan for greater uncertainty." tabindex="0">Revenue volatility</h4>
+              <div class="js-text-compare-revenue_volatility">
+                <div class="src-components-comparison--chartContainer">
+
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
+                    U.S. Median
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
+                    <div class="js-bar-compare-revenue_volatility-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(0px) scaleX(0.0752436);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(7.5%)">
+                      5.0
+                    </div>
+                  </div>
+
+
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
+                    Alabama
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
+                    <div class="js-bar-compare-revenue_volatility-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0px) scaleX(0.0638968);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(6.4%)">
+                      4.6
+                    </div>
+                  </div>
+
                 </div>
               </div>
-              <div class="src-views-state-comparison--typeDiv undefined">
-                <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="centralization" data-content="The degree to which borrowing is done by the state itself rather than by a component unit—a legally separate entity such as a housing or turnpike authority. Higher values mean the state is more centralized." tabindex="0">Centralization</h4>
-                <div class="js-text-compare-centralization">
-                  <div class="src-components-comparison--chartContainer">
+            </div>
+            <div class="src-views-state-comparison--typeDiv undefined">
+              <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="ten_year_pop_growth" data-content="The 10-year population growth rate from 2008 to 2017. Growing populations are associated with greater infrastructure investment." tabindex="0">Population growth</h4>
+              <div class="js-text-compare-ten_year_pop_growth">
+                <div class="src-components-comparison--chartContainer">
 
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
-                      U.S. Median
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
-                      <div class="js-bar-compare-centralization-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(0%) scaleX(0.288058);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(28.8%)">
-                        28.8%
-                      </div>
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
+                    U.S. Median
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
+                    <div class="js-bar-compare-ten_year_pop_growth-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(0px) scaleX(0.0619);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(6.2%)">
+                      6.2%
                     </div>
-
-
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
-                      Alabama
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
-                      <div class="js-bar-compare-centralization-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.347169);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(34.7%)">
-                        34.7%
-                      </div>
-                    </div>
-
                   </div>
-                </div>
-              </div>
-              <div class="src-views-state-comparison--typeDiv undefined">
-                <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="state_local_division" data-content="The share of combined state and local debt issued by local governments. States where local governments borrow less tend to have higher debt levels." tabindex="0">State-Local Borrowing Division</h4>
-                <div class="js-text-compare-state_local_division">
-                  <div class="src-components-comparison--chartContainer">
 
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
-                      U.S. Median
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
-                      <div class="js-bar-compare-state_local_division-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(0%) scaleX(0.580501);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(58.1%)">
-                        58.3%
-                      </div>
+
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
+                    Alabama
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
+                    <div class="js-bar-compare-ten_year_pop_growth-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0px) scaleX(0.0332);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(3.3%)">
+                      3.3%
                     </div>
-
-
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
-                      Alabama
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
-                      <div class="js-bar-compare-state_local_division-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.747198);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(74.7%)">
-                        70.1%
-                      </div>
-                    </div>
-
                   </div>
+
                 </div>
               </div>
             </div>
           </div>
-          <div class="undefined">
-            <h3 class="src-views-state-comparison--groupHeader">Fiscal Conditions and Infrastructure Needs</h3>
-            <div class="src-views-state-comparison--typeContainer undefined">
-              <div class="src-views-state-comparison--typeDiv undefined">
-                <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="revenue_volatility" data-content="A measure of variation in tax collections. Low scores mean that revenue levels are similar from year to year, while high scores indicate that revenue varies more. More volatile states should plan for greater uncertainty." tabindex="0">Revenue Volatility</h4>
-                <div class="js-text-compare-revenue_volatility">
-                  <div class="src-components-comparison--chartContainer">
+        </div>
+        <div class="undefined">
+          <h3 class="src-views-state-comparison--groupHeader">Debt Levels</h3>
+          <div class="src-views-state-comparison--typeContainer undefined">
+            <div class="src-views-state-comparison--typeDiv undefined">
+              <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="debt_per_capita" data-content="Total debt relative to a state’s population." tabindex="0">Debt per capita</h4>
+              <div class="js-text-compare-debt_per_capita">
+                <div class="src-components-comparison--chartContainer">
 
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
-                      U.S. Median
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
-                      <div class="js-bar-compare-revenue_volatility-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(0%) scaleX(0.0752436);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(7.5%)">
-                        5.0
-                      </div>
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
+                    U.S. Median
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
+                    <div class="js-bar-compare-debt_per_capita-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(0px) scaleX(0.236176);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(23.6%)">
+                      $3,198
                     </div>
-
-
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
-                      Alabama
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
-                      <div class="js-bar-compare-revenue_volatility-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0638968);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(6.4%)">
-                        4.6
-                      </div>
-                    </div>
-
                   </div>
+
+
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
+                    Alabama
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
+                    <div class="js-bar-compare-debt_per_capita-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0px) scaleX(0.104128);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(10.4%)">
+                      $1,839
+                    </div>
+                  </div>
+
                 </div>
               </div>
-              <div class="src-views-state-comparison--typeDiv undefined">
-                <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="ten_year_pop_growth" data-content="The 10-year population growth rate from 2008 to 2017. Growing populations are associated with greater infrastructure investment." tabindex="0">Population Growth</h4>
-                <div class="js-text-compare-ten_year_pop_growth">
-                  <div class="src-components-comparison--chartContainer">
+            </div>
+            <div class="src-views-state-comparison--typeDiv undefined">
+              <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="debt_percent_SPI" data-content="Total debt relative to state personal income, a measure of economic resources." tabindex="0">Debt as a percentage of SPI</h4>
+              <div class="js-text-compare-debt_percent_SPI">
+                <div class="src-components-comparison--chartContainer">
 
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
-                      U.S. Median
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
-                      <div class="js-bar-compare-ten_year_pop_growth-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(7.46771%) scaleX(0.347558);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(42.2%)">
-                        6.2%
-                      </div>
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
+                    U.S. Median
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
+                    <div class="js-bar-compare-debt_percent_SPI-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(0px) scaleX(0.0734);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(7.3%)">
+                      7.3%
                     </div>
-
-
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
-                      Alabama
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
-                      <div class="js-bar-compare-ten_year_pop_growth-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(7.46771%) scaleX(0.186412);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(26.1%)">
-                        3.3%
-                      </div>
-                    </div>
-
                   </div>
+
+
+                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
+                    Alabama
+                  </p>
+                  <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
+                    <div class="js-bar-compare-debt_percent_SPI-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0px) scaleX(0.0481);"></div>
+                    <div class="src-components-comparison--dataLabel" style="transform: translateX(4.8%)">
+                      4.8%
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
           </div>
-          <div class="undefined">
-            <h3 class="src-views-state-comparison--groupHeader">Debt Levels</h3>
-            <div class="src-views-state-comparison--typeContainer undefined">
-              <div class="src-views-state-comparison--typeDiv undefined">
-                <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="debt_per_capita" data-content="Total debt relative to a state’s population." tabindex="0">Debt per Capita</h4>
-                <div class="js-text-compare-debt_per_capita">
-                  <div class="src-components-comparison--chartContainer">
-
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
-                      U.S. Median
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
-                      <div class="js-bar-compare-debt_per_capita-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(0%) scaleX(0.236176);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(23.6%)">
-                        $3,198
-                      </div>
-                    </div>
-
-
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
-                      Alabama
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
-                      <div class="js-bar-compare-debt_per_capita-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.104128);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(10.4%)">
-                        $1,839
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <div class="src-views-state-comparison--typeDiv undefined">
-                <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="debt_percent_SPI" data-content="Total debt relative to state personal income, a measure of economic resources." tabindex="0">Debt as a Percentage of SPI</h4>
-                <div class="js-text-compare-debt_percent_SPI">
-                  <div class="src-components-comparison--chartContainer">
-
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel1">
-                      U.S. Median
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer1">
-                      <div class="js-bar-compare-debt_percent_SPI-0 src-components-bar--bar src-components-bar--barColor1" style="transform: translateX(0%) scaleX(0.351358);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(35.1%)">
-                        7.3%
-                      </div>
-                    </div>
-
-
-                    <p class="src-components-comparison--chartLabel src-components-comparison--chartLabel2">
-                      Alabama
-                    </p>
-                    <div class="src-components-comparison--barContainer src-components-comparison--barContainer2">
-                      <div class="js-bar-compare-debt_percent_SPI-1 src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.191721);"></div>
-                      <div class="src-components-comparison--dataLabel" style="transform: translateX(19.2%)">
-                        4.8%
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
+        </div>
+        <div class="src-views-state-comparison--credit-rating">
+          <h3 class="src-views-state-comparison--groupHeader">Credit Rating</h3>
+          <div class="src-views-state-comparison--typeContainer src-views-state-comparison--credit-rating">
+            <div class="src-views-state-comparison--typeDiv src-views-state-comparison--credit2015">
+              <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="credit2015" data-content="Standard &amp; Poor’s general obligation or issuer credit rating." tabindex="0">2015</h4>
+              <div class="js-text-compare-credit2015">
+                <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">U.S. Median: <span class="src-components-comparison--compareColor1">N/A</span></p>
+                <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">Alabama: <span class="src-components-comparison--compareColor2">AA</span></p>
               </div>
             </div>
-          </div>
-          <div class="src-views-state-comparison--credit-rating">
-            <h3 class="src-views-state-comparison--groupHeader">Credit Rating</h3>
-            <div class="src-views-state-comparison--typeContainer src-views-state-comparison--credit-rating">
-              <div class="src-views-state-comparison--typeDiv src-views-state-comparison--credit2015">
-                <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="credit2015" data-content="Standard &amp; Poor’s general obligation credit rating." tabindex="0">2015</h4>
-                <div class="js-text-compare-credit2015">
-                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">U.S. Median: <span class="src-components-comparison--compareColor1">N/A</span></p>
-                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">Alabama: <span class="src-components-comparison--compareColor2">AA</span></p>
-                </div>
-              </div>
-              <div class="src-views-state-comparison--typeDiv src-views-state-comparison--credit2018">
-                <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="credit2018" data-content="Standard &amp; Poor’s general obligation credit rating." tabindex="0">2018</h4>
-                <div class="js-text-compare-credit2018">
-                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">U.S. Median: <span class="src-components-comparison--compareColor1">N/A</span></p>
-                  <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">Alabama: <span class="src-components-comparison--compareColor2">AA</span></p>
-                </div>
+            <div class="src-views-state-comparison--typeDiv src-views-state-comparison--credit2018">
+              <h4 class="src-views-state-comparison--typeHeader src-views-state-comparison--withTooltip" data-field="credit2018" data-content="Standard &amp; Poor’s general obligation or issuer credit rating." tabindex="0">2018</h4>
+              <div class="js-text-compare-credit2018">
+                <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">U.S. Median: <span class="src-components-comparison--compareColor1">N/A</span></p>
+                <p class="src-components-comparison--chartLabel src-components-comparison--chartLabelText">Alabama: <span class="src-components-comparison--compareColor2">AA</span></p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section id="section-states">
-      <h2 class="static" role="button" tabindex="0" aria-label="Show/hide content">50-State Data</h2>
-      <div class="js-inner-content">
-        <div class="js-fifty-state-selections">
-          <div class="src-views-fifty-state-selections--dropdownWrapper"><label class="src-views-fifty-state-selections--dropdownOuter">Select field:<div class="src-views-fifty-state-selections--dropdownInner">
-                <div class="js-dropdown-select-field submodules-UI-js-inputs--PCTDropdown src-components-dropdown--dropdown" tabindex="0">
-                  <div class="js-input-div">Debt as a Percentage of SPI</div>
-                  <ul>
-                    <li data-value="centralization">Centralization</li>
-                    <li data-value="debt_percent_SPI" class="selected">Debt as a Percentage of SPI</li>
-                    <li data-value="debt_per_capita">Debt per Capita</li>
-                    <li data-value="ten_year_pop_growth">Population Growth</li>
-                    <li data-value="revenue_volatility">Revenue Volatility</li>
-                    <li data-value="state_local_division">State-Local Borrowing Division</li>
-                  </ul>
-                </div>
-              </div></label><label class="src-views-fifty-state-selections--dropdownOuter">Group by:<div class="src-views-fifty-state-selections--dropdownInner">
-                <div class="js-dropdown-group-by submodules-UI-js-inputs--PCTDropdown src-components-dropdown--dropdown" tabindex="0">
-                  <div class="js-input-div">— None —</div>
-                  <ul>
-                    <li data-value="null" class="selected">— None —</li>
-                    <li data-value="census">Census region and division</li>
-                    <li data-value="credit2015">Credit rating 2015</li>
-                    <li data-value="credit2018">Credit rating 2018</li>
-                    <li data-value="debt_limit_type">General Obligation Debt Limit Type</li>
-                  </ul>
-                </div>
-              </div></label></div>
-          <div id="explainer-wrapper" style="height: 68px;">
-            <div id="field-explainer" class="">
-              <p><strong>Debt as a percentage of state personal income.</strong> Total debt relative to state personal income, a measure of economic resources. For more information, please see “About the Data” below.</p>
-            </div>
-            <div id="group-explainer"></div>
+    </div>
+  </section>
+  <section id="section-states">
+    <h2 class="static" role="button" tabindex="0" aria-label="Show/hide content">50-State Data</h2>
+    <div class="js-inner-content">
+      <div class="js-fifty-state-selections">
+        <div class="src-views-fifty-state-selections--dropdownWrapper"><label class="src-views-fifty-state-selections--dropdownOuter">Select field:<div class="src-views-fifty-state-selections--dropdownInner">
+              <div class="js-dropdown-select-field submodules-UI-js-inputs--PCTDropdown src-components-dropdown--dropdown" tabindex="0">
+                <div class="js-input-div">Debt as a percentage of SPI</div>
+                <ul>
+                  <li data-value="centralization">Centralization</li>
+                  <li data-value="debt_percent_SPI" class="selected">Debt as a percentage of SPI</li>
+                  <li data-value="debt_per_capita">Debt per capita</li>
+                  <li data-value="ten_year_pop_growth">Population growth</li>
+                  <li data-value="revenue_volatility">Revenue volatility</li>
+                  <li data-value="state_local_division">State-local borrowing division</li>
+                </ul>
+              </div>
+            </div></label><label class="src-views-fifty-state-selections--dropdownOuter">Group by:<div class="src-views-fifty-state-selections--dropdownInner">
+              <div class="js-dropdown-group-by submodules-UI-js-inputs--PCTDropdown src-components-dropdown--dropdown" tabindex="0">
+                <div class="js-input-div">— None —</div>
+                <ul>
+                  <li data-value="null" class="selected">— None —</li>
+                  <li data-value="census">Census region and division</li>
+                  <li data-value="credit2015">Credit rating 2015</li>
+                  <li data-value="credit2018">Credit rating 2018</li>
+                  <li data-value="debt_limit_type">General obligation debt limit type</li>
+                </ul>
+              </div>
+            </div></label></div>
+        <div id="explainer-wrapper" style="height: 50px;">
+          <div id="field-explainer" class="">
+            <p><strong>Debt as a percentage of SPI.</strong> Total debt relative to state personal income, a measure of economic resources. <a href="#debt_percent_SPI" class="src-views-fifty-state--moreLink">more</a></p>
           </div>
-          <div class="flex">
-            <p class="src-views-fifty-state-selections--label src-views-fifty-state-selections--labelSort flex"><span>Sort by:</span> <span><a class="src-views-fifty-state-selections--sortBy src-views-fifty-state-selections--sortActive" data-sort="alpha" href="#">A–Z</a> | <a class="src-views-fifty-state-selections--sortBy" data-sort="asc" href="#">Low–High</a> | <a class="src-views-fifty-state-selections--sortBy" data-sort="desc" href="#">High–Low</a></span></p>
-            <p class="src-views-fifty-state-selections--label undefined">Select a state to highlight | <a id="clear-all-highlight" href="#">Clear all</a></p>
-          </div>
+          <div id="group-explainer"></div>
         </div>
-        <div id="fifty-state-view">
-          <div class="js-fifty-chart-container">
-            <div class="src-views-fifty-state--groupDiv">
-              <div id="barContainer-AL" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Alabama</p>
-                <div class="bar-state-AL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.191721);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(19.2%)">
-                  4.8%
-                </div>
+        <div class="flex">
+          <p class="src-views-fifty-state-selections--label src-views-fifty-state-selections--labelSort flex"><span>Sort by:</span> <span><a class="src-views-fifty-state-selections--sortBy src-views-fifty-state-selections--sortActive" data-sort="alpha" href="#">A–Z</a> | <a class="src-views-fifty-state-selections--sortBy" data-sort="asc" href="#">Low–High</a> | <a class="src-views-fifty-state-selections--sortBy" data-sort="desc" href="#">High–Low</a></span></p>
+          <p class="src-views-fifty-state-selections--label undefined">Select a state to highlight | <a id="clear-all-highlight" href="#">Clear all</a></p>
+        </div>
+      </div>
+      <div id="fifty-state-view">
+        <div class="js-fifty-chart-container">
+          <div class="src-views-fifty-state--groupDiv">
+            <div id="barContainer-AL" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Alabama</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-AL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.183556);"></div>
               </div>
-              <div id="barContainer-AK" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Alaska</p>
-                <div class="bar-state-AK src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.728681);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(72.9%)">
-                  13.3%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(18.4%)">
+                4.8%
               </div>
-              <div id="barContainer-AZ" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Arizona</p>
-                <div class="bar-state-AZ src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.219484);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(21.9%)">
-                  5.3%
-                </div>
+            </div>
+            <div id="barContainer-AK" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Alaska</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-AK src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.72594);"></div>
               </div>
-              <div id="barContainer-AR" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Arkansas</p>
-                <div class="bar-state-AR src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.15891);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(15.9%)">
-                  4.3%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(72.6%)">
+                13.3%
               </div>
-              <div id="barContainer-CA" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">California</p>
-                <div class="bar-state-CA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.336845);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(33.7%)">
-                  7.1%
-                </div>
+            </div>
+            <div id="barContainer-AZ" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Arizona</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-AZ src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.2116);"></div>
               </div>
-              <div id="barContainer-CO" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Colorado</p>
-                <div class="bar-state-CO src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.271855);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(27.2%)">
-                  6.1%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(21.2%)">
+                5.3%
               </div>
-              <div id="barContainer-CT" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Connecticut</p>
-                <div class="bar-state-CT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.798719);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(79.9%)">
-                  14.4%
-                </div>
+            </div>
+            <div id="barContainer-AR" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Arkansas</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-AR src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.150414);"></div>
               </div>
-              <div id="barContainer-DE" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Delaware</p>
-                <div class="bar-state-DE src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.593021);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(59.3%)">
-                  11.2%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(15.0%)">
+                4.3%
               </div>
-              <div id="barContainer-FL" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Florida</p>
-                <div class="bar-state-FL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.116635);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(11.7%)">
-                  3.6%
-                </div>
+            </div>
+            <div id="barContainer-CA" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">California</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-CA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.330147);"></div>
               </div>
-              <div id="barContainer-GA" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Georgia</p>
-                <div class="bar-state-GA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.085717);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(8.6%)">
-                  3.1%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(33.0%)">
+                7.1%
               </div>
-              <div id="barContainer-HI" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Hawaii</p>
-                <div class="bar-state-HI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.681989);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(68.2%)">
-                  12.6%
-                </div>
+            </div>
+            <div id="barContainer-CO" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Colorado</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-CO src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.2645);"></div>
               </div>
-              <div id="barContainer-ID" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Idaho</p>
-                <div class="bar-state-ID src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.24914);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(24.9%)">
-                  5.7%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(26.4%)">
+                6.1%
               </div>
-              <div id="barContainer-IL" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Illinois</p>
-                <div class="bar-state-IL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.509101);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(50.9%)">
-                  9.8%
-                </div>
+            </div>
+            <div id="barContainer-CT" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Connecticut</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-CT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.796686);"></div>
               </div>
-              <div id="barContainer-IN" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Indiana</p>
-                <div class="bar-state-IN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.397419);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(39.7%)">
-                  8.1%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(79.7%)">
+                14.4%
               </div>
-              <div id="barContainer-IA" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Iowa</p>
-                <div class="bar-state-IA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.15891);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(15.9%)">
-                  4.3%
-                </div>
+            </div>
+            <div id="barContainer-DE" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Delaware</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-DE src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.58891);"></div>
               </div>
-              <div id="barContainer-KS" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Kansas</p>
-                <div class="bar-state-KS src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.238413);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(23.8%)">
-                  5.6%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(58.9%)">
+                11.2%
               </div>
-              <div id="barContainer-KY" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Kentucky</p>
-                <div class="bar-state-KY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.397419);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(39.7%)">
-                  8.1%
-                </div>
+            </div>
+            <div id="barContainer-FL" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Florida</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-FL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.107712);"></div>
               </div>
-              <div id="barContainer-LA" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Louisiana</p>
-                <div class="bar-state-LA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.442218);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(44.2%)">
-                  8.8%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(10.8%)">
+                3.6%
               </div>
-              <div id="barContainer-ME" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Maine</p>
-                <div class="bar-state-ME src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.44348);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(44.3%)">
-                  8.8%
-                </div>
+            </div>
+            <div id="barContainer-GA" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Georgia</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-GA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0764818);"></div>
               </div>
-              <div id="barContainer-MD" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Maryland</p>
-                <div class="bar-state-MD src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.384168);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(38.4%)">
-                  7.9%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(7.6%)">
+                3.1%
               </div>
-              <div id="barContainer-MA" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Massachusetts</p>
+            </div>
+            <div id="barContainer-HI" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Hawaii</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-HI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.678776);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(67.9%)">
+                12.6%
+              </div>
+            </div>
+            <div id="barContainer-ID" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Idaho</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-ID src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.241555);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(24.2%)">
+                5.7%
+              </div>
+            </div>
+            <div id="barContainer-IL" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Illinois</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-IL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.504143);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(50.4%)">
+                9.8%
+              </div>
+            </div>
+            <div id="barContainer-IN" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Indiana</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-IN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.391332);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(39.1%)">
+                8.1%
+              </div>
+            </div>
+            <div id="barContainer-IA" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Iowa</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-IA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.150414);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(15.0%)">
+                4.3%
+              </div>
+            </div>
+            <div id="barContainer-KS" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Kansas</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-KS src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.23072);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(23.1%)">
+                5.6%
+              </div>
+            </div>
+            <div id="barContainer-KY" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Kentucky</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-KY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.391332);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(39.1%)">
+                8.1%
+              </div>
+            </div>
+            <div id="barContainer-LA" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Louisiana</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-LA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.436584);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(43.7%)">
+                8.8%
+              </div>
+            </div>
+            <div id="barContainer-ME" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Maine</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-ME src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.437859);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(43.8%)">
+                8.8%
+              </div>
+            </div>
+            <div id="barContainer-MD" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Maryland</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-MD src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.377948);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(37.8%)">
+                7.9%
+              </div>
+            </div>
+            <div id="barContainer-MA" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Massachusetts</p>
+              <div class="src-views-fifty-state--barInnerContainer">
                 <div class="bar-state-MA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(1);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(100.0%)">
-                  17.6%
-                </div>
               </div>
-              <div id="barContainer-MI" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Michigan</p>
-                <div class="bar-state-MI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.374704);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(37.5%)">
-                  7.7%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(100.0%)">
+                17.6%
               </div>
-              <div id="barContainer-MN" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Minnesota</p>
-                <div class="bar-state-MN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.264914);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(26.5%)">
-                  6.0%
-                </div>
+            </div>
+            <div id="barContainer-MI" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Michigan</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-MI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.368388);"></div>
               </div>
-              <div id="barContainer-MS" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Mississippi</p>
-                <div class="bar-state-MS src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.337476);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(33.7%)">
-                  7.1%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(36.8%)">
+                7.7%
               </div>
-              <div id="barContainer-MO" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Missouri</p>
-                <div class="bar-state-MO src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.360822);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(36.1%)">
-                  7.5%
-                </div>
+            </div>
+            <div id="barContainer-MN" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Minnesota</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-MN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.257489);"></div>
               </div>
-              <div id="barContainer-MT" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Montana</p>
-                <div class="bar-state-MT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.349465);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.9%)">
-                  7.3%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(25.7%)">
+                6.0%
               </div>
-              <div id="barContainer-NE" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Nebraska</p>
-                <div class="bar-state-NE src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.01);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(1.0%)">
-                  1.9%
-                </div>
+            </div>
+            <div id="barContainer-MS" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Mississippi</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-MS src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.330784);"></div>
               </div>
-              <div id="barContainer-NV" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Nevada</p>
-                <div class="bar-state-NV src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0585851);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(5.9%)">
-                  2.7%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(33.1%)">
+                7.1%
               </div>
-              <div id="barContainer-NH" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">New Hampshire</p>
-                <div class="bar-state-NH src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.602486);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(60.2%)">
-                  11.3%
-                </div>
+            </div>
+            <div id="barContainer-MO" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Missouri</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-MO src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.354366);"></div>
               </div>
-              <div id="barContainer-NJ" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">New Jersey</p>
-                <div class="bar-state-NJ src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.670631);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(67.1%)">
-                  12.4%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(35.4%)">
+                7.5%
               </div>
-              <div id="barContainer-NM" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">New Mexico</p>
-                <div class="bar-state-NM src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.423289);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(42.3%)">
-                  8.5%
-                </div>
+            </div>
+            <div id="barContainer-MT" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Montana</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-MT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.342894);"></div>
               </div>
-              <div id="barContainer-NY" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">New York</p>
-                <div class="bar-state-NY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.634034);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(63.4%)">
-                  11.8%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.3%)">
+                7.3%
               </div>
-              <div id="barContainer-NC" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">North Carolina</p>
-                <div class="bar-state-NC src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.153231);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(15.3%)">
-                  4.2%
-                </div>
+            </div>
+            <div id="barContainer-NE" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Nebraska</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-NE src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0);"></div>
               </div>
-              <div id="barContainer-ND" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">North Dakota</p>
-                <div class="bar-state-ND src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.198031);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(19.8%)">
-                  4.9%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(0.0%)">
+                1.9%
               </div>
-              <div id="barContainer-OH" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Ohio</p>
-                <div class="bar-state-OH src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.290153);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(29.0%)">
-                  6.4%
-                </div>
+            </div>
+            <div id="barContainer-NV" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Nevada</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-NV src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0490758);"></div>
               </div>
-              <div id="barContainer-OK" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Oklahoma</p>
-                <div class="bar-state-OK src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.214436);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(21.4%)">
-                  5.2%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(4.9%)">
+                2.7%
               </div>
-              <div id="barContainer-OR" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Oregon</p>
-                <div class="bar-state-OR src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.348834);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.9%)">
-                  7.3%
-                </div>
+            </div>
+            <div id="barContainer-NH" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">New Hampshire</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-NH src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.59847);"></div>
               </div>
-              <div id="barContainer-PA" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Pennsylvania</p>
-                <div class="bar-state-PA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.35325);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(35.3%)">
-                  7.4%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(59.8%)">
+                11.3%
               </div>
-              <div id="barContainer-RI" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Rhode Island</p>
-                <div class="bar-state-RI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.962772);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(96.3%)">
-                  17.0%
-                </div>
+            </div>
+            <div id="barContainer-NJ" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">New Jersey</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-NJ src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.667304);"></div>
               </div>
-              <div id="barContainer-SC" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">South Carolina</p>
-                <div class="bar-state-SC src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.376597);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(37.7%)">
-                  7.7%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(66.7%)">
+                12.4%
               </div>
-              <div id="barContainer-SD" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">South Dakota</p>
-                <div class="bar-state-SD src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.394895);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(39.5%)">
-                  8.0%
-                </div>
+            </div>
+            <div id="barContainer-NM" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">New Mexico</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-NM src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.417463);"></div>
               </div>
-              <div id="barContainer-TN" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Tennessee</p>
-                <div class="bar-state-TN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0182027);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(1.8%)">
-                  2.1%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(41.7%)">
+                8.5%
               </div>
-              <div id="barContainer-TX" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Texas</p>
-                <div class="bar-state-TX src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.106539);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(10.7%)">
-                  3.5%
-                </div>
+            </div>
+            <div id="barContainer-NY" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">New York</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-NY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.630338);"></div>
               </div>
-              <div id="barContainer-US" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">U.S. Median</p>
-                <div class="bar-state-US src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.351358);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(35.1%)">
-                  7.3%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(63.0%)">
+                11.8%
               </div>
-              <div id="barContainer-UT" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Utah</p>
-                <div class="bar-state-UT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.279426);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(27.9%)">
-                  6.2%
-                </div>
+            </div>
+            <div id="barContainer-NC" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">North Carolina</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-NC src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.144678);"></div>
               </div>
-              <div id="barContainer-VT" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Vermont</p>
-                <div class="bar-state-VT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.540019);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(54.0%)">
-                  10.3%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(14.5%)">
+                4.2%
               </div>
-              <div id="barContainer-VA" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Virginia</p>
-                <div class="bar-state-VA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.29457);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(29.5%)">
-                  6.4%
-                </div>
+            </div>
+            <div id="barContainer-ND" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">North Dakota</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-ND src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.18993);"></div>
               </div>
-              <div id="barContainer-WA" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Washington</p>
-                <div class="bar-state-WA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.423289);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(42.3%)">
-                  8.5%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(19.0%)">
+                4.9%
               </div>
-              <div id="barContainer-WV" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">West Virginia</p>
-                <div class="bar-state-WV src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.556424);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(55.6%)">
-                  10.6%
-                </div>
+            </div>
+            <div id="barContainer-OH" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Ohio</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-OH src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.282983);"></div>
               </div>
-              <div id="barContainer-WI" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Wisconsin</p>
-                <div class="bar-state-WI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.413824);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(41.4%)">
-                  8.3%
-                </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(28.3%)">
+                6.4%
               </div>
-              <div id="barContainer-WY" class="src-views-fifty-state--barContainer">
-                <p class="src-views-fifty-state--barLabel">Wyoming</p>
-                <div class="bar-state-WY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0478585);"></div>
-                <div class="src-views-fifty-state--placeHolder"></div>
-                <div class="src-views-fifty-state--dataLabel" style="transform: translateX(4.8%)">
-                  2.5%
-                </div>
+            </div>
+            <div id="barContainer-OK" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Oklahoma</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-OK src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.206501);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(20.7%)">
+                5.2%
+              </div>
+            </div>
+            <div id="barContainer-OR" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Oregon</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-OR src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.342256);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.2%)">
+                7.3%
+              </div>
+            </div>
+            <div id="barContainer-PA" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Pennsylvania</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-PA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.346718);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.7%)">
+                7.4%
+              </div>
+            </div>
+            <div id="barContainer-RI" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Rhode Island</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-RI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.962396);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(96.2%)">
+                17.0%
+              </div>
+            </div>
+            <div id="barContainer-SC" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">South Carolina</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-SC src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.3703);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(37.0%)">
+                7.7%
+              </div>
+            </div>
+            <div id="barContainer-SD" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">South Dakota</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-SD src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.388783);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(38.9%)">
+                8.0%
+              </div>
+            </div>
+            <div id="barContainer-TN" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Tennessee</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-TN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.00828553);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(0.8%)">
+                2.1%
+              </div>
+            </div>
+            <div id="barContainer-TX" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Texas</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-TX src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0975143);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(9.8%)">
+                3.5%
+              </div>
+            </div>
+            <div id="barContainer-US" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">U.S. Median</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-US src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.344806);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.5%)">
+                7.3%
+              </div>
+            </div>
+            <div id="barContainer-UT" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Utah</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-UT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.272148);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(27.2%)">
+                6.2%
+              </div>
+            </div>
+            <div id="barContainer-VT" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Vermont</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-VT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.535373);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(53.5%)">
+                10.3%
+              </div>
+            </div>
+            <div id="barContainer-VA" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Virginia</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-VA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.287444);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(28.7%)">
+                6.4%
+              </div>
+            </div>
+            <div id="barContainer-WA" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Washington</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-WA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.417463);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(41.7%)">
+                8.5%
+              </div>
+            </div>
+            <div id="barContainer-WV" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">West Virginia</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-WV src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.551944);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(55.2%)">
+                10.6%
+              </div>
+            </div>
+            <div id="barContainer-WI" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Wisconsin</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-WI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.407903);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(40.8%)">
+                8.3%
+              </div>
+            </div>
+            <div id="barContainer-WY" class="src-views-fifty-state--barContainer">
+              <p class="src-views-fifty-state--barLabel">Wyoming</p>
+              <div class="src-views-fifty-state--barInnerContainer">
+                <div class="bar-state-WY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0382409);"></div>
+              </div>
+              <div class="src-views-fifty-state--placeHolder"></div>
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(3.8%)">
+                2.5%
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section id="section-about">
-      <h2 class="static" role="button" tabindex="0" aria-label="Show/hide content">About the Data</h2>
-      <div class="js-inner-content">
+    </div>
+  </section>
+  <section id="section-about">
+    <h2 class="static" role="button" tabindex="0" aria-label="Show/hide content">About the Data</h2>
+    <div class="js-inner-content">
+
+      <p>
+        Pew researchers developed this list of characteristics by examining relevant literature and consulting subject matter experts. The final set of seven characteristics included in the tool was selected based on evidence in the literature that the characteristics are related to state debt, the feasibility of collecting the data used to construct the characteristic, and a desire to avoid redundancy. Pew also limited the number of characteristics to make the tool easy to use and understand.
+      </p>
+      <p>
+        The goal of this tool is not to create an exhaustive catalog of the factors that might affect state borrowing levels, so states should not feel the need to limit themselves to the data in it when selecting peers. Instead, the tool is intended to help states consider these differences when constructing peer groups.
+      </p>
+      <h3 class="static">
+        Borrowing practices
+      </h3>
+      <p>
+        How states borrow also affects how they should make comparisons: General obligation (GO) debt limits, centralization, and the division of state-local borrowing in a state can affect state borrowing practices.
+      </p>
+      <a name="debt_limit_type" id="debt_limit_type"></a>
+      <h4 class="js-debt_limit_type">
+        General obligation debt limit type (2018)
+      </h4>
+      <p>
+        GO debt is one of the most common types issued by states. It carries a state’s full faith and credit, the strongest possible pledge. As a result, GO debt is typically a state’s highest rated and lowest cost because credit rating agencies and bond purchasers strongly believe that the state will repay it.<sup>1</sup>
+      </p>
+      <p>
+        Not all states issue much GO debt. All but two have GO debt limits, which vary in restrictiveness and structure. For example, Connecticut limits this debt to 1.6 times total estimated general fund tax receipts, while Arizona effectively prohibits its issuance.<sup>2</sup> Comparing Connecticut and Arizona, then, might not be appropriate because Connecticut has significant GO debt and Arizona has none. Connecticut’s debt will draw on the state’s general fund in a way that Arizona’s won’t. (GO debt is typically supported by a state’s general fund.) Because analyzing the revenue streams available for debt repayment is important, this is a key difference.
+      </p>
+      <p>
+        These limits sometimes apply to state debt beyond just GO borrowing. For example, West Virginia’s limit applies to net tax-supported debt, which includes GO.
+      </p>
+      <p>
+        Pew has classified each state’s limit for GO debt as one of the following
+        types:
+      </p>
+      <ul>
+        <li>
+          <strong>Constitutional amendment.</strong>
+          Three states—Alabama, Ohio, and West Virginia—require an amendment to
+          their constitutions to issue GO debt.
+        </li>
+        <li>
+          <strong>Metric.</strong>
+          In 11 states—Connecticut, Georgia, Hawaii, Mississippi, Nevada, New
+          Hampshire, North Dakota, Oregon, Tennessee, Utah, and Wisconsin—debt is
+          not allowed to exceed a certain metric-based threshold. Tennessee, for
+          example, caps debt service at 10 percent of combined revenues in its
+          general, debt service, and highway funds.
+        </li>
+        <li>
+          <strong>Metric-based with referendum to exceed.</strong>
+          North Carolina, Pennsylvania, and Wyoming use a metric to cap debt but
+          allow issuance above the cap with voter approval.
+        </li>
+        <li>
+          <strong>No limit.</strong>
+          Maryland and Vermont place no restrictions on GO debt.
+        </li>
+        <li>
+          <strong>Prohibition.</strong>
+          Arizona, Colorado, Indiana, and Nebraska effectively prohibit GO debt.
+          Indiana law forbids any GO debt to be issued; the others authorize
+          amounts so low—$350,000 or less—as to be equivalent to prohibitions.
+        </li>
+        <li>
+          <strong>Referendum and/or supermajority.</strong>
+          Thirteen states—Alaska, Arkansas, California, Idaho, Iowa, Kansas,
+          Kentucky, Maine, Michigan, Minnesota, Missouri, Montana, and Rhode
+          Island—require some combination of voter approval and/or a legislative
+          supermajority (generally, three-fifths or two-thirds) to issue debt.
+        </li>
+        <li>
+          <strong>Referendum and/or supermajority and metric.</strong>
+          Fourteen states—Delaware, Florida, Illinois, Louisiana, Massachusetts,
+          New Jersey, New Mexico, New York, Oklahoma, South Carolina, South
+          Dakota, Texas, Virginia, and Washington—require a referendum and/or
+          supermajority and have a metric-based cap on debt or debt service.
+        </li>
+      </ul>
+      <div class="pct-note">
+        <p>
+          <strong>Note:</strong> The classification system is a variation on the approach taken in D.
+          Roderick Kiewiet and Kristin Szakaly, “Constitutional Limitations on
+          Borrowing: An Analysis of State Bonded Indebtedness,” <cite>The Journal of Law, Economics &amp; Organization</cite> 12, no. 1 (1996):
+          62-97,
+          <a href="https://www.jstor.org/stable/765039?seq=1#page_scan_tab_contents">
+            https://www.jstor.org/stable/765039?seq=1#page_scan_tab_contents</a>.
+        </p>
+        <p>
+          <strong>Source:</strong> Pew analysis of state constitutions and statutes
+        </p>
+      </div>
+      <a name="centralization" id="centralization"></a>
+      <h4 class="js-centralization">
+        Centralization (fiscal year 2014)
+      </h4>
+      <p>
+        In some states, borrowing is done by entities other than the primary—
+        meaning state—government, including the independent agencies and
+        authorities known as component units. Centralization measures primary
+        government debt as a share of the total debt issued by both the primary
+        government and its component units.
+      </p>
+      <p>
+        Component unit debt generally relies less on state funds for repayment than
+        primary government debt does. Often, lenders have no legal claim on state
+        general funds if the component unit defaults. As a result, state
+        comparisons based on total debt may be misleading. Montana and Delaware,
+        for example, have about the same total debt, but most of Montana’s debt is
+        held by component units and most of Delaware’s is held by the state.
+      </p>
+      <div class="pct-note">
+        <p>
+          <strong>Note:</strong> To calculate centralization in a state, Pew first analyzed the state’s comprehensive annual financial report for fiscal year 2014 to determine how much debt was held by the primary government. That figure was then compared to a sum of the debt of major component units as reported in their annual financial statements.<sup>3</sup>
+        </p>
+      </div>
+      <a name="state_local_division" id="state_local_division"></a>
+      <h4 class="js-state_local_division">
+        The state-local borrowing division (2015)
+      </h4>
+      <p>
+        One factor that influences state debt levels is the division of borrowing between state and local governments. In some states, local governments are responsible for paying for most capital projects within their jurisdictions. In other places, the state is responsible for those projects. Instead of a city or town bonding to finance them, the state takes on this debt-increasing its overall borrowing. The division of borrowing responsibility is related to the debt limit. Local governments in Arizona, for example, borrow more than the state does because the state’s ability to borrow is so restricted.<sup>4</sup> This tool compares local government borrowing to the combined debt of state and local governments within a state.
+      </p>
+      <div class="pct-note">
+        <p>
+          <strong>Source:</strong> Pew analysis of data from U.S. Census Bureau, “Annual Survey of
+          State and Local Government Finances: 2015 Data Release” (2018),
+          <a href="https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html">
+            https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html</a>
+        </p>
+      </div>
+      <p>
+        <strong></strong>
+      </p>
+      <h3 class="static">
+        Fiscal conditions and infrastructure needs
+      </h3>
+      <p>
+        Fiscal conditions may affect a state’s willingness to issue debt and ability to repay it, while infrastructure needs might increase a state’s demand for debt. Observing trends and variations among states in both categories can allow officials to create more appropriate peer groups.
+      </p>
+      <a name="revenue_volatility" id="revenue_volatility"></a>
+      <h4 class="js-revenue_volatility">
+        Revenue volatility (1998-2017)
+      </h4>
+      <p>
+        Revenue volatility is the annual fluctuation in tax collections and is
+        affected by each state’s mix of tax streams. It indicates whether a state
+        can expect to dedicate a relatively consistent share of its revenue to its
+        liabilities year to year or whether that share will show greater
+        fluctuation as revenue varies. States with stable revenue can plan debt
+        issuances and pay down debt more easily than states with uncertain tax
+        collections can.<sup>5</sup> States with more volatile revenue may therefore wish to
+        compare themselves to states with similar concerns.
+      </p>
+      <p>
+        Pew used data from 1998 to 2017 to calculate a revenue volatility score for
+        each state. The score reflects variations in yearly percentage changes in
+        revenue between 1998 and 2017.<sup>6</sup> States have differing levels of volatility
+        because they have unique revenue mixes. Alaska has a highly volatile
+        revenue stream because much of its collections come from unpredictable
+        severance taxes on oil. Other states—such as South Dakota, which earns more
+        of its revenue from stable sources such as personal income taxes—have less
+        volatility. A low volatility score means that revenue levels were similar
+        from year to year, and a high score indicates that revenue grew or declined
+        more dramatically. The scores range from 2.7 to 37.6.
+      </p>
+      <div>
+        <div id="edn1">
+        </div>
+      </div>
+      <div class="pct-note">
+        <p>
+          <strong>Source:</strong> The Pew Charitable Trusts, “Tax Revenue Volatility, FY 1998-2017,”
+          last modified Aug. 29, 2018,
+          <a href="http://www.pewtrusts.org/en/research-and-analysis/data-visualizations/2014/fiscal-50#ind6">
+            http://www.pewtrusts.org/en/research-and-analysis/data-visualizations/2014/fiscal-50#ind6</a>
+        </p>
+      </div>
+      <a name="ten_year_pop_growth" id="ten_year_pop_growth"></a>
+      <h4 class="js-ten_year_pop_growth">
+        Population growth (2008-17)
+      </h4>
+      <p>
+        Population growth drives infrastructure needs. More people means greater
+        pressure on a state’s infrastructure, necessitating improvements and new
+        construction. Research shows that as a state’s population grows, so too
+        does its demand for, and in some cases spending on, capital construction.<sup>7</sup>
+      </p>
+      <p>
+        As a result, states with similar growth patterns may have similar demands
+        for infrastructure. For this reason, Pew used population growth as a proxy
+        for infrastructure demand, a metric for which exact, reliable sources are
+        scarce. Observing population growth can help identify peers and provides a
+        data point not often used in interstate debt comparisons.
+      </p>
+      <p>
+        Pew selected a 10-year population growth rate, measured as the increase or
+        decrease in state population between 2008 and 2017. Although no consensus
+        exists in academic literature regarding the appropriate time span for
+        examining population trends, this period captured the trough of the Great
+        Recession, the subsequent economic expansion, and the resulting demographic
+        and geographic shifts.<sup>8</sup>
+      </p>
+
+      <div class="pct-note">
+        <p>
+          <strong>Sources:</strong> Pew analysis of data from U.S. Census Bureau, “Annual Survey of
+          State and Local Government Finances: 2015 Data Release” (2018),
+          <a href="https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html">
+            https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html</a>
+          ; U.S. Census Bureau, “Annual Estimates of the Resident Population for the
+          United States, Regions, States, and Puerto Rico: April 1, 2010 to July 1,
+          2017,” Table 1,
+          <a href="https://www2.census.gov/programs-surveys/popest/tables/2010-2017/state/totals/nst-est2017-01.xlsx">
+            https://www2.census.gov/programs-surveys/popest/tables/2010-2017/state/totals/nst-est2017-01.xlsx</a>
+          ; U.S. Census Bureau, “Intercensal Estimates of the Resident Population for
+          the United States, Regions, States, and Puerto Rico: April 1, 2000 to July
+          1, 2010,” Table 1,
+          <a href="https://www2.census.gov/programs-surveys/popest/tables/2000-2010/intercensal/state/st-est00int-01.xls">
+            https://www2.census.gov/programs-surveys/popest/tables/2000-2010/intercensal/state/st-est00int-01.xls</a>
+        </p>
+      </div>
+      <h3 class="static">
+        Debt levels (2015)
+      </h3>
+      <p>
+        Debt levels are a natural point of comparison and are influenced by the
+        preceding characteristics. Although an absolute dollar amount provides
+        useful information, it does not put the amount of debt into context
+        relative to the state’s resources.<sup>9</sup> Given size, population, and economic
+        differences among states, a dollar amount is also less useful for state
+        comparisons. Instead, normalized ratios allow states of various sizes to
+        compare themselves. Consistent with the best practices for understanding
+        debt affordability, Pew’s tool includes two ratios—debt per capita and debt
+        as a percentage of state personal income—to give a more complete measure of
+        a state’s debt. State-based analyses often use a ratio of debt service to
+        revenue when evaluating debt levels and setting limits. This ratio is not
+        included in this tool due to cross-state comparability issues.<sup>10</sup>
+      </p>
+      <a name="debt_per_capita" id="debt_per_capita"></a>
+      <h4 class="js-debt_per_capita">
+        Debt per capita
+      </h4>
+      <p>
+        Because debt is repaid through revenue generally in the form of taxes or user fees paid by residents, assessing debt relative to its repayment source-the resident-is a common approach. Debt per capita, which measures total debt against a state’s population, makes comparisons between states of different sizes feasible and helps policymakers understand the debt burden on individual residents.
+      </p>
+      <div class="pct-note">
+        <p>
+          <strong>Sources:</strong> Pew analysis of data from U.S. Census Bureau, “Annual Survey of
+          State and Local Government Finances,” 2015 Data Release (2018),
+          <a href="https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html">
+            https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html</a>
+          ; U.S. Census Bureau, “Annual Estimates of the Resident Population for the
+          United States, Regions, States, and Puerto Rico: April 1, 2010 to July 1,
+          2017,” Table 1,
+          <a href="https://www2.census.gov/programs-surveys/popest/tables/2010-2017/state/totals/nst-est2017-01.xlsx">
+            https://www2.census.gov/programs-surveys/popest/tables/2010-2017/state/totals/nst-est2017-01.xlsx</a>
+        </p>
+      </div>
+      <a name="debt_percent_SPI" id="debt_percent_SPI"></a>
+      <h4 class="js-debt_percent_SPI">
+        Debt as a percentage of state personal income
+      </h4>
+      <p>
+        Another common practice, used by credit rating agencies and academics, is to consider a state’s debt level relative to resources available for repayment.<sup>11</sup> A ratio comparing debt not only to population but to taxpayer earning power or wealth is therefore beneficial.<sup>12</sup> Debt as a percentage of state personal income addresses this and is commonly used by states to evaluate debt levels.
+      </p>
+      <div class="pct-note">
+        <p>
+          <strong>Sources:</strong> Pew analysis of data from U.S. Census Bureau, “Annual Survey of
+          State and Local Government Finances,” 2015 Data Release (2018),
+          <a href="https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html">
+            https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html</a>
+          ; U.S. Bureau of Economic Analysis, “SA1 Personal Income Summary: Personal
+          Income, Population, Per Capita Personal Income,”
+          https://www.bea.gov/data/income-saving/personal-income-by-state.
+        </p>
+      </div>
+      <aside class="pct-box">
+        <h4>Census Data vs. Moody’s Net Tax-Supported Debt Calculations</h4>
 
         <p>
-          Pew researchers developed this list of characteristics by examining
-          relevant literature and consulting subject matter experts. The final set of
-          seven characteristics included in the tool was selected based on evidence
-          in the literature that the characteristics are related to state debt, the
-          feasibility of collecting the data used to construct the characteristic,
-          and a desire to avoid redundancy. Pew also limited the number of
-          characteristics to make the tool easy to use and understand.
+          Although debt affordability studies often use Moody’s Investors Service
+          Inc. calculations of state net tax-supported debt to compare borrowing, The
+          Pew Charitable Trusts used U.S. Census Bureau data for two reasons.
         </p>
         <p>
-          The goal of this tool was not to create an exhaustive catalog of the
-          factors that may affect state borrowing levels, so states should not feel
-          the need to limit themselves to the data in it when selecting peers.
-          Instead, the tool is intended to help states consider these differences
-          when constructing peer groups.
+          First, the Census Bureau captures a broader scope of debt than does
+          Moody’s, including some debt held by dependent agencies such as public
+          authorities and component units,<sup>13</sup> giving a more accurate representation of
+          the debt burden supported by a state’s residents.<sup>14</sup> Second, the bureau
+          analyzes how closely the dependent agencies it includes in its definition
+          of state debt are fiscally or administratively tied to the state. Because
+          ultimate responsibility for a debt can be nebulous—and a state may not
+          support the liabilities of its more independent entities—this further
+          ensures an accurate description of state debt.<sup>15</sup>
         </p>
-        <h3 class="static">
-          Borrowing practices
-        </h3>
+      </aside>
+      <a name="credit_rating" id="credit_rating"></a>
+      <h3 class="js-credit_rating static">
+        Credit ratings (September 2018 and September 2015)
+      </h3>
+      <p>
+        This tool allows users to group states by Standard &amp; Poor’s credit ratings to explore differences among those with similar credit profiles. The user can select credit ratings from 2018 or 2015 to look at either recent information or information corresponding to other, earlier data points in this tool.
+      </p>
+      <div class="pct-note">
         <p>
-          How states borrow also affects how they should make comparisons: General
-          obligation (GO) debt limits, centralization, and the division of
-          state-local borrowing in a state can affect state borrowing practices.
+          <strong>Note:</strong> Pew collected ratings on general obligation issuance as of September
+          2018 and September 2015. If the state does not issue GO bonds, the rating
+          on the senior-most tax-backed issuance was used instead. In addition to
+          S&amp;P, there are two other major credit rating agencies: Moody’s and
+          Fitch. There is little variation in ratings among the three agencies.
         </p>
-        <a name="debt_limit_type" id="debt_limit_type"></a>
-        <h4 class="js-debt_limit_type">
-          General obligation debt limit type (2018)
-        </h4>
-        <p>
-          GO debt is one of the most common types issued by states. It carries a
-          state’s full faith and credit, the strongest possible pledge. As a result,
-          GO debt is typically a state’s highest rated and lowest cost since credit
-          rating agencies and bond purchasers strongly believe the state will repay
-          it.<sup>1</sup>
-        </p>
-        <p>
-          Not all states issue much GO debt. All but two have GO debt limits, which
-          vary in restrictiveness and structure. For example, Connecticut limits this
-          debt to 1.6 times total estimated general fund tax receipts, while Arizona
-          effectively prohibits its issuance.<sup>2</sup> Comparing Connecticut
-          and Arizona, then, might not be appropriate because Connecticut has
-          significant GO debt and Arizona none. Connecticut’s debt will draw on the
-          state’s general fund in a way Arizona’s won’t. (GO debt is typically
-          supported by a state’s general fund.) Because analyzing the revenue streams
-          available for debt repayment is important, this is a key difference.
-        </p>
-        <p>
-          These limits sometimes apply to state debt beyond just GO borrowing. For
-          example, West Virginia’s limit applies to net tax-supported debt, which
-          includes GO.
-        </p>
-        <p>
-          Pew has classified each state’s limit for GO debt as one of the following
-          types:
-        </p>
-        <ul>
-          <li>
-            <strong>Constitutional amendment.</strong>
-            Three states—Alabama, Ohio, and West Virginia—require an amendment to
-            their constitutions to issue GO debt.
-          </li>
-          <li>
-            <strong>Metric.</strong>
-            In 11 states—Connecticut, Georgia, Hawaii, Mississippi, Nevada, New
-            Hampshire, North Dakota, Oregon, Tennessee, Utah, and Wisconsin—debt is
-            not allowed to exceed a certain metric-based threshold. Tennessee, for
-            example, caps debt service at 10 percent of combined revenues in its
-            general, debt service, and highway funds.
-          </li>
-          <li>
-            <strong>Metric-based with referendum to exceed.</strong>
-            North Carolina, Pennsylvania, and Wyoming use a metric to cap debt but
-            allow issuance above the cap with voter approval.
-          </li>
-          <li>
-            <strong>No limit.</strong>
-            Maryland and Vermont place no restrictions on GO debt.
-          </li>
-          <li>
-            <strong>Prohibition.</strong>
-            Arizona, Colorado, Indiana, and Nebraska prohibit GO debt. Indiana law
-            forbids any GO debt to be issued; the others authorize amounts so
-            low—$350,000 or less—as to be equivalent to prohibitions.
-          </li>
-          <li>
-            <strong>Referendum and/or supermajority.</strong>
-            Thirteen states—Alaska, Arkansas, California, Idaho, Iowa, Kansas,
-            Kentucky, Maine, Michigan, Minnesota, Missouri, Montana, and Rhode
-            Island—require some combination of voter approval and/or a legislative
-            supermajority (generally three-fifths or two-thirds) to issue debt.
-          </li>
-          <li>
-            <strong>Referendum and/or supermajority and metric.</strong>
-            Fourteen states—Delaware, Florida, Illinois, Louisiana, Massachusetts,
-            New Jersey, New Mexico, New York, Oklahoma, South Carolina, South
-            Dakota, Texas, Virginia, and Washington—require a referendum and/or
-            supermajority and have a metric-based cap on debt or debt service.
-          </li>
-        </ul>
-        <div class="pct-note">
+      </div>
+      <div class="pct-endnotes">
+
+        <div id="edn1">
           <p>
-            <strong>Note:</strong> The classification system is a variation on the approach taken in D.
-            Roderick Kiewiet and Kristin Szakaly, “Constitutional Limitations on
-            Borrowing: An Analysis of State Bonded Indebtedness,” <cite>The Journal of Law, Economics &amp; Organization</cite> 12, no. 1 (1996):
-            62-97,
+            1.
+            The Pew Charitable Trusts, “Strategies for Managing State Debt”
+            (2017),
+            <a href="http://www.pewtrusts.org/en/research-and-analysis/reports/2017/06/strategies-for-managing-state-debt">
+              http://www.pewtrusts.org/en/research-and-analysis/reports/2017/06/strategies-for-managing-state-debt</a>.
+          </p>
+        </div>
+        <div id="edn2">
+          <p>
+            2.
+            Ibid.
+          </p>
+        </div>
+
+        <div id="edn4">
+          <p>
+            3.
+            For more detail on how we collected these data, see The Pew
+            Charitable Trusts, “Strategies for Managing State Debt,”
+            methodology.
+          </p>
+        </div>
+        <div id="edn5">
+          <p>
+            4.
+            For a discussion of the relationship between debt limits and local
+            borrowing, see D. Roderick Kiewiet and Kristin Szakaly,
+            “Constitutional Limitations on Borrowing: An Analysis of State
+            Bonded Indebtedness,” <cite>The Journal of Law, Economics &amp; Organization </cite>12, no. 1
+            (1996): 62-97,
             <a href="https://www.jstor.org/stable/765039?seq=1#page_scan_tab_contents">
               https://www.jstor.org/stable/765039?seq=1#page_scan_tab_contents</a>.
           </p>
+        </div>
+        <div id="edn6">
           <p>
-            <strong>Source:</strong> Pew analysis of state constitutions and statutes
+            5.
+            One study found that as economic volatility increases, states
+            prefer to pay for infrastructure projects with cash rather than
+            through financing. Wen Wang, Yilin Hou, and William Duncome,
+            “Determinants of Pay-as-You-Go Financing of Capital Projects:
+            Evidence From the States,” <cite>Public Budgeting &amp; Finance </cite>
+            27, no. 4 (2007): 18-42,
+            <a href="https://doi.org/10.1111/j.1540-5850.2007.00892.x">
+              https://doi.org/10.1111/j.1540-5850.2007.00892.x</a>.
           </p>
         </div>
-        <a name="centralization" id="centralization"></a>
-        <h4 class="js-centralization">
-          Centralization (fiscal year 2014)
-        </h4>
-        <p>
-          Another effect of Arizona’s prohibition on GO debt is decentralized debt
-          issuance.<sup>3</sup> This means
-          borrowing is done by entities other than the primary—meaning
-          state—government, including the independent agencies and authorities known
-          as component units. Centralization measures component unit debt as a share
-          of the total debt issued by both the primary government and its component
-          units.
-        </p>
-        <p>
-          Component unit debt generally relies less on state funds for repayment than
-          primary government debt. Often, lenders have no legal claim on state
-          general funds if the component unit defaults. As a result, state
-          comparisons based on total debt may be misleading. Montana and Delaware,
-          for example, have about the same total debt, but most of Montana’s debt is
-          held by component units and most of Delaware’s is held by the state.
-        </p>
-        <div class="pct-note">
+        <div id="edn7">
           <p>
-            <strong>Note:</strong> To calculate centralization in a state, Pew first analyzed the
-            state’s comprehensive annual financial report to determine how much debt
-            was held by the primary government. That was then compared to a sum of the
-            debt of major component units as reported in their annual financial
-            statements.<sup>4</sup>
+            6.
+            The Pew Charitable Trusts, “Tax Revenue Volatility Varies Across
+            States, Revenue Streams,” accessed Sept. 10, 2018,
+            <a href="http://www.pewtrusts.org/en/multimedia/data-visualizations/2014/fiscal-50#ind6">
+              http://www.pewtrusts.org/en/multimedia/data-visualizations/2014/fiscal-50#ind6</a>.
           </p>
         </div>
-        <a name="state_local_division" id="state_local_division"></a>
-        <h4 class="js-state_local_division">
-          The state-local borrowing division (2015)
-        </h4>
-        <p>
-          One factor that influences state debt levels is the division of borrowing
-          between state and local governments. In some states, local governments are
-          responsible for paying for most capital projects within their
-          jurisdictions. In other places, the state is responsible for those
-          projects. Instead of a city or town bonding to finance them, the state
-          takes on this debt—increasing its overall borrowing. The division of
-          borrowing responsibility is related to the debt limit. Local governments in
-          Arizona, for example, borrow more than the state does because the state’s
-          ability to borrow is so restricted.<sup>5</sup> This tool measures the
-          state-local borrowing division as the share of total debt within a state
-          issued by local governments.
-        </p>
-        <div class="pct-note">
+        <div id="edn8">
           <p>
-            <strong>Source:</strong> Pew analysis of data from U.S. Census Bureau, “Annual Survey of
-            State and Local Government Finances: 2015 Data Release” (2018),
-            <a href="https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html">
-              https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html</a>
+            7.
+            Ronald C. Fisher and Robert W. Wassmer, “The Issuance of State and
+            Local Debt During the United States Great Recession,” <cite>National Tax Journal</cite> 67, no. 1 (2014): 113-50,
+            <a href="https://ideas.repec.org/a/ntj/journl/v67y2014i1p113-150.html">
+              https://ideas.repec.org/a/ntj/journl/v67y2014i1p113-150.html</a>
+            ; Ronald C. Fisher and Robert W. Wassmer, “An Analysis of
+            State-Local Government Capital Expenditure During the 2000s,” <cite>Public Budgeting &amp; Finance</cite> 35, no. 1 (2015): 3-28,
+            <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/pbaf.12062">
+              https://onlinelibrary.wiley.com/doi/abs/10.1111/pbaf.12062</a>.
           </p>
         </div>
-        <p>
-          <strong></strong>
-        </p>
-        <h3 class="static">
-          Fiscal conditions and infrastructure needs
-        </h3>
-        <p>
-          Fiscal conditions may affect a state’s willingness to issue debt and
-          ability to repay it, while infrastructure needs might increase a state’s
-          demand for debt. Observing trends and variations among states in both
-          categories can allow officials to create more appropriate peer groups.
-        </p>
-        <a name="revenue_volatility" id="revenue_volatility"></a>
-        <h4 class="js-revenue_volatility">
-          Revenue volatility (1997-2016)
-        </h4>
-        <p>
-          Revenue volatility is the annual fluctuation in tax collections and is
-          affected by each state’s mix of tax streams. It indicates whether a state
-          can expect to dedicate a relatively consistent share of its revenue to its
-          liabilities year to year or whether that share will show greater
-          fluctuation as revenue varies. States with stable revenue can plan debt
-          issuances and pay down debt more easily than states with uncertain tax
-          collections can.<sup>6</sup> States
-          with more volatile revenue may therefore wish to compare themselves to
-          states with similar concerns.
-        </p>
-        <p>
-          Pew used data from 1997 to 2016 to calculate a revenue volatility score for
-          each state. The score reflects variations in yearly percentage changes in
-          revenue between 1997 and 2016.<sup>7</sup> States have differing
-          levels of volatility because they have unique revenue mixes. Alaska has a
-          highly volatile revenue stream because much of its collections come from
-          unpredictable severance taxes on oil. Other states—such as South Dakota,
-          which earns more of its revenue from stable sources like personal income
-          taxes—have less volatility. A low volatility score means that revenue
-          levels were similar from year to year, and a high score indicates that
-          revenue grew or declined more dramatically.
-        </p>
-        <div class="pct-note">
+        <div id="edn9">
           <p>
-            <strong>Source:</strong> The Pew Charitable Trusts, “Tax Revenue Volatility, FY 1997-2016,”
-            last modified Aug. 29, 2018,
-            <a href="http://www.pewtrusts.org/en/research-and-analysis/data-visualizations/2014/fiscal-50#ind6">
-              http://www.pewtrusts.org/en/research-and-analysis/data-visualizations/2014/fiscal-50#ind6</a>
+            8.
+            The National Bureau of Economic Research, “US Business Cycle
+            Expansions and Contractions,” Sept. 20, 2010,
+            <a href="http://www.nber.org/cycles.html">
+              http://www.nber.org/cycles.html</a>.
           </p>
         </div>
-        <a name="ten_year_pop_growth" id="ten_year_pop_growth"></a>
-        <h4 class="js-ten_year_pop_growth">
-          Population growth (2008-17)
-        </h4>
-        <p>
-          Population growth drives infrastructure needs. More people means greater
-          pressure on a state’s infrastructure, necessitating improvements and new
-          construction. Research shows that as a state’s population grows, so too
-          does its demand for, and in some cases spending on, capital construction.<sup>8</sup>
-        </p>
-        <p>
-          As a result, states with similar growth patterns may have similar demands
-          for infrastructure. For this reason, Pew used population growth as a proxy
-          for infrastructure demand, a metric for which exact, reliable sources are
-          scarce. Observing population growth can help identify peers and provides a
-          data point not often used in interstate debt comparisons.
-        </p>
-        <p>
-          Pew selected a 10-year population growth rate, measured as the increase or
-          decrease in state population between 2008 and 2017. Although no consensus
-          exists in academic literature regarding the appropriate time span for
-          examining population trends, this period captured the trough of the Great
-          Recession, the subsequent economic expansion, and the resulting demographic
-          and geographic shifts.<sup>9</sup>
-        </p>
-        <div class="pct-note">
+        <div id="edn10">
           <p>
-            <strong>Sources:</strong> Pew analysis of data from U.S. Census Bureau, “Annual Survey of
-            State and Local Government Finances: 2015 Data Release” (2018),
-            <a href="https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html">
-              https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html</a>
-            ; U.S. Census Bureau, “Annual Estimates of the Resident Population for the
-            United States, Regions, States, and Puerto Rico: April 1, 2010 to July 1,
-            2017,” Table 1,
-            <a href="https://www2.census.gov/programs-surveys/popest/tables/2010-2017/state/totals/nst-est2017-01.xlsx">
-              https://www2.census.gov/programs-surveys/popest/tables/2010-2017/state/totals/nst-est2017-01.xlsx</a>
-            ; U.S. Census Bureau, “Intercensal Estimates of the Resident Population for
-            the United States, Regions, States, and Puerto Rico: April 1, 2000 to July
-            1, 2010,” Table 1,
-            <a href="https://www2.census.gov/programs-surveys/popest/tables/2000-2010/intercensal/state/st-est00int-01.xls">
-              https://www2.census.gov/programs-surveys/popest/tables/2000-2010/intercensal/state/st-est00int-01.xls</a>
+            9.
+            Jennifer Weiner, “Assessing the Affordability of State Debt,” New
+            England Public Policy Center at the Federal Reserve Bank of Boston
+            (2013),
+            <a href="https://www.bostonfed.org/publications/new-england-public-policy-center-research-report/2013/assessing-the-affordability-of-state-debt.aspx">
+              https://www.bostonfed.org/publications/new-england-public-policy-center-research-report/2013/assessing-the-affordability-of-state-debt.aspx</a>.
           </p>
         </div>
-        <h3 class="static">
-          Debt levels (2015)
-        </h3>
-        <p>
-          Debt levels are a natural point of comparison and are influenced by the
-          preceding characteristics. While an absolute dollar amount provides useful
-          information, it does not put the amount of debt into context relative to
-          the state’s resources.<sup>10</sup>
-          Given size, population, and economic differences among states, a dollar
-          amount is also less useful for state comparisons. Instead, normalized
-          ratios allow states of various sizes to compare themselves. Consistent with
-          the best practices for understanding debt affordability, Pew’s tool
-          includes two ratios—debt per capita and debt as a percentage of state
-          personal income—to give a more complete measure of a state’s debt.
-          State-based analyses often use a ratio of debt service to revenue when
-          evaluating debt levels and setting limits. This ratio is not included in
-          this tool due to cross-state comparability issues.<sup>11</sup>
-        </p>
-        <a name="debt_per_capita" id="debt_per_capita"></a>
-        <h4 class="js-debt_per_capita">
-          Debt per capita
-        </h4>
-        <p>
-          Because debt is repaid through revenue generally in the form of taxes or
-          user fees paid by residents, assessing debt relative to its repayment
-          source—the resident—is a common approach. Debt per capita, which measures
-          total debt against a state’s population, makes comparisons between states
-          of different sizes feasible and helps policymakers understand the debt
-          burden on individual residents.
-        </p>
-        <div class="pct-note">
+        <div id="edn11">
           <p>
-            <strong>Sources:</strong> Pew analysis of data from U.S. Census Bureau, “Annual Survey of
-            State and Local Government Finances,” 2015 Data Release (2018),
-            <a href="https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html">
-              https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html</a>
-            ; U.S. Census Bureau, “Annual Estimates of the Resident Population for the
-            United States, Regions, States, and Puerto Rico: April 1, 2010 to July 1,
-            2017,” Table 1,
-            <a href="https://www2.census.gov/programs-surveys/popest/tables/2010-2017/state/totals/nst-est2017-01.xlsx">
-              https://www2.census.gov/programs-surveys/popest/tables/2010-2017/state/totals/nst-est2017-01.xlsx</a>
+            10.
+            In CAFRs, states report debt service payments from a variety of
+            funds. Using this information to construct a comparable measure of
+            debt service as a share of general fund revenue requires a detailed
+            understanding of each state’s reporting practices.
           </p>
         </div>
-        <a name="debt_percent_SPI" id="debt_percent_SPI"></a>
-        <h4 class="js-debt_percent_SPI">
-          Debt as a percentage of state personal income
-        </h4>
-        <p>
-          Another common practice, used by credit rating agencies and academics, is
-          to consider a state’s debt level relative to resources available for
-          repayment.<sup>12</sup> A ratio
-          comparing debt not only to population but to taxpayer earning power or
-          wealth is therefore beneficial.<sup>13</sup> Debt as a percentage
-          of state personal income addresses this and is commonly used by states to
-          evaluate debt levels.
-        </p>
-        <div class="pct-note">
+        <div id="edn12">
           <p>
-            <strong>Sources:</strong> Pew analysis of data from U.S. Census Bureau, “Annual Survey of
-            State and Local Government Finances,” 2015 Data Release (2018),
-            <a href="https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html">
-              https://www.census.gov/programs-surveys/gov-finances/newsroom/updates/release.html</a>
-            ; U.S. Bureau of Economic Analysis, “SA1 Personal Income Summary: Personal
-            Income, Population, Per Capita Personal Income,”
-            https://www.bea.gov/data/income-saving/personal-income-by-state.
+            11.
+            Jennifer Weiner, “A Guide to State Debt Affordability Studies:
+            Common Elements and Best Practices,” New England Public Policy
+            Center at the Federal Reserve Bank of Boston (2013),
+            <a href="https://www.bostonfed.org/publications/new-england-public-policy-center-policy-brief/2013/a-guide-to-state-debt-affordability-studies-common-elements-and-best-practices.aspx">
+              https://www.bostonfed.org/publications/new-england-public-policy-center-policy-brief/2013/a-guide-to-state-debt-affordability-studies-common-elements-and-best-practices.aspx</a>
+            ; Charles Brecher, Kurt Richwerger, and Marcia Van Wagner, “An
+            Approach to Measuring the Affordability of State Debt,” <cite>Public Budgeting &amp; Finance</cite> 23, no. 4 (2003): 65-85,
+            <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.0275-1100.2003.02304004.x">
+              https://onlinelibrary.wiley.com/doi/abs/10.1111/j.0275-1100.2003.02304004.x</a>.
           </p>
         </div>
-        <aside class="pct-box">
-          <h4>Census Data vs. Moody’s Net Tax-Supported Debt Calculations</h4>
-
+        <div id="edn13">
           <p>
-            While debt affordability studies often use Moody’s Investors Service Inc.
-            calculations of state net tax-supported debt to compare borrowing, The Pew
-            Charitable Trusts used U.S. Census Bureau data for two reasons.
-          </p>
-          <p>
-            First, the Census Bureau captures a broader scope of debt than does
-            Moody’s, including some debt held by dependent agencies such as public
-            authorities and component units,<sup>14</sup> giving a more
-            accurate representation of the debt burden supported by a state’s
-            residents.<sup>15</sup> Second, the
-            bureau analyzes how closely the dependent agencies it includes in its
-            definition of state debt are fiscally or administratively tied to the
-            state. Because ultimate responsibility for a debt can be nebulous—and a
-            state may not support the liabilities of its more independent entities—this
-            further ensures an accurate description of state debt.<sup>16</sup>
-          </p>
-        </aside>
-        <a name="credit_rating" id="credit_rating"></a>
-        <h3 class="js-credit_rating static">
-          Credit ratings (September 2018 and September 2015)
-        </h3>
-        <p>
-          This tool allows users to group states by Standard &amp; Poor’s credit
-          ratings to explore differences among those with similar credit profiles.
-          The user can select credit ratings from 2018 or 2015 to look at either
-          recent information or information corresponding to other, earlier data
-          points in this tool.
-        </p>
-        <div class="pct-note">
-          <p>
-            <strong>Note:</strong> Pew collected ratings on general obligation issuance as of September
-            2018 and September 2015. If the state does not issue GO bonds, the rating
-            on the senior-most tax-backed issuance was used instead. In addition to
-            S&amp;P, there are two other major credit rating agencies: Moody’s and
-            Fitch. There is little variation in ratings among the three agencies.
+            12.
+            W. Bartley Hildreth and Gerald J. Miller, “Debt and the Local
+            Economy: Problems in Benchmarking Local Government Debt
+            Affordability,” <cite>Public Budgeting &amp; Finance</cite> 22, no. 4
+            (2003): 99-113,
+            <a href="https://doi.org/10.1111/1540-5850.00091">
+              https://doi.org/10.1111/1540-5850.00091</a>.
           </p>
         </div>
-        <div class="pct-endnotes">
-
-          <div id="edn1">
-            <p>
-              1.
-              The Pew Charitable Trusts, “Strategies for Managing State Debt”
-              (2017),
-              <a href="http://www.pewtrusts.org/en/research-and-analysis/reports/2017/06/strategies-for-managing-state-debt">
-                http://www.pewtrusts.org/en/research-and-analysis/reports/2017/06/strategies-for-managing-state-debt</a>.
-            </p>
-          </div>
-          <div id="edn2">
-            <p>
-              2.
-              Ibid.
-            </p>
-          </div>
-          <div id="edn3">
-            <p>
-              3.
-              Research on state borrowing practices has found that debt limits
-              decrease the centralization of state debt as states borrow through
-              other entities to circumvent these limits. See Beverly S. Bunch,
-              “The Effect of Constitutional Debt Limits on State Governments’ Use
-              of Public Authorities,” <cite>Public Choice </cite>68, no. 1-3 (1991):
-              57-69,
-              <a href="https://link.springer.com/article/10.1007/BF00173819">
-                https://link.springer.com/article/10.1007/BF00173819</a>
-              ; Rhonda Riherd Trautman, “The Impact of State Debt Management on
-              Debt Activity,” <cite>Public Budgeting &amp; Finance </cite>15, no. 2
-              (1995): 33-51,
-              <a href="https://doi.org/10.1111/1540-5850.01038">
-                https://doi.org/10.1111/1540-5850.01038</a>.
-            </p>
-          </div>
-          <div id="edn4">
-            <p>
-              4.
-              For more detail on how we collected these data, see The Pew
-              Charitable Trusts, “Strategies for Managing State Debt,”
-              methodology.
-            </p>
-          </div>
-          <div id="edn5">
-            <p>
-              5.
-              For a discussion of the relationship between debt limits and local
-              borrowing, see D. Roderick Kiewiet and Kristin Szakaly,
-              “Constitutional Limitations on Borrowing: An Analysis of State
-              Bonded Indebtedness,” <cite>The Journal of Law, Economics &amp; Organization </cite>12, no. 1
-              (1996): 62-97,
-              <a href="https://www.jstor.org/stable/765039?seq=1#page_scan_tab_contents">
-                https://www.jstor.org/stable/765039?seq=1#page_scan_tab_contents</a>.
-            </p>
-          </div>
-          <div id="edn6">
-            <p>
-              6.
-              One study found that as economic volatility increases, states
-              prefer to pay for infrastructure projects with cash rather than
-              through financing. Wen Wang, Yilin Hou, and William Duncome,
-              “Determinants of Pay-as-You-Go Financing of Capital Projects:
-              Evidence From the States,” <cite>Public Budgeting &amp; Finance </cite>
-              27, no. 4 (2007): 18-42,
-              <a href="https://doi.org/10.1111/j.1540-5850.2007.00892.x">
-                https://doi.org/10.1111/j.1540-5850.2007.00892.x</a>.
-            </p>
-          </div>
-          <div id="edn7">
-            <p>
-              7.
-              The Pew Charitable Trusts, “Tax Revenue Volatility Varies Across
-              States, Revenue Streams,” accessed Sept. 10, 2018,
-              <a href="http://www.pewtrusts.org/en/multimedia/data-visualizations/2014/fiscal-50#ind6">
-                http://www.pewtrusts.org/en/multimedia/data-visualizations/2014/fiscal-50#ind6</a>.
-            </p>
-          </div>
-          <div id="edn8">
-            <p>
-              8.
-              Ronald C. Fisher and Robert W. Wassmer, “The Issuance of State and
-              Local Debt During the United States Great Recession,” <cite>National Tax Journal</cite> 67, no. 1 (2014): 113-50,
-              <a href="https://ideas.repec.org/a/ntj/journl/v67y2014i1p113-150.html">
-                https://ideas.repec.org/a/ntj/journl/v67y2014i1p113-150.html</a>
-              ; Ronald C. Fisher and Robert W. Wassmer, “An Analysis of
-              State-Local Government Capital Expenditure During the 2000s,” <cite>Public Budgeting &amp; Finance</cite> 35, no. 1 (2015): 3-28,
-              <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/pbaf.12062">
-                https://onlinelibrary.wiley.com/doi/abs/10.1111/pbaf.12062</a>.
-            </p>
-          </div>
-          <div id="edn9">
-            <p>
-              9.
-              The National Bureau of Economic Research, “US Business Cycle
-              Expansions and Contractions,” Sept. 20, 2010,
-              <a href="http://www.nber.org/cycles.html">
-                http://www.nber.org/cycles.html</a>.
-            </p>
-          </div>
-          <div id="edn10">
-            <p>
-              10.
-              Jennifer Weiner, “Assessing the Affordability of State Debt,” New
-              England Public Policy Center at the Federal Reserve Bank of Boston
-              (2013),
-              <a href="https://www.bostonfed.org/publications/new-england-public-policy-center-research-report/2013/assessing-the-affordability-of-state-debt.aspx">
-                https://www.bostonfed.org/publications/new-england-public-policy-center-research-report/2013/assessing-the-affordability-of-state-debt.aspx</a>.
-            </p>
-          </div>
-          <div id="edn11">
-            <p>
-              11.
-              In CAFRs, states report debt service payments from a variety of
-              funds. Using this information to construct a comparable measure of
-              debt service as a share of general fund revenue requires a detailed
-              understanding of each state’s reporting practices.
-            </p>
-          </div>
-          <div id="edn12">
-            <p>
-              12.
-              Jennifer Weiner, “A Guide to State Debt Affordability Studies:
-              Common Elements and Best Practices,” New England Public Policy
-              Center at the Federal Reserve Bank of Boston (2013),
-              <a href="https://www.bostonfed.org/publications/new-england-public-policy-center-policy-brief/2013/a-guide-to-state-debt-affordability-studies-common-elements-and-best-practices.aspx">
-                https://www.bostonfed.org/publications/new-england-public-policy-center-policy-brief/2013/a-guide-to-state-debt-affordability-studies-common-elements-and-best-practices.aspx</a>
-              ; Charles Brecher, Kurt Richwerger, and Marcia Van Wagner, “An
-              Approach to Measuring the Affordability of State Debt,” <cite>Public Budgeting &amp; Finance</cite> 23, no. 4 (2003): 65-85,
-              <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.0275-1100.2003.02304004.x">
-                https://onlinelibrary.wiley.com/doi/abs/10.1111/j.0275-1100.2003.02304004.x</a>.
-            </p>
-          </div>
-          <div id="edn13">
-            <p>
-              13.
-              W. Bartley Hildreth and Gerald J. Miller, “Debt and the Local
-              Economy: Problems in Benchmarking Local Government Debt
-              Affordability,” <cite>Public Budgeting &amp; Finance</cite> 22, no. 4
-              (2003): 99-113,
-              <a href="https://doi.org/10.1111/1540-5850.00091">
-                https://doi.org/10.1111/1540-5850.00091</a>.
-            </p>
-          </div>
-          <div id="edn14">
-            <p>
-              14.
-              Component units are entities that are legally separate from a state
-              but perform state functions. They typically include bodies such as
-              housing authorities, economic development corporations, and
-              universities.
-            </p>
-          </div>
-          <div id="edn15">
-            <p>
-              15.
-              Weiner, “A Guide.”
-            </p>
-          </div>
-          <div id="edn16">
-            <p>
-              16.
-              Bo Zhao and Wen Wang, “Transparency in State Debt Disclosure,” New
-              England Public Policy Center at the Federal Reserve Bank of Boston
-              (2017),
-              <a href="https://www.bostonfed.org/publications/research-department-working-paper/2017/transparency-in-state-debt-disclosure.aspx">
-                https://www.bostonfed.org/publications/research-department-working-paper/2017/transparency-in-state-debt-disclosure.aspx</a>.
-            </p>
-          </div>
+        <div id="edn14">
+          <p>
+            13.
+            Component units are entities that are legally separate from a state
+            but perform state functions. They typically include bodies such as
+            housing authorities, economic development corporations, and
+            universities.
+          </p>
         </div>
-
+        <div id="edn15">
+          <p>
+            14.
+            Weiner, “A Guide.”
+          </p>
+        </div>
+        <div id="edn16">
+          <p>
+            15.
+            Bo Zhao and Wen Wang, “Transparency in State Debt Disclosure,” New
+            England Public Policy Center at the Federal Reserve Bank of Boston
+            (2017),
+            <a href="https://www.bostonfed.org/publications/research-department-working-paper/2017/transparency-in-state-debt-disclosure.aspx">
+              https://www.bostonfed.org/publications/research-department-working-paper/2017/transparency-in-state-debt-disclosure.aspx</a>.
+          </p>
+        </div>
       </div>
-    </section>
-    <footer>
-      <div>
-        <p><strong>Download resources:</strong>
-          <a class="pct-download" href="">Resource 1</a>
-          <a class="pct-download" href="">Resource 2</a>
-        </p>
-      </div>
-    </footer>
-  </main>
-  <div class="clearfix"></div>
 
-  <script class="emitted-bundle" src="/~/media/data-visualizations/interactives/2019/state-debt/vendors-js/index.js?v=8672e3"></script>
+    </div>
+  </section>
+  <footer>
+    <div>
+      <p><strong>Download resources:</strong>
+        <a class="pct-download" href="">[placeholder]</a>
+        <a class="pct-download" href="">[placeholder]</a>
+      </p>
+    </div>
+  </footer>
+</main>
+<div class="clearfix"></div>
 
-  <script class="emitted-bundle" src="/~/media/data-visualizations/interactives/2019/state-debt/js/index.js?v=8672e3"></script>
+<script class="emitted-bundle" src="/~/media/data-visualizations/interactives/2019/state-debt/vendors-js/index.js?v=5c5f17"></script>
 
-  <!-- END EMBED -->
+<script class="emitted-bundle" src="/~/media/data-visualizations/interactives/2019/state-debt/js/index.js?v=5c5f17"></script>
+
+<!-- END EMBED -->
