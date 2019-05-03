@@ -83,6 +83,8 @@
     padding: 0;
     border-bottom-color: $gray;
     font-weight: bold;
+    background: inline('./icon-search.png') no-repeat right center;
+    background-size: 20px;
     &::placeholder {
         font-weight: bold;
     }
