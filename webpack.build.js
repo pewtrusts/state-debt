@@ -10,7 +10,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const pretty = require('pretty');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const publicPath = '/~/media/data-visualizations/interactives/2019/state-debt/' // <<== set this for each project
+const publicPath = '/~/media/data-visualizations/interactives/2019/statedebt/' // <<== set this for each project
 
 module.exports = env => {
     return merge(common(env), {
