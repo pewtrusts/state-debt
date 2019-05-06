@@ -40,13 +40,18 @@ export default class Selections extends Element {
         var dropdownWrapper = document.createElement('div');
         dropdownWrapper.classList.add(s.dropdownWrapper);
         dropdownData.forEach((d,i) => {
+            console.log(d);
             var dropdownInner = document.createElement('div'),
-                dropdownOuter = document.createElement('label'),
+                dropdownOuter = document.createElement('div'),
+                dropdownLabel = document.createElement('label'),
                 dropdown = this.dropdowns[i];
+            dropdown.el.setAttribute('aria-labelledby', 'label-dropdown-' + d.type );
             dropdownOuter.classList.add(s.dropdownOuter);
-            dropdownOuter.innerText = d.label;
+            dropdownLabel.innerText = d.label;
+            dropdownLabel.setAttribute('id', 'label-dropdown-' + d.type);
             dropdownInner.classList.add(s.dropdownInner);
             dropdownInner.appendChild(dropdown.el);
+            dropdownOuter.appendChild(dropdownLabel);
             dropdownOuter.appendChild(dropdownInner);
             dropdownWrapper.appendChild(dropdownOuter);
         });
