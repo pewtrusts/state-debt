@@ -38,6 +38,7 @@ export default class ThisDropdown extends Dropdown {
             return dropdown; // if prerendered and no need to render (no data mismatch)
         }
         dropdown.classList.add(s.dropdown);
+        //dropdown.setAttribute('aria-controls', 'fifty-state-view');
         //dropdown.setAttribute('multiple', true);
         return dropdown;
     }
