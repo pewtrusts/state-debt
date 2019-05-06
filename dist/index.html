@@ -4,7 +4,7 @@
   </script>
   <!--<script src="https://cdn.polyfill.io/v2/polyfill.js?features=fetch,Promise,WebAnimations,Element.prototype.classList,Array.prototype.find"></script>-->
 
-  <link class="emitted-css" href="/~/media/data-visualizations/interactives/2019/state-debt/css/styles.css?v=5c5f17" rel="stylesheet">
+  <link class="emitted-css" href="/~/media/data-visualizations/interactives/2019/statedebt/css/styles.css?v=c4405d" rel="stylesheet">
 
   <section id="section-overview">
     <h2 class="static" role="button" tabindex="0" aria-label="Show/hide content">Overview</h2>
@@ -265,8 +265,10 @@
     <h2 class="static" role="button" tabindex="0" aria-label="Show/hide content">50-State Data</h2>
     <div class="js-inner-content">
       <div class="js-fifty-state-selections">
-        <div class="src-views-fifty-state-selections--dropdownWrapper"><label class="src-views-fifty-state-selections--dropdownOuter">Select field:<div class="src-views-fifty-state-selections--dropdownInner">
-              <div class="js-dropdown-select-field submodules-UI-js-inputs--PCTDropdown src-components-dropdown--dropdown" tabindex="0">
+        <div class="src-views-fifty-state-selections--dropdownWrapper">
+          <div class="src-views-fifty-state-selections--dropdownOuter"><label id="label-dropdown-field">Select field:</label>
+            <div class="src-views-fifty-state-selections--dropdownInner">
+              <div class="js-dropdown-select-field submodules-UI-js-inputs--PCTDropdown src-components-dropdown--dropdown" tabindex="0" aria-labelledby="label-dropdown-field">
                 <div class="js-input-div">Debt as a percentage of SPI</div>
                 <ul>
                   <li data-value="centralization">Centralization</li>
@@ -277,8 +279,11 @@
                   <li data-value="state_local_division">State-local borrowing division</li>
                 </ul>
               </div>
-            </div></label><label class="src-views-fifty-state-selections--dropdownOuter">Group by:<div class="src-views-fifty-state-selections--dropdownInner">
-              <div class="js-dropdown-group-by submodules-UI-js-inputs--PCTDropdown src-components-dropdown--dropdown" tabindex="0">
+            </div>
+          </div>
+          <div class="src-views-fifty-state-selections--dropdownOuter"><label id="label-dropdown-group">Group by:</label>
+            <div class="src-views-fifty-state-selections--dropdownInner">
+              <div class="js-dropdown-group-by submodules-UI-js-inputs--PCTDropdown src-components-dropdown--dropdown" tabindex="0" aria-labelledby="label-dropdown-group">
                 <div class="js-input-div">— None —</div>
                 <ul>
                   <li data-value="null" class="selected">— None —</li>
@@ -288,7 +293,9 @@
                   <li data-value="debt_limit_type">General obligation debt limit type</li>
                 </ul>
               </div>
-            </div></label></div>
+            </div>
+          </div>
+        </div>
         <div id="explainer-wrapper" style="height: 50px;">
           <div id="field-explainer" class="">
             <p><strong>Debt as a percentage of SPI.</strong> Total debt relative to state personal income, a measure of economic resources. <a href="#debt_percent_SPI" class="src-views-fifty-state--moreLink">more</a></p>
@@ -306,200 +313,200 @@
             <div id="barContainer-AL" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Alabama</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-AL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.183556);"></div>
+                <div class="bar-state-AL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.191721);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(18.4%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(19.2%)">
                 4.8%
               </div>
             </div>
             <div id="barContainer-AK" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Alaska</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-AK src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.72594);"></div>
+                <div class="bar-state-AK src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.728681);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(72.6%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(72.9%)">
                 13.3%
               </div>
             </div>
             <div id="barContainer-AZ" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Arizona</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-AZ src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.2116);"></div>
+                <div class="bar-state-AZ src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.219484);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(21.2%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(21.9%)">
                 5.3%
               </div>
             </div>
             <div id="barContainer-AR" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Arkansas</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-AR src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.150414);"></div>
+                <div class="bar-state-AR src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.15891);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(15.0%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(15.9%)">
                 4.3%
               </div>
             </div>
             <div id="barContainer-CA" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">California</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-CA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.330147);"></div>
+                <div class="bar-state-CA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.336845);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(33.0%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(33.7%)">
                 7.1%
               </div>
             </div>
             <div id="barContainer-CO" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Colorado</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-CO src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.2645);"></div>
+                <div class="bar-state-CO src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.271855);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(26.4%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(27.2%)">
                 6.1%
               </div>
             </div>
             <div id="barContainer-CT" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Connecticut</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-CT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.796686);"></div>
+                <div class="bar-state-CT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.798719);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(79.7%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(79.9%)">
                 14.4%
               </div>
             </div>
             <div id="barContainer-DE" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Delaware</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-DE src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.58891);"></div>
+                <div class="bar-state-DE src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.593021);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(58.9%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(59.3%)">
                 11.2%
               </div>
             </div>
             <div id="barContainer-FL" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Florida</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-FL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.107712);"></div>
+                <div class="bar-state-FL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.116635);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(10.8%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(11.7%)">
                 3.6%
               </div>
             </div>
             <div id="barContainer-GA" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Georgia</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-GA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0764818);"></div>
+                <div class="bar-state-GA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.085717);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(7.6%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(8.6%)">
                 3.1%
               </div>
             </div>
             <div id="barContainer-HI" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Hawaii</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-HI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.678776);"></div>
+                <div class="bar-state-HI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.681989);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(67.9%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(68.2%)">
                 12.6%
               </div>
             </div>
             <div id="barContainer-ID" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Idaho</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-ID src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.241555);"></div>
+                <div class="bar-state-ID src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.24914);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(24.2%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(24.9%)">
                 5.7%
               </div>
             </div>
             <div id="barContainer-IL" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Illinois</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-IL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.504143);"></div>
+                <div class="bar-state-IL src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.509101);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(50.4%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(50.9%)">
                 9.8%
               </div>
             </div>
             <div id="barContainer-IN" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Indiana</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-IN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.391332);"></div>
+                <div class="bar-state-IN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.397419);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(39.1%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(39.7%)">
                 8.1%
               </div>
             </div>
             <div id="barContainer-IA" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Iowa</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-IA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.150414);"></div>
+                <div class="bar-state-IA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.15891);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(15.0%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(15.9%)">
                 4.3%
               </div>
             </div>
             <div id="barContainer-KS" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Kansas</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-KS src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.23072);"></div>
+                <div class="bar-state-KS src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.238413);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(23.1%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(23.8%)">
                 5.6%
               </div>
             </div>
             <div id="barContainer-KY" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Kentucky</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-KY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.391332);"></div>
+                <div class="bar-state-KY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.397419);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(39.1%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(39.7%)">
                 8.1%
               </div>
             </div>
             <div id="barContainer-LA" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Louisiana</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-LA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.436584);"></div>
+                <div class="bar-state-LA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.442218);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(43.7%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(44.2%)">
                 8.8%
               </div>
             </div>
             <div id="barContainer-ME" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Maine</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-ME src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.437859);"></div>
+                <div class="bar-state-ME src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.44348);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(43.8%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(44.3%)">
                 8.8%
               </div>
             </div>
             <div id="barContainer-MD" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Maryland</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-MD src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.377948);"></div>
+                <div class="bar-state-MD src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.384168);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(37.8%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(38.4%)">
                 7.9%
               </div>
             </div>
@@ -516,300 +523,300 @@
             <div id="barContainer-MI" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Michigan</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-MI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.368388);"></div>
+                <div class="bar-state-MI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.374704);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(36.8%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(37.5%)">
                 7.7%
               </div>
             </div>
             <div id="barContainer-MN" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Minnesota</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-MN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.257489);"></div>
+                <div class="bar-state-MN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.264914);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(25.7%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(26.5%)">
                 6.0%
               </div>
             </div>
             <div id="barContainer-MS" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Mississippi</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-MS src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.330784);"></div>
+                <div class="bar-state-MS src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.337476);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(33.1%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(33.7%)">
                 7.1%
               </div>
             </div>
             <div id="barContainer-MO" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Missouri</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-MO src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.354366);"></div>
+                <div class="bar-state-MO src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.360822);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(35.4%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(36.1%)">
                 7.5%
               </div>
             </div>
             <div id="barContainer-MT" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Montana</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-MT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.342894);"></div>
+                <div class="bar-state-MT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.349465);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.3%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.9%)">
                 7.3%
               </div>
             </div>
             <div id="barContainer-NE" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Nebraska</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-NE src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0);"></div>
+                <div class="bar-state-NE src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.01);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(0.0%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(1.0%)">
                 1.9%
               </div>
             </div>
             <div id="barContainer-NV" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Nevada</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-NV src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0490758);"></div>
+                <div class="bar-state-NV src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0585851);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(4.9%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(5.9%)">
                 2.7%
               </div>
             </div>
             <div id="barContainer-NH" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">New Hampshire</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-NH src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.59847);"></div>
+                <div class="bar-state-NH src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.602486);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(59.8%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(60.2%)">
                 11.3%
               </div>
             </div>
             <div id="barContainer-NJ" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">New Jersey</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-NJ src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.667304);"></div>
+                <div class="bar-state-NJ src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.670631);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(66.7%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(67.1%)">
                 12.4%
               </div>
             </div>
             <div id="barContainer-NM" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">New Mexico</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-NM src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.417463);"></div>
+                <div class="bar-state-NM src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.423289);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(41.7%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(42.3%)">
                 8.5%
               </div>
             </div>
             <div id="barContainer-NY" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">New York</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-NY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.630338);"></div>
+                <div class="bar-state-NY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.634034);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(63.0%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(63.4%)">
                 11.8%
               </div>
             </div>
             <div id="barContainer-NC" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">North Carolina</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-NC src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.144678);"></div>
+                <div class="bar-state-NC src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.153231);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(14.5%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(15.3%)">
                 4.2%
               </div>
             </div>
             <div id="barContainer-ND" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">North Dakota</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-ND src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.18993);"></div>
+                <div class="bar-state-ND src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.198031);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(19.0%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(19.8%)">
                 4.9%
               </div>
             </div>
             <div id="barContainer-OH" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Ohio</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-OH src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.282983);"></div>
+                <div class="bar-state-OH src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.290153);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(28.3%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(29.0%)">
                 6.4%
               </div>
             </div>
             <div id="barContainer-OK" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Oklahoma</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-OK src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.206501);"></div>
+                <div class="bar-state-OK src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.214436);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(20.7%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(21.4%)">
                 5.2%
               </div>
             </div>
             <div id="barContainer-OR" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Oregon</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-OR src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.342256);"></div>
+                <div class="bar-state-OR src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.348834);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.2%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.9%)">
                 7.3%
               </div>
             </div>
             <div id="barContainer-PA" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Pennsylvania</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-PA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.346718);"></div>
+                <div class="bar-state-PA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.35325);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.7%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(35.3%)">
                 7.4%
               </div>
             </div>
             <div id="barContainer-RI" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Rhode Island</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-RI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.962396);"></div>
+                <div class="bar-state-RI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.962772);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(96.2%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(96.3%)">
                 17.0%
               </div>
             </div>
             <div id="barContainer-SC" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">South Carolina</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-SC src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.3703);"></div>
+                <div class="bar-state-SC src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.376597);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(37.0%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(37.7%)">
                 7.7%
               </div>
             </div>
             <div id="barContainer-SD" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">South Dakota</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-SD src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.388783);"></div>
+                <div class="bar-state-SD src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.394895);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(38.9%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(39.5%)">
                 8.0%
               </div>
             </div>
             <div id="barContainer-TN" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Tennessee</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-TN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.00828553);"></div>
+                <div class="bar-state-TN src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0182027);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(0.8%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(1.8%)">
                 2.1%
               </div>
             </div>
             <div id="barContainer-TX" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Texas</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-TX src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0975143);"></div>
+                <div class="bar-state-TX src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.106539);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(9.8%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(10.7%)">
                 3.5%
               </div>
             </div>
             <div id="barContainer-US" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">U.S. Median</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-US src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.344806);"></div>
+                <div class="bar-state-US src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.351358);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(34.5%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(35.1%)">
                 7.3%
               </div>
             </div>
             <div id="barContainer-UT" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Utah</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-UT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.272148);"></div>
+                <div class="bar-state-UT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.279426);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(27.2%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(27.9%)">
                 6.2%
               </div>
             </div>
             <div id="barContainer-VT" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Vermont</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-VT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.535373);"></div>
+                <div class="bar-state-VT src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.540019);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(53.5%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(54.0%)">
                 10.3%
               </div>
             </div>
             <div id="barContainer-VA" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Virginia</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-VA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.287444);"></div>
+                <div class="bar-state-VA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.29457);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(28.7%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(29.5%)">
                 6.4%
               </div>
             </div>
             <div id="barContainer-WA" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Washington</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-WA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.417463);"></div>
+                <div class="bar-state-WA src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.423289);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(41.7%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(42.3%)">
                 8.5%
               </div>
             </div>
             <div id="barContainer-WV" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">West Virginia</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-WV src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.551944);"></div>
+                <div class="bar-state-WV src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.556424);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(55.2%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(55.6%)">
                 10.6%
               </div>
             </div>
             <div id="barContainer-WI" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Wisconsin</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-WI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.407903);"></div>
+                <div class="bar-state-WI src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.413824);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(40.8%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(41.4%)">
                 8.3%
               </div>
             </div>
             <div id="barContainer-WY" class="src-views-fifty-state--barContainer">
               <p class="src-views-fifty-state--barLabel">Wyoming</p>
               <div class="src-views-fifty-state--barInnerContainer">
-                <div class="bar-state-WY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0382409);"></div>
+                <div class="bar-state-WY src-components-bar--bar src-components-bar--barColor2" style="transform: translateX(0%) scaleX(0.0478585);"></div>
               </div>
               <div class="src-views-fifty-state--placeHolder"></div>
-              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(3.8%)">
+              <div class="src-views-fifty-state--dataLabel" style="transform: translateX(4.8%)">
                 2.5%
               </div>
             </div>
@@ -1295,8 +1302,8 @@
 </main>
 <div class="clearfix"></div>
 
-<script class="emitted-bundle" src="/~/media/data-visualizations/interactives/2019/state-debt/vendors-js/index.js?v=5c5f17"></script>
+<script class="emitted-bundle" src="/~/media/data-visualizations/interactives/2019/statedebt/vendors-js/index.js?v=c4405d"></script>
 
-<script class="emitted-bundle" src="/~/media/data-visualizations/interactives/2019/state-debt/js/index.js?v=5c5f17"></script>
+<script class="emitted-bundle" src="/~/media/data-visualizations/interactives/2019/statedebt/js/index.js?v=c4405d"></script>
 
 <!-- END EMBED -->
