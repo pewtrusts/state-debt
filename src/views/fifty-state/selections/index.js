@@ -45,7 +45,8 @@ export default class Selections extends Element {
                 dropdownOuter = document.createElement('div'),
                 dropdownLabel = document.createElement('label'),
                 dropdown = this.dropdowns[i];
-            dropdown.el.setAttribute('aria-labelledby', 'label-dropdown-' + d.type );
+            dropdown.el.querySelector('.js-input-div').id = `label-dropdown-${d.type}-value`;
+            dropdown.el.setAttribute('aria-labelledby', `label-dropdown-${d.type} label-dropdown-${d.type}-value`);
             dropdown.el.querySelector('ul').setAttribute('aria-controls', 'fifty-state-view' );
             dropdownOuter.classList.add(s.dropdownOuter);
             dropdownLabel.innerText = d.label;
