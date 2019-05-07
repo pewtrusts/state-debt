@@ -85,6 +85,11 @@
     font-weight: bold;
     background: inline('./icon-search.png') no-repeat right center;
     background-size: 20px;
+    &::-ms-clear { /* to hide x-out option on IE10 */
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
     &::placeholder {
         font-weight: bold;
     }
