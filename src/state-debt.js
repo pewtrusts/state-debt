@@ -5,6 +5,7 @@ import Papa from 'papaparse';
 import { stateModule as S } from 'stateful-dead';
 //import PS from 'pubsub-setter';
 import { publishWindowResize } from '@Utils';
+import smoothscroll from 'smoothscroll-polyfill';
 
 //data ( CSVs loaded by file-loader for use by Papaparse at build and runtime. that's set in webpack.common.js )
 import data from './data/data.csv';
@@ -24,6 +25,8 @@ import sections from './partials/sections.html';
 import footer from './partials/footer.html';
 
 publishWindowResize(S);
+
+smoothscroll.polyfill();
 
 const model = {
     groups,
