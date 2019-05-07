@@ -1,5 +1,7 @@
 @import 'variable.scss';
-
+body {
+    overflow-x: hidden; 
+}
 :global(.rich-text #pew-app) {
     @media (max-width: 917px){
         width: 100vw;
