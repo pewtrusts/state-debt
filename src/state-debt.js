@@ -149,7 +149,8 @@ export default class StateDebt extends PCTApp {
             var target = document.querySelector('#' + link.href.split('#')[1]);
             link.addEventListener('click', function(e){
                 e.preventDefault();
-                target.scrollIntoView({
+                window.scrollTo({
+                    top: target.getBoundingClientRect().top + window.pageYOffset - 120,
                     behavior: 'smooth'
                 });
             });
@@ -193,11 +194,11 @@ export default class StateDebt extends PCTApp {
             e.preventDefault();
             scrollPosition = window.pageYOffset;
             if ( header ){
-                header.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
+                let headerPosition = header.getBoundingClientRect().top + scrollPosition - 120;
+                window.scrollTo({
+                    top: headerPosition,
+                    behavior: 'smooth'
                 });
-
                 document.querySelectorAll('.showGoBack').forEach(function(each){
                     each.classList.remove('showGoBack');
                 });
