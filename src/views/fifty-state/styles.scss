@@ -53,6 +53,7 @@ $label_width: 128px;
     transform: translateX(100%);
     padding-left: 5px;
     transition: transform 0.2s ease-in-out;
+    overflow-wrap: normal;
 }
 
 .placeHolder {
