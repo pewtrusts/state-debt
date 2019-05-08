@@ -8,6 +8,7 @@ import ComparisonChart from '@Project/components/comparison/chart';
 import AutoComplete from '@AutoComplete/js/autoComplete.js';
 import PS from 'pubsub-setter';
 import tippy from 'tippy.js';
+import { GTMPush } from '@Utils';
 
 const initialCompare = ['US','AL'];
 
@@ -226,6 +227,7 @@ export default class Comparison extends Element {
                     highlight: true,                       // Highlight matching results      | (Optional)
                     onSelection: feedback => {             // Action script onSelection event | (Optional)
                         console.log(feedback, this);
+                        GTMPush(`StateDebt|Compare-${index}|${feedback.selection.code}`);
                         S.setState('compare.' + index, feedback.selection.code);
                         input.value = feedback.selection.state;
                         input.focus();

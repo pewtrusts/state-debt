@@ -2,6 +2,7 @@ import Element from '@UI/element';
 import s from './styles.scss';
 import ThisDropdown from '@Project/components/dropdown';
 import { stateModule as S } from 'stateful-dead';
+import { GTMPush } from '@Utils';
 
 export default class Selections extends Element {
     prerender(){
@@ -81,6 +82,7 @@ export default class Selections extends Element {
                 e.preventDefault();
                 document.querySelector('.' + s.sortActive).classList.remove(s.sortActive);
                 each.classList.add(s.sortActive);
+                GTMPush(`StateDebt|FiftyState|Sort|${each.dataset.sort}`);
                 S.setState('sort', each.dataset.sort);
             });
         });

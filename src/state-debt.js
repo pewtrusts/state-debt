@@ -6,6 +6,7 @@ import { stateModule as S } from 'stateful-dead';
 //import PS from 'pubsub-setter';
 import { publishWindowResize } from '@Utils';
 import smoothscroll from 'smoothscroll-polyfill';
+import { GTMPush } from '@Utils';
 
 //data ( CSVs loaded by file-loader for use by Papaparse at build and runtime. that's set in webpack.common.js )
 import data from './data/data.csv';
@@ -163,6 +164,7 @@ export default class StateDebt extends PCTApp {
             this.parentNode.querySelector('.js-inner-content').classList.toggle('pct-hide');
             this.classList.toggle('pct-is-closed');
             this.blur();
+            GTMPush(`StateDebt|OpenClose|${this.innerText}`);
         }
         document.querySelectorAll('#pew-app section > h2').forEach(heading => {
             heading.addEventListener('click', toggleSection);
@@ -194,6 +196,7 @@ export default class StateDebt extends PCTApp {
             e.preventDefault();
             scrollPosition = window.pageYOffset;
             if ( header ){
+                GTMPush(`StateDebt|MoreLink|${field}`);
                 let headerPosition = header.getBoundingClientRect().top + scrollPosition - 120;
                 window.scrollTo({
                     top: headerPosition,

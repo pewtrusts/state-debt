@@ -1,6 +1,7 @@
 import s from './styles.scss';
 import { Dropdown } from '@UI/inputs/inputs.js';
 import { stateModule as S } from 'stateful-dead';
+import { GTMPush } from '@Utils';
 
 export default class ThisDropdown extends Dropdown {
     constructor(selector, options){
@@ -51,6 +52,7 @@ export default class ThisDropdown extends Dropdown {
         });*/
     }
     onChange(){
+        GTMPush(`StateDebt|FiftyState|${this.dropdownType}|${this.selectedOption.dataset.value}`);
         S.setState(this.dropdownType, this.selectedOption.dataset.value);
     }
     

@@ -6,6 +6,7 @@ import * as d3 from 'd3-collection';
 import Bar from '@Project/components/bar';
 import Selections from './selections';
 import PS from 'pubsub-setter';
+import { GTMPush } from '@Utils';
 
 import { formatValue } from '@Project/methods';
 
@@ -226,6 +227,9 @@ export default class FiftyStateView extends Element {
         document.querySelectorAll('.' + s.barContainer).forEach(barContainer => {
             barContainer.addEventListener('click', () => {
                 this.highlightedBars[barContainer.id] = !this.highlightedBars[barContainer.id];
+                if ( this.highlightedBars[barContainer.id] ){
+                    GTMPush(`StateDebt|FiftyState|Highlight|${barContainer.id}`);
+                }
                 barContainer.classList.toggle(s.isHighlighted);
             });
         });
@@ -237,6 +241,7 @@ export default class FiftyStateView extends Element {
                 barContainer.classList.remove(s.isHighlighted);
                 this.highlightedBars = {};
             });
+            GTMPush('StateDebt|FiftyState|RemoveHighlights');
         });
     }
     updateDataLabels(){
