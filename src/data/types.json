@@ -13,7 +13,7 @@
     "group": 1,
     "order": 2,
     "label": "Centralization",
-    "tooltip": "The degree to which borrowing is done by the state itself rather than by component units. Higher values mean that borrowing in the state is more centralized."
+    "tooltip": "The degree to which borrowing is done by the state itself rather than by component units. Higher values mean borrowing in the state is more centralized."
   },
   {
     "field": "state_local_division",
@@ -29,7 +29,7 @@
     "group": 2,
     "order": 1,
     "label": "Revenue volatility",
-    "tooltip": "A measure of variation in tax collections. Low scores mean that revenue levels are similar from year to year, while high scores indicate that revenue varies more. More volatile states should plan for greater uncertainty."
+    "tooltip": "A measure of variation in tax collections. Low scores mean that revenue levels are similar from year to year, while high scores indicate that revenue varies more. More volatile states should plan for greater uncertainty. "
   },
   {
     "field": "ten_year_pop_growth",
@@ -37,7 +37,7 @@
     "group": 2,
     "order": 2,
     "label": "Population growth",
-    "tooltip": "The 10-year population growth rate from 2008 to 2017. Growing populations are associated with greater infrastructure investment."
+    "tooltip": "The 10-year population growth rate from 2008 to 2017. Growing populations are associated with greater infrastructure investment. "
   },
   {
     "field": "debt_per_capita",
@@ -53,7 +53,7 @@
     "type": "percent",
     "group": 3,
     "order": 2,
-    "label": "Debt as a percentage of SPI",
+    "label": "Debt as a percentage of state personal income",
     "tooltip": "Total debt relative to state personal income, a measure of economic resources.",
     "isDefaultSelection": true
   },
@@ -63,7 +63,7 @@
     "group": 4,
     "order": 1,
     "label": 2015,
-    "tooltip": "Standard & Poor’s general obligation or issuer credit rating."
+    "tooltip": "S&P Global Rating’s general obligation or issuer credit rating."
   },
   {
     "field": "credit2018",
@@ -71,7 +71,7 @@
     "group": 4,
     "order": 2,
     "label": 2018,
-    "tooltip": "Standard & Poor’s general obligation or issuer credit rating."
+    "tooltip": "S&P Global Rating’s general obligation or issuer credit rating."
   },
   {
     "field": "census",
