@@ -15,6 +15,8 @@ const initialCompare = ['US','AL'];
 
 export default class Comparison extends Element {
     prerender(){ // this prerender is called as part of the super constructor
+        //container
+        var view = super.prerender();
  
         this.comparisons = [];
         // first loop through to instantiate the Comparisons. if prerendered, comparison.el will be the renders html. if not, it will be created
@@ -33,8 +35,6 @@ export default class Comparison extends Element {
 
         //then either return the prendered DOM element or create it, appending the DOM elements from the comparisons instantiated above 
 
-        //container
-        var view = super.prerender();
         //this.children = []; already set as part of createComponent method
         if ( this.prerendered && !this.rerender) {
             return view; // if prerendered and no need to render (no data mismatch)
@@ -62,13 +62,13 @@ export default class Comparison extends Element {
         return view;
     }
     randomize(){
-      /*  function randomIntFromInterval(min,max){ // min and max included https://stackoverflow.com/a/7228322
+        function randomIntFromInterval(min,max){ // min and max included https://stackoverflow.com/a/7228322
             return Math.floor(Math.random()*(max-min+1)+min);
         }
         var states = this.model.data.map(d => d.code);
         var index = states.indexOf('US');
         states.splice(index, 1);
-        S.setState('compare.1', states[randomIntFromInterval(0, states.length -1)]);*/
+        S.setState('compare.1', states[randomIntFromInterval(0, states.length -1)]);
     }
     init(){
         this.initializeAutocompletes();
@@ -81,9 +81,9 @@ export default class Comparison extends Element {
             }]
         ]);
         if ( !window.IS_PRERENDERING ){
-          // setTimeout(() => {
-                this.randomize();
-          //  },5000);
+         //  setTimeout(() => {
+               this.randomize();
+         //   },1000);
          }
     }
     initializeTooltips(){

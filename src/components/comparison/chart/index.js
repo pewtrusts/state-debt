@@ -9,7 +9,7 @@ export default class ComparisonChart extends Comparison {
         var div = super.prerender();
         this.bars = [];
         [0,1].forEach(index => {
-            this.bars.push(this.parent.parent.createComponent(this.model, Bar, `div.js-bar-compare-${this.data.field}-${index}`, {parent: this, data: {d: this.matches[index], field: this.data.field, color: index + 1}}))
+            this.bars.push(this.parent.parent.createComponent(this.model, Bar, `div.js-bar-compare-${this.data.field}-${index}`, {rerenderOnDataMismatch: true, parent: this, data: {d: this.matches[index], field: this.data.field, color: index + 1}}))
         });
         this.children.push(...this.bars);
         if ( this.prerendered && !this.rerender) {

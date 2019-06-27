@@ -29,20 +29,15 @@ import Element from '@UI/element';
         return raw > 0 ? raw : 0;
     }
     checkIfZero(){
-        /* eslint no-debugger: off */
-        if ( this.el.parentNode === null ) {
-            debugger;
-        }
         if ( this.data.d[this.data.field] === 0 ){
             this.el.parentNode.classList.add(s.isZero);
         } else {
             this.el.parentNode.classList.remove(s.isZero);
         }
     }
-    update(){
+    update(msg){
+        this.el = document.querySelector(`.js-bar-compare-${this.data.field}-${msg}`);
         this.checkIfZero();
-        // in development mode, this.el is a js object but does not refer to element rendered on the page
-        //var el = process.env.NODE_ENV === 'development' ? document.querySelector(`.js-bar-compare-${this.data.field}-${index}`) : this.el;
         window.requestAnimationFrame(() => {
             this.el.style.transform = `translateX(${this.parent.name === 'FiftyStateView' ? this.placeZero(this.data.field) * 100 + '%' : 0}) scaleX(${this.linearScale(this.data.d, this.data.field)})`;
         });       
