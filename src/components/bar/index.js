@@ -29,6 +29,10 @@ import Element from '@UI/element';
         return raw > 0 ? raw : 0;
     }
     checkIfZero(){
+        /* eslint no-debugger: off */
+        if ( this.el.parentNode === null ) {
+            debugger;
+        }
         if ( this.data.d[this.data.field] === 0 ){
             this.el.parentNode.classList.add(s.isZero);
         } else {

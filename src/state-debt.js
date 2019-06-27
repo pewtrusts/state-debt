@@ -67,7 +67,7 @@ function getRuntimeData(){
                 } else if ( process.env.NODE_ENV !== 'development' && dataHash.toString() !== appContainer.getAttribute('data-data-hash') ){
                     appContainer.setAttribute('data-data-mismatch',true);
                     console.log('data mismatch');
-                    model.isMismatched = true; // set so that components can access this value 
+                    model.isMismatched = true; // SET HERE FOR DEBUGGING PURPOSES. NEED TO MOVE BACK UP
                 }
             },
             complete: response => { // arrow function here to keep `this` context as StateDebt
@@ -93,7 +93,7 @@ function getRuntimeData(){
                 
                 views.push(
                     this.createComponent(model, ComparisonView, 'div#comparison-view', {renderToSelector: '#section-comparison .js-inner-content', rerenderOnDataMismatch: true, parent: this}),  
-                    this.createComponent(model, FiftyStateView, 'div#fifty-state-view', {renderToSelector: '#section-states .js-inner-content', rerenderOnDataMismatch: true, parent: this})  
+                    this.createComponent(model, FiftyStateView, 'div#fifty-state-view', {renderToSelector: '#fifty-state-container', rerenderOnDataMismatch: true, parent: this})  
                 );
                 
                 resolve(true);

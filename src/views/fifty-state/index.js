@@ -49,7 +49,7 @@ export default class FiftyStateView extends Element {
         this.lastPositions = {};
         this.highlightedBars = {};
         this.groupByFn = this.groupBy !== null ? d => d[this.groupBy] : d => d !== null;
-        this.selections = this.parent.createComponent(this.model, Selections, `div.js-fifty-state-selections`, {parent: this});
+        this.selections = this.parent.createComponent(this.model, Selections, `div.js-fifty-state-selections`, {parent: this, rerenderOnDataMismatch: true, renderToSelector: '#selections-container'});
         this.sortValueKey = 'state';
         this.sortValuesFn = ascending;
         this.groupBy = 'null';
@@ -89,7 +89,7 @@ export default class FiftyStateView extends Element {
         
     }
     renderSelections(){
-        this.container.appendChild(this.selections.el);
+        this.selections.container.appendChild(this.selections.el);
     }
     renderCharts(){
         var container = document.createElement('div'),
