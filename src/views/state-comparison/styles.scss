@@ -169,7 +169,7 @@
 }
 :global(.showGoBack) {
     cursor: pointer;
-    
+    max-width: calc(100% - 60px);
     display: inline-block !important;
     position: relative;
     &::before {
@@ -191,6 +191,8 @@
         padding: 0 3px 3px;
         font-size: 16px;
         right: -60px;
+        top: calc(50% - 11px);
+        height: 22px;
 
 
     }
