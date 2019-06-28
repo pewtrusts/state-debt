@@ -28,7 +28,8 @@ import Element from '@UI/element';
             raw = ( 0 - typeObject.min ) / typeObject.spread;
         return raw > 0 ? raw : 0;
     }
-    checkIfZero(){
+    checkIfZero(msg){
+        this.el = this.el || document.querySelector(`.js-bar-compare-${this.data.field}-${msg}`);
         if ( this.data.d[this.data.field] === 0 ){
             this.el.parentNode.classList.add(s.isZero);
         } else {
@@ -36,8 +37,8 @@ import Element from '@UI/element';
         }
     }
     update(msg){
-        this.el = document.querySelector(`.js-bar-compare-${this.data.field}-${msg}`);
-        this.checkIfZero();
+        this.el = this.el || document.querySelector(`.js-bar-compare-${this.data.field}-${msg}`);
+        this.checkIfZero(msg);
         window.requestAnimationFrame(() => {
             this.el.style.transform = `translateX(${this.parent.name === 'FiftyStateView' ? this.placeZero(this.data.field) * 100 + '%' : 0}) scaleX(${this.linearScale(this.data.d, this.data.field)})`;
         });       
