@@ -23,7 +23,6 @@ import PCTApp from '@App';
 
 //static content
 import sections from './partials/sections.html';
-import footer from './partials/footer.html';
 
 publishWindowResize(S);
 
@@ -109,7 +108,6 @@ export default class StateDebt extends PCTApp {
     prerender(){
         console.log('prerender');
         this.el.insertAdjacentHTML('beforeend', sections);
-        this.el.insertAdjacentHTML('beforeend', footer);
         //this.wasPrerendered = false;
         getRuntimeData.call(this).then(() => { // bind StateDebt as context `this` for getRuntimeData so that it can acceess this.el, etc
             console.log(model);
