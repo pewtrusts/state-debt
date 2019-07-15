@@ -173,8 +173,26 @@ export default class StateDebt extends PCTApp {
             });
         });
     }
-    returnMoreLink(field){
-        console.log(field);
+    returnMoreLink(field, initialLink){
+        function initLink(link){
+            link.addEventListener('click', function(e){
+                e.preventDefault();
+                scrollPosition = window.pageYOffset;
+                if ( header ){
+                    GTMPush(`StateDebt|MoreLink|${field}`);
+                    let headerPosition = header.getBoundingClientRect().top + scrollPosition - 120;
+                    window.scrollTo({
+                        top: headerPosition,
+                        behavior: 'smooth'
+                    });
+                    document.querySelectorAll('.showGoBack').forEach(function(each){
+                        each.classList.remove('showGoBack');
+                    });
+                    header.classList.add('showGoBack');
+                    header.addEventListener('click', scrollBack);
+                }
+            });
+        }
         function scrollBack(){
             window.scrollTo({
                 top: scrollPosition,
@@ -183,30 +201,20 @@ export default class StateDebt extends PCTApp {
             this.removeEventListener('click', scrollBack);
             this.classList.remove('showGoBack');
         }
-        var link = document.createElement('a');
-        if ( field === 'credit2015' || field === 'credit2018' ){
-            field = 'credit_rating';
-        }
+        var link; 
         var header = document.querySelector('.js-' + field);
-        link.innerText = 'more';
-        link.href = '#' + field;
-        link.addEventListener('click', function(e){
-            e.preventDefault();
-            scrollPosition = window.pageYOffset;
-            if ( header ){
-                GTMPush(`StateDebt|MoreLink|${field}`);
-                let headerPosition = header.getBoundingClientRect().top + scrollPosition - 120;
-                window.scrollTo({
-                    top: headerPosition,
-                    behavior: 'smooth'
-                });
-                document.querySelectorAll('.showGoBack').forEach(function(each){
-                    each.classList.remove('showGoBack');
-                });
-                header.classList.add('showGoBack');
-                header.addEventListener('click', scrollBack);
+        if ( !initialLink ) {
+            link = document.createElement('a');
+            if ( field === 'credit2015' || field === 'credit2018' ){
+                field = 'credit_rating';
             }
-        });
+            link.innerText = 'more';
+            link.href = '#' + field;
+        } else {
+            link = initialLink;
+        }
+        initLink(link);
         return header ? link : null;
     }
+    
 }

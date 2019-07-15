@@ -188,6 +188,13 @@ export default class FiftyStateView extends Element {
         this.groupExplainer = document.querySelector('#group-explainer');
         this.initHighlightBars();
         this.initClearAllHighlights();
+        this.initMoreLinks();
+    }
+    initMoreLinks(){ // there should only be one at pageLoad but building to handle multiple
+        var links = document.querySelectorAll('.' + s.moreLink);
+        links.forEach(link => {
+            this.parent.returnMoreLink(this.field, link);
+        });
     }
     updateExplainerText(msg,data, calledFromPrerender){
         console.log(msg,data, this);
