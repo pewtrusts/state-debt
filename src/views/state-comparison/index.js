@@ -242,7 +242,7 @@ export default class Comparison extends Element {
                     },
                     searchEngine: "strict",              // Search Engine type/mode           | (Optional)
                     selector: '#compare-input-' + index,
-                    threshold: 2,                        // Min. Chars length to start Engine | (Optional)
+                    threshold: 0,                        // Min. Chars length to start Engine | (Optional)
                     //maxResults: 5,                         /
                 })
             );
