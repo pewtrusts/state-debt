@@ -17,3 +17,4 @@
 [submodule "submodules/autoComplete.js"]
 	path = submodules/autoComplete.js
 	url = git@github.com:pewtrusts/autoComplete.js.git
+	branch = startsWith
