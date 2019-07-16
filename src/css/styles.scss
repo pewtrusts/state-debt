@@ -148,3 +148,7 @@ body {
 :global(.no-opacity) {
     opacity: 0;
 }
+:global(.compare-instruct){
+    margin-top: 5px;
+    color: $gray;
+}
