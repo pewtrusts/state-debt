@@ -20,7 +20,7 @@
     "type": "percent",
     "group": 1,
     "order": 3,
-    "label": "State-local borrowing division",
+    "label": "Local-state borrowing division",
     "tooltip": "The share of combined state and local debt issued by local governments. States in which local governments borrow less tend to have higher state debt levels."
   },
   {
