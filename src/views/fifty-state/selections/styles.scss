@@ -7,7 +7,8 @@
     margin-bottom: 15px;
 }
 .dropdownOuter {
-    width: 310px;
+    max-width: 310px;
+    min-width: 275px;
     flex-grow: 1;
     font-size: 16px;
     font-weight: bold;
