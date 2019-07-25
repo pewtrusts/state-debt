@@ -67,7 +67,7 @@ function getRuntimeData(){
                     appContainer.setAttribute('data-data-mismatch',true);
                     console.log('data mismatch');
                     model.isMismatched = true; // SET HERE FOR DEBUGGING PURPOSES. NEED TO MOVE BACK UP
-                }
+                } 
             },
             complete: response => { // arrow function here to keep `this` context as StateDebt
                 

@@ -10,7 +10,6 @@ import Element from '@UI/element';
         }
         div.classList.add(s.bar, s['barColor' + this.data.color]);
         div.style.transform = `translateX(${this.parent.name === 'FiftyStateView' ? this.placeZero(this.data.field) * 100 + '%' : 0}) scaleX(${this.linearScale(this.data.d, this.data.field)})`;
-
         return div;
     }
     linearScale(match, field){
@@ -29,7 +28,7 @@ import Element from '@UI/element';
         return raw > 0 ? raw : 0;
     }
     checkIfZero(msg){
-        this.el = this.el || document.querySelector(`.js-bar-compare-${this.data.field}-${msg}`);
+        this.el = this.el.parentNode ? this.el : msg === undefined ? document.querySelector(`.bar-state-${this.data.d.code}`) : document.querySelector(`.js-bar-compare-${this.data.field}-${msg}`);
         if ( this.data.d[this.data.field] === 0 ){
             this.el.parentNode.classList.add(s.isZero);
         } else {
@@ -37,7 +36,7 @@ import Element from '@UI/element';
         }
     }
     update(msg){
-        this.el = this.el || document.querySelector(`.js-bar-compare-${this.data.field}-${msg}`);
+        this.el = this.el.parentNode ? this.el : msg === undefined ? document.querySelector(`.bar-state-${this.data.d.code}`) : document.querySelector(`.js-bar-compare-${this.data.field}-${msg}`);
         this.checkIfZero(msg);
         window.requestAnimationFrame(() => {
             this.el.style.transform = `translateX(${this.parent.name === 'FiftyStateView' ? this.placeZero(this.data.field) * 100 + '%' : 0}) scaleX(${this.linearScale(this.data.d, this.data.field)})`;
